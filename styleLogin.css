@@ -2,7 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Poppins", sans-serif;
 
 }
 
@@ -34,6 +34,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 930px;
 }
 
 .form::before {
@@ -43,7 +44,7 @@ html, body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.4); 
+    background-color: rgba(255, 255, 255, 0.6); 
     z-index: 1; 
 }
 
@@ -58,43 +59,100 @@ html, body {
 
 .content h1 {
     text-align: center;
-    font-size: 40px;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 45px;
 }
 
 .content h3 {
     text-align: center;
     margin: 10px 0 40px 0;
-}
-
-.input-form {
-    display: flex;
-    flex-direction: column;
+    font-size: 30px;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .input-form {
     display: flex;
     gap: 5px;
     margin-bottom: 26px;
+    flex-direction: column;
+}
+
+.input-form label {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .input-form input {
-    padding: 13px ;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255);
     border-radius: 8px;
-    border: none;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-form input:focus {
+    border-color: #D6E5F3;
 }
 
 button {
-    padding: 10px 15px;
+    padding: 10px 20px;
     border-radius: 10px;
+    font-size: 18px;
+    font-weight: 300;
     border: none;
     background-color: #172C76;
     color: white;
     float: right;
+    cursor: pointer;
+    transition: all 0.3s ease 0.3s;
+}
+
+button:hover {
+    background-color: rgba(23, 44, 118, 0.7);
+}
+
+a {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 .informasi {
     height: 100%;
-    /* max-width: ; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.informasi img, .informasi h1, .informasi p {
+    position: relative;
+    top: 100px;
+}
+
+.informasi img { 
+    width: 200px;
+    height: auto;
+}
+
+.informasi h1 {
+    font-size: 40px;
+}
+
+.informasi p {
+    font-size: 24px;
 }
 
 .footer {
