@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+}
+
+.header {
+    width: 100%;
+    height: 30px;
+    background-color: #AEAFB7;
+}
+
+.body {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100% - 60px);
+    background-color: #D6E5F3;
+}
+
+.form {
+    position: relative; 
+    background-image: url('img/Teknik-Polinema.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 930px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.4); 
+    z-index: 1; 
+}
+
+.content {
+    position: relative; 
+    z-index: 2; 
+    color: #000; 
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+}
+
+.content h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+.content h3 {
+    text-align: center;
+    margin: 10px 0 40px 0;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-form {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 26px;
+}
+
+.input-form input {
+    padding: 13px ;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: #172C76;
+    color: white;
+    float: right;
+}
+
+.informasi {
+    height: 100%;
+    /* max-width: ; */
+}
+
+.footer {
+    width: 100%;
+    height: 30px;
+    background-color: #AEAFB7;
+}
+

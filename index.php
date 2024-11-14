@@ -11,23 +11,30 @@
 </head>
 <body>
     <div class="header"></div>
-    <div class="form">
-        <h1>Sistem Informasi Bebas Tanggungan</h1>
-        <h3>Masuk Ke Akun Anda!</h3>
-        <form action="">
-            <div class="input-form">
-                <label for="noInduk">Nomor Induk</label>
-                <input type="text" name="noInduk" id="noInduk" placeholder="Masukkan No Induk Pegawai/Mahasiswa">
+    <div class="body"> 
+        <div class="form">
+            <div class="content">
+                <h1>Sistem Informasi Bebas Tanggungan</h1>
+                <h3>Masuk Ke Akun Anda!</h3>
+                <form action="">
+                    <div class="input-form">
+                        <label for="noInduk">Nomor Induk</label>
+                        <input type="text" name="noInduk" id="noInduk" placeholder="Masukkan No Induk Pegawai/Mahasiswa">
+                    </div>
+                    <div class="input-form">
+                        <label for="pass">Kata Sandi</label>
+                        <input type="password" name="pass" id="pass" placeholder="Masukkan Sandi">
+                    </div>
+                    <button type="submit">Masuk</button>
+                </form>
             </div>
-            <div class="input-form">
-                <label for="pass">Kata Sandi</label>
-                <input type="password" name="pass" id="pass" placeholder="Masukkan Sandi">
-            </div>
-            <input type="submit" value="Masuk">
-        </form>
+        </div>
+    
+        <div class="informasi">
+            <h1>Selamat Datang</h1>
+            <p>Mempersembahkan platform resmi Jurusan Teknologi Informasi untuk mengakses berbagai dokumen akademik dan penelitian jurusan.</p>
+        </div>
     </div>
-
-    <div class="informasi"></div>
     <div class="footer"></div>
 </body>
 </html>
