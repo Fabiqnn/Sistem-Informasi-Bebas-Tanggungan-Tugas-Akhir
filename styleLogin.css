@@ -14,7 +14,7 @@ html, body {
 .header {
     width: 100%;
     height: 30px;
-    background-color: #AEAFB7;
+    background-color: #1E2630;
 }
 
 .body {
@@ -158,6 +158,6 @@ a:hover {
 .footer {
     width: 100%;
     height: 30px;
-    background-color: #AEAFB7;
+    background-color: #1E2630;
 }
 

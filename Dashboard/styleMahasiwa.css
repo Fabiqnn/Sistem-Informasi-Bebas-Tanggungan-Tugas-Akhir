@@ -1,25 +1,39 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
     margin: 0;
-    font-family: "Poppins", sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
 }
 
-html, body {
-    width: 100%;
-    height: 100vh;
+html {
+    line-height: 2rem;
 }
 
-.header {
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: block;
+}
+
+header {
     width: 100%;
     height: 30px;
-    background-color: #AEAFB7;
+    background-color: #1E2630;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.body {
+    margin-top: 30px;
+    height: calc(100vh - 30px);
 }
 
 .banner {
-    position: relative;
     display: flex;
     height: 300px;
+    position: relative;
+    margin-left: 250px;
 }
 
 .banner::before {
@@ -28,14 +42,16 @@ html, body {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0; 
     background: linear-gradient(to right, rgba(115, 115, 115, 0.3), rgb(168, 168, 168, 0.95), rgb(217, 217, 217)); 
     z-index: 1; 
 }
 
 .img-container {
+    background-image: url(Teknik-Polinema.jpg);
     width: 900px;
     overflow: hidden;   
+    object-fit: cover;
 }
 
 .img-container img {
@@ -61,8 +77,125 @@ html, body {
     font-size: 38px;
 }
 
-.footer {
-    width: 100%;
-    height: 30px;
-    background-color: #AEAFB7;
+#sidebar {
+    background-color: #2B3643;
+    padding: 15px 10px;
+    height: 100vh;
+    color: white;
+    position: fixed;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+/* Sidebar tertutup */
+#sidebar.closed {
+    width: 60px;  /* Lebar sidebar saat tertutup */
+}
+
+/* Tombol toggle untuk membuka dan menutup sidebar */
+#sidebar > ul > li:first-child > .toggle-btn {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Mengatur tampilan menu pada sidebar */
+#sidebar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+/* Menata setiap item sidebar */
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Mengatur ikon di dalam sidebar */
+.sidebar-item i {
+    color: white;
+    font-size: 30px;
+}
+
+/* Tombol di dalam sidebar */
+.sidebar-item button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Mengatur teks pada item sidebar */
+.sidebar-item span {
+    font-size: 1rem;
+    color: white;
+}
+
+/* Tautan di dalam sidebar */
+.sidebar-item a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Menyembunyikan teks pada item sidebar saat sidebar tertutup */
+#sidebar.closed .sidebar-item span {
+    opacity: 0;  /* Menyembunyikan teks */
+}
+
+/* Menyembunyikan ikon dropdown hanya saat sidebar tertutup */
+#sidebar.closed .sidebar-item .dropdown .dropdown-icon {
+    display: none;  /* Menyembunyikan ikon dropdown */
+}
+
+/* Mengatur dropdown untuk konten yang tersembunyi secara default */
+.sidebar-item.dropdown {
+    flex-direction: column;
+}
+
+/* Dropdown content tersembunyi */
+.sidebar-item.dropdown .dropdown-content {
+    display: none;
+}
+
+/* Menampilkan dropdown content ketika dropdown dibuka */
+.sidebar-item.dropdown.open .dropdown-content {
+    display: block;
+}
+
+/* Menata tombol dropdown */
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Konten dropdown */
+.dropdown-content {
+    display: none;
+    position: relative;
+}
+
+/* Menampilkan konten dropdown saat status dropdown terbuka */
+.dropdown.open .dropdown-content {
+    display: block;
+}
+
+/* Ikon dropdown yang berubah posisi saat dropdown terbuka */
+.dropdown .dropdown-icon {
+    margin-left: auto;
+    transition: transform 0.3s;
+}
+
+/* Mengubah arah ikon saat dropdown terbuka */
+.dropdown.open .dropdown-icon {
+    transform: rotate(-90deg);
 }
