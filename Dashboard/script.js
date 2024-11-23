@@ -1,17 +1,16 @@
-// Mendapatkan elemen sidebar dan toggle button
-const sidebar = document.getElementById('sidebar');
-const toggleButton = document.querySelector('.toggle-btn');
+const dropdownBtn = document.querySelectorAll(".dropdown-btn");
+const toggleBtn = document.querySelector(".toggle-btn");
+const sidebar = document.querySelector(".sidebar");
+const mainContent = document.querySelector(".main-content");
 
-// Menambahkan event listener untuk toggle button
-toggleButton.addEventListener('click', () => {
-    // Toggle class 'closed' pada sidebar untuk membuka/menutup
-    sidebar.classList.toggle('closed');
+toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+    mainContent.classList.toggle("shrink");
 });
 
-// Mengatur dropdown menu
-document.querySelectorAll('.dropdown-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
-        const dropdown = btn.parentElement;
-        dropdown.classList.toggle('open');
+dropdownBtn.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const parent =  btn.parentElement;
+        parent.classList.toggle("open");
     });
 });

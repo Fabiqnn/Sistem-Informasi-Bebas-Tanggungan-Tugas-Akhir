@@ -33,7 +33,6 @@ header {
     display: flex;
     height: 300px;
     position: relative;
-    margin-left: 250px;
 }
 
 .banner::before {
@@ -58,7 +57,6 @@ header {
     width: 100%;
     height: auto;
     object-fit: cover;
-
 }
 
 .judul {
@@ -67,6 +65,9 @@ header {
     font-weight: 600;
     font-style: normal;
     display: flex;
+    position: absolute;
+    top: 115px;
+    right: 2rem;
     justify-content: center;
     align-items: center;
 }
@@ -77,125 +78,120 @@ header {
     font-size: 38px;
 }
 
-#sidebar {
-    background-color: #2B3643;
-    padding: 15px 10px;
-    height: 100vh;
-    color: white;
+.sidebar {
     position: fixed;
+    width: 70px;
+    background-color: #2B3643;
+    height: 100%;
     z-index: 10;
-    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.1);
+    transition: width .3s ease;
 }
 
-/* Sidebar tertutup */
-#sidebar.closed {
-    width: 60px;  /* Lebar sidebar saat tertutup */
+.sidebar.open {
+    width: 330px;
 }
 
-/* Tombol toggle untuk membuka dan menutup sidebar */
-#sidebar > ul > li:first-child > .toggle-btn {
-    margin-bottom: 20px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-/* Mengatur tampilan menu pada sidebar */
-#sidebar ul {
+.sidebar ul {
     list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
+    width: max-content;
 }
 
-/* Menata setiap item sidebar */
-.sidebar-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-}
-
-/* Mengatur ikon di dalam sidebar */
-.sidebar-item i {
-    color: white;
-    font-size: 30px;
-}
-
-/* Tombol di dalam sidebar */
-.sidebar-item button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-/* Mengatur teks pada item sidebar */
-.sidebar-item span {
-    font-size: 1rem;
-    color: white;
-}
-
-/* Tautan di dalam sidebar */
-.sidebar-item a {
+.sidebar ul a {
     text-decoration: none;
     color: white;
+}
+
+.sidebar-item {
+    transition: background-color .3s ease;
+}
+
+.sidebar button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar span {
+    font-size: 18px;
+}
+
+.sidebar-item:hover {
+    background-color: rgba(127, 134, 142, 1);
+}
+
+.sidebar-item.header:hover {
+    background-color: #2B3643;
+}
+
+.sidebar-item.header {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.sidebar-item.header span{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.sidebar-item {
+    margin-bottom: 10px;
+}
+
+.sidebar-item a{
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
-/* Menyembunyikan teks pada item sidebar saat sidebar tertutup */
-#sidebar.closed .sidebar-item span {
-    opacity: 0;  /* Menyembunyikan teks */
-}
-
-/* Menyembunyikan ikon dropdown hanya saat sidebar tertutup */
-#sidebar.closed .sidebar-item .dropdown .dropdown-icon {
-    display: none;  /* Menyembunyikan ikon dropdown */
-}
-
-/* Mengatur dropdown untuk konten yang tersembunyi secara default */
-.sidebar-item.dropdown {
-    flex-direction: column;
-}
-
-/* Dropdown content tersembunyi */
-.sidebar-item.dropdown .dropdown-content {
-    display: none;
-}
-
-/* Menampilkan dropdown content ketika dropdown dibuka */
-.sidebar-item.dropdown.open .dropdown-content {
-    display: block;
-}
-
-/* Menata tombol dropdown */
-.dropdown-btn {
+.sidebar-item button {
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
-/* Konten dropdown */
+.sidebar-item i {
+    font-size: 30px;
+    margin: 5px 20px;
+}
+
+.sidebar-item i.dropdown-icon {
+    font-size: 16px;
+    margin: 8px;
+    transition: transform .3s ease;
+}
+
 .dropdown-content {
-    display: none;
-    position: relative;
+    padding-left: 70px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .3s linear, opacity .3s linear;
 }
 
-/* Menampilkan konten dropdown saat status dropdown terbuka */
+.dropdown-content a {
+    height: 40px;
+}
+
+.dropdown-content > ul > li:first-child {
+    margin-top: 5px;
+}
+
 .dropdown.open .dropdown-content {
-    display: block;
+    max-height: fit-content;
+    opacity: 1;
 }
 
-/* Ikon dropdown yang berubah posisi saat dropdown terbuka */
-.dropdown .dropdown-icon {
-    margin-left: auto;
-    transition: transform 0.3s;
-}
-
-/* Mengubah arah ikon saat dropdown terbuka */
 .dropdown.open .dropdown-icon {
     transform: rotate(-90deg);
+}
+
+.main-content {
+    height: inherit;
+    margin-top: 30px;
+    transition: margin-left .3s ease;
+}
+
+.main-content.shrink {
+    margin-left: 330px;
 }

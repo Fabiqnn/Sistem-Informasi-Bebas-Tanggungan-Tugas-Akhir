@@ -18,9 +18,9 @@
     <header></header>
 
     <div class="body">
-        <nav id="sidebar">
+        <nav class="sidebar">
             <ul>
-                <li class="sidebar-item">
+                <li class="sidebar-item header">
                     <button class="toggle-btn">
                         <i class="lni lni-menu-hamburger-1"></i>
                         <span>Bebas Tanggungan</span>
@@ -73,17 +73,17 @@
             </ul>
         </nav>
 
-        <div class="banner">
-            <div class="img-container">
-                <div class="filter"></div>
+        <div class="main-content">
+            <div class="banner">
+                <div class="img-container">
+                    <div class="filter"></div>
+                </div>
+                <div class="judul">
+                    <h1>Sistem Bebas Tanggungan</h1>
+                </div>
             </div>
-            <div class="judul">
-                <h1>Sistem Bebas Tanggungan</h1>
-            </div>
-        </div>
 
-        <div class="profile">
-
+            <div class="profile"></div>
         </div>
     </div>
 
