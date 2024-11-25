@@ -27,7 +27,7 @@
                     </button>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#">
+                    <a href="DashboardMahasiswa.php">
                         <i class="lni lni-home-2"></i>
                         <span>Beranda</span>
                     </a>
@@ -100,6 +100,7 @@
                 </div>
 
                 <h3>Riwayat Permintaan</h3>
+                <hr id="hr-3">
                 <div class="request">
                     <button class="riwayat-btn" id="ta-btn">Bebas Tanggungan/TA
                         <i class="lni lni-chevron-left dropdown-icon"></i>
