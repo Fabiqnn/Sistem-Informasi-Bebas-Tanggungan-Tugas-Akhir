@@ -75,7 +75,7 @@
 
         <div class="main-content">
             <div class="banner">
-                <div class="img-container">
+                <div id="img-container1">
                     <div class="filter"></div>
                 </div>
                 <div class="judul">
@@ -83,7 +83,52 @@
                 </div>
             </div>
 
-            <div class="profile"></div>
+            <div class="card-container">
+                <h3>SELAMAT DATANG</h3>
+                <hr id="hr-1">
+                <div class="profile">
+                    <div id="img-container2">
+                        <img src="jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="profile picture">
+                    </div>
+                    <div id="credential">
+                        <h4 id="h4-1">Hai' </h4> <h4 id="h4-2">Fabian Hasbillah</h4>
+                        <hr id="hr-2">
+                        <h5>No Induk : 2341720170</h5>
+                        <h5>Jurusan  : Teknik Informatika</h5>
+                        <h5>Prodi    : D4</h5>
+                    </div>
+                </div>
+
+                <h3>Riwayat Permintaan</h3>
+                <div class="request">
+                    <button class="riwayat-btn" id="ta-btn">Bebas Tanggungan/TA
+                        <i class="lni lni-chevron-left dropdown-icon"></i>
+                    </button>
+
+                    <div class="verifikasi">
+                        <p>halo</p>
+                        <!-- kontainer table -->
+                    </div>
+
+                    <button class="riwayat-btn" id="prodi-btn">Bebas Tanggungan Prodi TI
+                        <i class="lni lni-chevron-left dropdown-icon"></i>
+                    </button>
+
+                    <div class="verifikasi">
+                        <p>halo</p>
+                         <!-- kontainer table -->
+                    </div>
+
+                    <button class="riwayat-btn" id="perpus-btn">Bebas Tanggungan Perpustakaan
+                        <i class="lni lni-chevron-left dropdown-icon"></i>
+                    </button>
+                        
+                    <div class="verifikasi">
+                        <p>halo</p>
+                         <!-- kontainer table -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

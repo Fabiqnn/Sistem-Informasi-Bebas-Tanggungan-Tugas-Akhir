@@ -31,7 +31,7 @@ header {
 
 .banner {
     display: flex;
-    height: 300px;
+    min-height: 200px;
     position: relative;
 }
 
@@ -46,14 +46,14 @@ header {
     z-index: 1; 
 }
 
-.img-container {
+#img-container1 {
     background-image: url(Teknik-Polinema.jpg);
     width: 900px;
     overflow: hidden;   
     object-fit: cover;
 }
 
-.img-container img {
+#img-container1 img {
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -65,9 +65,7 @@ header {
     font-weight: 600;
     font-style: normal;
     display: flex;
-    position: absolute;
-    top: 115px;
-    right: 2rem;
+    margin-right: 75px;
     justify-content: center;
     align-items: center;
 }
@@ -190,8 +188,108 @@ header {
     height: inherit;
     margin-top: 30px;
     transition: margin-left .3s ease;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
 }
 
 .main-content.shrink {
     margin-left: 330px;
+}
+
+.card-container {
+    padding: 25px 20px;
+}
+
+.card-container h3 {
+    font-weight: 600;
+    font-size: 25px;
+    color: #14AE5C;
+    padding: 10px;
+}
+
+#hr-1 {
+    margin: 0px 10px 20px 10px;
+    opacity: .5;
+}
+
+.profile {
+    display: flex;
+    gap: 20px;
+    background: #E6ECEF;
+    align-self: center;
+    padding: 20px;
+}
+
+#img-container2 {
+    height: 300px;
+    width: 215px;
+    display: flex;
+}
+
+#img-container2 img {
+    width: inherit;
+    height: inherit;
+
+}
+
+#credential h4 {
+    font-size: 30px;
+}
+
+#credential #h4-2 {
+    color: #172C76;
+    margin-bottom: 5px;
+}
+
+#hr-2 {
+    margin-bottom: 10px;
+}
+
+#credential h5 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.card-container .request {
+    background: #B6CCD7;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.request button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: left;
+    align-items: center;
+    display: flex;
+}
+
+.request .riwayat-btn.open {
+    i.dropdown-icon {
+        transform: rotate(-90deg);
+    }
+}
+
+.request i {
+    font-size: 20px;
+    margin-left: 5px;
+    transition: transform .3s ease;
+}
+
+.request .verifikasi {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .3s linear, opacity .3s linear;
+}
+
+.request .verifikasi.open {
+    max-height: fit-content;
+    opacity: 1;
 }
