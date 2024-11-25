@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleMahasiwa.css" type="text/css">
+    <link rel="stylesheet" href="../assets/css/style-mahasiwa.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -88,7 +88,7 @@
                 <hr id="hr-1">
                 <div class="profile">
                     <div id="img-container2">
-                        <img src="jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="profile picture">
+                        <img src="../assets/images/profildummy1.jpg" alt="profile picture">
                     </div>
                     <div id="credential">
                         <h4 id="h4-1">Hai' </h4> <h4 id="h4-2">Fabian Hasbillah</h4>
@@ -102,7 +102,8 @@
                 <h3>Riwayat Permintaan</h3>
                 <hr id="hr-3">
                 <div class="request">
-                    <button class="riwayat-btn" id="ta-btn">Bebas Tanggungan/TA
+                    <button class="riwayat-btn" id="ta-btn">
+                        <span>Bebas Tanggungan/TA</span>
                         <i class="lni lni-chevron-left dropdown-icon"></i>
                     </button>
 
@@ -111,7 +112,8 @@
                         <!-- kontainer table -->
                     </div>
 
-                    <button class="riwayat-btn" id="prodi-btn">Bebas Tanggungan Prodi TI
+                    <button class="riwayat-btn" id="prodi-btn">
+                        <span>Bebas Tanggungan Prodi TI</span>
                         <i class="lni lni-chevron-left dropdown-icon"></i>
                     </button>
 
@@ -120,7 +122,8 @@
                          <!-- kontainer table -->
                     </div>
 
-                    <button class="riwayat-btn" id="perpus-btn">Bebas Tanggungan Perpustakaan
+                    <button class="riwayat-btn" id="perpus-btn">
+                        <span>Bebas Tanggungan Perpustakaan</span>
                         <i class="lni lni-chevron-left dropdown-icon"></i>
                     </button>
                         
@@ -135,7 +138,7 @@
 
     <!-- <div class="footer"></div> -->
 
-    <script src="script.js"></script>
+    <script src="../assets/js/script-mhs.js"></script>
 </body>
 
 </html>

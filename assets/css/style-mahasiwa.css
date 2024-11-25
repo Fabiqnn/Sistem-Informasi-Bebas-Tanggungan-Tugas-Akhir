@@ -47,7 +47,7 @@ header {
 }
 
 #img-container1 {
-    background-image: url(Teknik-Polinema.jpg);
+    background-image: url('../images/gedung-sipil.jpg');
     width: 900px;
     overflow: hidden;   
     object-fit: cover;
@@ -269,10 +269,14 @@ header {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     text-align: left;
     align-items: center;
     display: flex;
+}
+
+.request .riwayat-btn span:hover {
+    text-decoration: underline;
 }
 
 .request .riwayat-btn.open {
