@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+html {
+    line-height: 2rem;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: block;
+}
+
+.body {
+    margin-top: 30px;
+    height: calc(100vh - 30px);
+}
+
+.banner {
+    display: flex;
+    min-height: 200px;
+    position: relative;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    background: linear-gradient(to right, rgba(115, 115, 115, 0.3), rgb(168, 168, 168, 0.95), rgb(217, 217, 217)); 
+    z-index: 1; 
+}
+
+#img-container1 {
+    background-image: url('../images/gedung-sipil.jpg');
+    width: 900px;
+    overflow: hidden;   
+    object-fit: cover;
+}
+
+#img-container1 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.judul {
+    width: calc(100% - 900px);
+    z-index: 1;
+    font-weight: 600;
+    font-style: normal;
+    display: flex;
+    margin-right: 75px;
+    justify-content: center;
+    align-items: center;
+}
+
+.judul h1 {
+    text-align: center;
+    width: 417px;
+    font-size: 38px;
+}
+
+/* main content */
+
+.form-container {
+    padding: 25px;
+}
+
+.form {
+    display: grid;
+}
+
+.form-container h3, h4 {
+    text-align: center;
+}
+
+.form-container h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.form-container h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.form-container .update-btn {
+    justify-self: right;
+    background-color: #14AE5C;
+    transition: background-color .3s ease;
+    margin-bottom: 0;
+}
+
+.update-btn:hover {
+    background-color: rgba(20, 174, 92, .8);
+}
+
+.informasi-admin h4 {
+    text-align: left;
+    color: #14AE5C;
+    margin-bottom: 0;
+}
+
+.informasi-admin h5 {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.informasi-admin hr {
+    margin-bottom: 15px;
+    opacity: .5;
+}
+
+.form-container .informasi-admin {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.form {
+    background: rgba(230, 236, 239, 1);
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.form button {
+    padding: 7px 18px;
+    font-size: 15px;
+    color: white;
+    border-radius: 8px;
+    border: none;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.upload-btn {
+    background-color: rgb(44, 44, 44);
+    color: white;
+    padding: 7px 15px;
+    justify-self: left;
+    border-radius: 8px;
+    margin: 5px 0 20px 0;
+    transition: background-color .3s ease;
+    cursor: pointer;
+}
+
+.upload-btn:hover {
+    background-color: rgba(44, 44, 44, .8);
+}
+
+.form h4 {
+    color: #14AE5C;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.form form {
+    display: grid;
+}
+
+form input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 5px;
+}
+
+form #submit-btn {
+    margin-top: 10px;
+    justify-self: right;
+    background-color: rgba(20, 122, 196, 1);
+    padding: 7px 25px;
+    transition: background-color .3s ease;
+}
+
+form #submit-btn:hover {
+    background-color: rgba(20, 122, 196, .8);
+}

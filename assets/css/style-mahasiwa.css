@@ -153,6 +153,10 @@ header {
     margin: 5px 20px;
 }
 
+.sidebar-item.dropdown:hover {
+    background-color: rgba(127, 134, 142, 1);
+}
+
 .sidebar-item i.dropdown-icon {
     font-size: 16px;
     margin: 8px;
@@ -160,11 +164,23 @@ header {
 }
 
 .dropdown-content {
-    padding-left: 70px;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height .3s linear, opacity .3s linear;
+}
+
+.dropdown-content ul {
+    width: inherit;
+    padding-left: 40px;
+    background-color: #2B3643;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-content li:hover {
+    text-decoration: underline ;
+    text-decoration-color: #E6ECEF;
 }
 
 .dropdown-content a {
@@ -197,15 +213,19 @@ header {
     margin-left: 330px;
 }
 
+/* copy sampai sini */
+/* ---------------- */
+
 .card-container {
     padding: 25px 20px;
 }
 
 .card-container h3 {
-    font-weight: 600;
+    font-weight: 300;
     font-size: 25px;
     color: #14AE5C;
     padding: 10px;
+    margin-top: 10px;
 }
 
 #hr-1 {

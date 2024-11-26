@@ -1,0 +1,137 @@
+.sidebar {
+    position: fixed;
+    width: 70px;
+    background-color: #2B3643;
+    height: 100%;
+    z-index: 10;
+    overflow: hidden;
+    box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.1);
+    transition: width .3s ease;
+}
+
+.sidebar.open {
+    width: 330px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    width: max-content;
+    padding-left: 0;
+}
+
+.sidebar ul a {
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar-item {
+    transition: background-color .3s ease;
+}
+
+.sidebar button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar span {
+    font-size: 18px;
+}
+
+.sidebar-item:hover {
+    background-color: rgba(127, 134, 142, 1);
+}
+
+.sidebar-item.header:hover {
+    background-color: #2B3643;
+}
+
+.sidebar-item.header {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.sidebar-item.header span{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.sidebar-item {
+    margin-bottom: 10px;
+}
+
+.sidebar-item a{
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-item button {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-item i {
+    font-size: 30px;
+    margin: 5px 20px;
+}
+
+.sidebar-item.dropdown:hover {
+    background-color: rgba(127, 134, 142, 1);
+}
+
+.sidebar-item i.dropdown-icon {
+    font-size: 16px;
+    margin: 8px;
+    transition: transform .3s ease;
+}
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.dropdown-content ul {
+    width: inherit;
+    padding-left: 40px;
+    background-color: #2B3643;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-content li:hover {
+    text-decoration: underline ;
+    text-decoration-color: #E6ECEF;
+}
+
+.dropdown-content a {
+    height: 40px;
+}
+
+.dropdown-content > ul > li:first-child {
+    margin-top: 5px;
+}
+
+.dropdown.open .dropdown-content {
+    max-height: fit-content;
+    opacity: 1;
+}
+
+.dropdown.open .dropdown-icon {
+    transform: rotate(-90deg);
+}
+
+.main-content {
+    height: inherit;
+    margin-top: 30px;
+    transition: margin-left .3s ease;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content.shrink {
+    margin-left: 330px;
+}
