@@ -32,7 +32,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../Mahasiswa/form-jurusan.php">
                             <span>Tanggunan Jurusan</span>
                         </a>
                     </li>
