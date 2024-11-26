@@ -1,0 +1,50 @@
+
+.banner {
+    display: flex;
+    min-height: 200px;
+    position: relative;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    background: linear-gradient(to right, rgba(115, 115, 115, 0.3), rgb(168, 168, 168, 0.95), rgb(217, 217, 217)); 
+    z-index: 1; 
+}
+
+#img-container1 {
+    background-image: url('../images/gedung-sipil.jpg');
+    width: 900px;
+    overflow: hidden;   
+    object-fit: cover;
+}
+
+#img-container1 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.judul {
+    width: calc(100% - 900px);
+    z-index: 1;
+    font-weight: 600;
+    font-style: normal;
+    display: flex;
+    margin-right: 75px;
+    justify-content: center;
+    align-items: center;
+}
+
+.judul h1 {
+    text-align: center;
+    width: 417px;
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 2rem;
+    margin: 0;
+}

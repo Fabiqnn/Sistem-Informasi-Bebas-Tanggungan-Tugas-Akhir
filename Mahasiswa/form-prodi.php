@@ -28,14 +28,9 @@
     ?>
 
         <div class="main-content">
-            <div class="banner">
-                <div id="img-container1">
-                    <div class="filter"></div>
-                </div>
-                <div class="judul">
-                    <h1>Sistem Bebas Tanggungan</h1>
-                </div>
-            </div>
+            <?php
+                include '../include/banner.php';
+            ?>
 
             <div class="form-container">
                 <h3>Bebas Tanggungan Tugas Akhir</h3>

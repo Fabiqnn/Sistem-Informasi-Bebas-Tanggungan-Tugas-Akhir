@@ -33,7 +33,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <span>Tanggunan Prodi</span>
+                            <span>Tanggunan Jurusan</span>
                         </a>
                     </li>
                     <li>
