@@ -243,6 +243,8 @@
                             <label for="up-resi" class="upload-btn">upload</label>
                             <input type="file" id="up-resi">
                         </div>
+
+                        <button type="submit" id="submit-btn">Kirim</button>
                     </form>
                 </div>
             </div>
