@@ -20,7 +20,7 @@ body {
     height: calc(100vh - 40px);
 }
 
-/* main content */
+/* main container */
 
 .form-container {
     padding: 25px;
@@ -107,6 +107,73 @@ form #fnumber:valid {
 form #fnumber:invalid {
     border-color: #ae1414;
 }
+
+.label {
+    line-height: 1.5;
+}
+
+.radio-container {
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-bottom: 20px;
+}
+
+.radio-container .radio-check {
+    margin: 0;
+}
+
+select {
+    padding: 8px;
+    border-radius: 5px;
+    border-color: transparent;
+    margin-bottom: 20px;
+}
+
+.subjudul {
+    background-color: #FEB74B;
+    color: black;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+    margin: 30px 0;
+}
+
+.upload {
+    background-color: rgb(255, 255, 255);
+    padding: 8px 8px 8px 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    height: max-content;
+    display: grid;
+    line-height: 1.5;
+}
+
+.upload h6, .form h6 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.upload p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.upload .last {
+    margin-bottom: 10px;
+}
+
+.upload .upload-btn {
+    margin: 0;
+}
+
+
+
+
+
+
+/* button */
 
 .form-container .update-btn {
     justify-self: right;

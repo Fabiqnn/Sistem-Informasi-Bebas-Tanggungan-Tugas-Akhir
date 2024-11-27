@@ -33,7 +33,7 @@
             ?>
 
             <div class="form-container">
-                <h3>Bebas Tanggungan Tugas Akhir</h3>
+                <h3>Bebas Tanggungan Jurusan Teknologi Informasi</h3>
                 <div class="informasi-admin">
                     <h4>Informasi Admin</h4>
                     <hr>
@@ -45,14 +45,14 @@
 
                 <div class="form">
                     <button class="update-btn">update</button>
-                    <h4>Formulir</h4>
+                    <h4>Formulir Tanggungan Prodi</h4>
                     <form action="" method="post" enctype="multipart/form-data">
-                        <label for="femail">Email</label>
-                        <input type="email" name="femail" id="femail">
                         <label for="fnama">Nama Lengkap</label>
                         <input type="text" name="fnama" id="fnama">
                         <label for="fnim">NIM</label>
                         <input type="text" name="fnim" id="fnim">
+                        <label for="femail">Email</label>
+                        <input type="email" name="femail" id="femail">
                         <label>Bukti Distribusi Buku Skripsi / Laporan Akhir</label>
                         
                         <label for="up-skripsi" class="upload-btn">upload</label> <!--button-->
