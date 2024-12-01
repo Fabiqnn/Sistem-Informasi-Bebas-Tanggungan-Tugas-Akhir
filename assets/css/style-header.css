@@ -15,6 +15,15 @@ header h1 {
     color: white;
     letter-spacing: 8px;
     font-weight: 500;
-    margin-left: 10px;
+    margin: 0 0 0 5px;
     cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 img {
+    width: 20px;
+    height: 20px;
+    margin-right: 30px;
 }
