@@ -42,14 +42,6 @@
                     <button class="update-btn">update</button>
                     <h4>Formulir Tanggungan Jurusan</h4>
                     <form action="" method="post" enctype="multipart/form-data">
-                        <label for="fname">Nama Lengkap</label>
-                        <input type="text" name="fname" id="fname">
-                        <label for="fnim">NIM</label>
-                        <input type="text" name="fnim" id="fnim">
-                        <label for="femail">Email</label>
-                        <input type="email" name="femail" id="femail">
-                        <label for="fnumber">No. Whatsapp</label>
-                        <input type="tel" name="fnumber" id="fnumber" pattern="^(\+62|62|0)8[1-9][0-9]{6,10}$" >
 
                         <label>Laporan Tugas Akhir/Skripsi</label>
                         <label for="up-laporan-ta" class="upload-btn">upload</label>

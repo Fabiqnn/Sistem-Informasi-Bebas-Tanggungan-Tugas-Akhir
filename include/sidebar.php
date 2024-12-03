@@ -45,7 +45,7 @@
             </div>
         </li>
         <li class="sidebar-item">
-            <a href="#">
+            <a href="../assets/php/logout-handler.php">
                 <i class="lni lni-exit"></i>
                 <span>Logout</span>
             </a>

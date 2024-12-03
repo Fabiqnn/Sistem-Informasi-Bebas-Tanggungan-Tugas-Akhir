@@ -47,12 +47,7 @@
                     <button class="update-btn">update</button>
                     <h4>Formulir Tanggungan Prodi</h4>
                     <form action="" method="post" enctype="multipart/form-data">
-                        <label for="fnama">Nama Lengkap</label>
-                        <input type="text" name="fnama" id="fnama">
-                        <label for="fnim">NIM</label>
-                        <input type="text" name="fnim" id="fnim">
-                        <label for="femail">Email</label>
-                        <input type="email" name="femail" id="femail">
+
                         <label>Bukti Distribusi Buku Skripsi / Laporan Akhir</label>
                         
                         <label for="up-skripsi" class="upload-btn">upload</label> <!--button-->

@@ -88,7 +88,7 @@ html, body {
 .input-form input {
     width: 100%;
     padding: 12px;
-    border: 1px solid rgba(255, 255, 255);
+    border: 3px solid rgba(255, 255, 255);
     border-radius: 8px;
     background-color: #f9f9f9;
     font-size: 16px;
@@ -97,8 +97,8 @@ html, body {
     transition: border-color 0.3s ease;
 }
 
-.input-form input:focus {
-    border-color: #D6E5F3;
+.input-form input.empty-input {
+    border-color: rgb(213, 81, 132);
 }
 
 button {
@@ -160,4 +160,5 @@ a:hover {
     height: 30px;
     background-color: #1E2630;
 }
+
 

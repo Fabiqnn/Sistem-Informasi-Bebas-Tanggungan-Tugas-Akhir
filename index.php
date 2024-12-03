@@ -1,3 +1,14 @@
+<?php
+    session_start();
+
+    if (isset($_SESSION['error'])) {
+        echo "<script type='text/javascript'>
+            alert('" . $_SESSION['error'] . "');
+        </script>";
+        unset($_SESSION['error']);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +29,7 @@
             <div class="content">
                 <h1>Sistem Informasi Bebas Tanggungan</h1>
                 <h3>Masuk Ke Akun Anda!</h3>
-                <form action="">
+                <form action="assets/php/login-handler.php" method="post" id="login-form">
                     <div class="input-form">
                         <label for="noInduk">Nomor Induk</label>
                         <input type="text" name="noInduk" id="noInduk" placeholder="Masukkan No Induk Pegawai/Mahasiswa">
@@ -40,5 +51,7 @@
         </div>
     </div>
     <div class="footer"></div>
+
+    <script src="assets/js/script-login.js"></script>
 </body>
 </html>

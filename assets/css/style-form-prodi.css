@@ -87,7 +87,25 @@ form input {
     padding: 8px;
     border-radius: 5px;
     border: none;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+form #fnumber {
+    outline: 0;
+    border: 2px solid black;
+    transition: border-color 0.3s ease;
+}
+
+form #fnumber:not(:focus):not(:placeholder-shown) {
+    border-color: transparent;
+}
+
+form #fnumber:valid {
+    border-color: #14AE5C;
+}
+
+form #fnumber:invalid {
+    border-color: #ae1414;
 }
 
 .form-container .update-btn {

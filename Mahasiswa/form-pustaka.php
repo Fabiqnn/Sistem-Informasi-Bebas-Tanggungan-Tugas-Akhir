@@ -41,17 +41,6 @@
                     <button class="update-btn">update</button>
                     <h4>Formulir Tanggungan Pustaka</h4>
                     <form action="" method="post" enctype="multipart/form-data">
-                        <label for="fname">Nama Lengkap</label>
-                        <input type="text" name="fname" id="fname">
-
-                        <label for="fnim">NIM</label>
-                        <input type="text" name="fnim" id="fnim">
-
-                        <label for="femail">Email</label>
-                        <input type="email" name="femail" id="femail">
-
-                        <label for="fnumber">No. Whatsapp</label>
-                        <input type="tel" name="fnumber" id="fnumber" pattern="^(\+62|62|0)8[1-9][0-9]{6,10}$">
 
                         <p class="label">Jenjang Pendidikan</p>
                         <div class="radio-container">
@@ -208,12 +197,12 @@
                         <p class="label">Dengan ini saya memberikan ijin kepada perpustakaan polinema untuk mengolah Laporan Akhir / Tugas Akhir saya dengan ketentuan yang ada untuk kemajuan ilmu pengetahuan dan institusi.</p>
                         <div class="radio-container">
                             <div class="radio">
-                                <input type="radio" name="izin" class="radio-check" id="d-2">
-                                <label for="d-2">D-2</label>
+                                <input type="radio" name="izin" class="radio-check" id="iya">
+                                <label for="iya">Diperbolehkan</label>
                             </div>
                             <div class="radio">
-                                <input type="radio" name="izin" class="radio-check" id="d-4">
-                                <label for="d-4">D-4</label>
+                                <input type="radio" name="izin" class="radio-check" id="tidak">
+                                <label for="tidak">Tidak Diperbolehkan</label>
                             </div>
                         </div>
 
