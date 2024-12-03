@@ -52,5 +52,6 @@
         </li>
     </ul>
 </nav>
+<script src="../assets/js/script-sidebar.js" defer></script>
 <link rel="stylesheet" href="../assets/css/style-sidebar.css" type="text/css">
 <link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css">

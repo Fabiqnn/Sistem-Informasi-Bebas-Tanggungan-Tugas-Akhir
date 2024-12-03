@@ -39,20 +39,20 @@
                 </div>
 
                 <div class="form">
-                    <button class="update-btn">update</button>
+                    <button class="update-btn">Perbarui</button>
                     <h4>Formulir Tanggungan Jurusan</h4>
                     <form action="" method="post" enctype="multipart/form-data">
 
                         <label>Laporan Tugas Akhir/Skripsi</label>
-                        <label for="up-laporan-ta" class="upload-btn">upload</label>
+                        <label for="up-laporan-ta" class="upload-btn">Unggah</label>
                         <input type="file" name="up-laporan-ta" id="up-laporan-ta">
                         
                         <label>Program/Aplikasi Tugas Akhir/Skripsi</label>
-                        <label for="up-program" class="upload-btn">upload</label>
+                        <label for="up-program" class="upload-btn">Unggah</label>
                         <input type="file" name="up-program" id="up-program">
                         
                         <label>Bukti Publikasi</label>
-                        <label for="up-publikasi" class="upload-btn">upload</label>
+                        <label for="up-publikasi" class="upload-btn">Unggah</label>
                         <input type="file" name="up-publikasi" id="up-publikasi">
 
                         <button type="submit" id="submit-btn">Kirim</button>

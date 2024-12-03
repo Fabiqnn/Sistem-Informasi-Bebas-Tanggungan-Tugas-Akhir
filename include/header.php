@@ -5,5 +5,15 @@
         SIBETA
     </h1>
     <div class="username"> 
+        <a href="edit-profile.php">
+            <div class="pfp-img">
+
+            </div>
+            <h1>
+                <?php
+                    isset($_SESSION['nama']);
+                ?>
+            </h1>
+        </a>
     </div>
 </header>

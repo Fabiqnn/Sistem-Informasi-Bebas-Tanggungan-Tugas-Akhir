@@ -45,11 +45,12 @@
                         <img src="../assets/images/profildummy1.jpg" alt="profile picture">
                     </div>
                     <div id="credential">
-                        <h4 id="h4-1">Hai' </h4> <h4 id="h4-2">Fabian Hasbillah</h4>
+                        <h4 id="h4-1">Hai' </h4> <h4 id="h4-2">Nama Pengguna</h4>
                         <hr id="hr-2">
-                        <h5>No Induk : 2341720170</h5>
-                        <h5>Jurusan  : Teknik Informatika</h5>
-                        <h5>Prodi    : D4</h5>
+                        <h5>No Induk : </h5>
+                        <h5>Jurusan  : </h5>
+                        <h5>Prodi    : </h5>
+                        <h5>Angkatan : </h5>
                     </div>
                 </div>
 
@@ -62,8 +63,15 @@
                     </button>
 
                     <div class="verifikasi">
-                        <p>halo</p>
-                        <!-- kontainer table -->
+                        <table>
+                            <tr>
+                                <th>Nama Admin</th>
+                                <th>Email</th>
+                                <th>No Wa</th>
+                                <th>Jabatan</th>
+                                <th>Status Verifikasi</th>
+                            </tr>
+                        </table>
                     </div>
 
                     <button class="riwayat-btn" id="prodi-btn">
@@ -72,8 +80,15 @@
                     </button>
 
                     <div class="verifikasi">
-                        <p>halo</p>
-                         <!-- kontainer table -->
+                        <table>
+                            <tr>
+                                <th>Nama Admin</th>
+                                <th>Email</th>
+                                <th>No Wa</th>
+                                <th>Jabatan</th>
+                                <th>Status Verifikasi</th>
+                            </tr>
+                        </table>
                     </div>
 
                     <button class="riwayat-btn" id="perpus-btn">
@@ -82,8 +97,15 @@
                     </button>
                         
                     <div class="verifikasi">
-                        <p>halo</p>
-                         <!-- kontainer table -->
+                        <table>
+                            <tr>
+                                <th>Nama Admin</th>
+                                <th>Email</th>
+                                <th>No Wa</th>
+                                <th>Jabatan</th>
+                                <th>Status Verifikasi</th>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>

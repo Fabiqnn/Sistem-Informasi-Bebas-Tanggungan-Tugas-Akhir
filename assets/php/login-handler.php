@@ -12,12 +12,13 @@
         $params = array($noInduk, $pass);
 
         $result = sqlsrv_query($conn, $query, $params);
-        $resultMhs = sqlsrv_query($conn, $query1, $params = [0]);
+        $resultMhs = sqlsrv_query($conn, $queryMhs, $params = [0]);
 
         if ($result && $resultMhs) {
             $row = sqlsrv_fetch_array($result);
             $rowMhs = sqlsrv_fetch_array($resultMhs);
-            if ($row && $rowMhs) {
+
+            if ($row) {
                 if ($row['ROLE'] == "mahasiswa") {
                     $_SESSION['logged-in'] = true;
                     $_SESSION['nama'] = $row['NAMA_MHS'];

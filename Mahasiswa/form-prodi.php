@@ -44,23 +44,23 @@
                 </div>
 
                 <div class="form">
-                    <button class="update-btn">update</button>
+                    <button class="update-btn">Perbarui</button>
                     <h4>Formulir Tanggungan Prodi</h4>
                     <form action="" method="post" enctype="multipart/form-data">
 
                         <label>Bukti Distribusi Buku Skripsi / Laporan Akhir</label>
                         
-                        <label for="up-skripsi" class="upload-btn">upload</label> <!--button-->
+                        <label for="up-skripsi" class="upload-btn">Unggah</label> <!--button-->
                         <input type="file" name="up-skripsi" id="up-skripsi">
                         
                         <label>Bukti Distribusi Laporan PKL</label>
                         
-                        <label for="up-pkl" class="upload-btn">upload</label> <!--button-->
+                        <label for="up-pkl" class="upload-btn">Unggah</label> <!--button-->
                         <input type="file" name="up-pkl" id="up-pkl">
                         
                         <label>Bukti Bebas Kompen</label>
                         
-                        <label for="up-kompen" class="upload-btn">upload</label> <!--button-->
+                        <label for="up-kompen" class="upload-btn">Unggah</label> <!--button-->
                         <input type="file" name="up-kompen" id="up-kompen">
                         
                         <button type="submit" id="submit-btn">Kirim</button>

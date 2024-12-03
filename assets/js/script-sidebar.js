@@ -1,4 +1,3 @@
-// sidebar
 const dropdownBtnSidebar = document.querySelector(".dropdown-btn");
 const sidebarBtn = document.querySelector(".toggle-btn");
 const sidebar = document.querySelector(".sidebar");
@@ -23,5 +22,3 @@ dropdownBtnSidebar.addEventListener("click", () => {
     const parentElement = dropdownBtnSidebar.parentElement;
     parentElement.classList.toggle("open");
 });
-
-// datalist

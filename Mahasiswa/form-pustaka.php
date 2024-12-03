@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="form">
-                    <button class="update-btn">update</button>
+                    <button class="update-btn">Perbarui</button>
                     <h4>Formulir Tanggungan Pustaka</h4>
                     <form action="" method="post" enctype="multipart/form-data">
 
@@ -113,73 +113,73 @@
                             <h6>Pendahuluan ( Digabung Menjadi 1 File PDF )</h6>
                             <p>Contoh Penulisan Nama File ( D4 TI_2341720170_PENDAHULUAN_2024 ) ( Tahun Menyesuaikan )</p>
                             <p class="last">( Isi Pendahuluan = Cover s.d Halaman Lampiran )</p>
-                            <label for="up-pendahuluan" class="upload-btn">upload</label>
+                            <label for="up-pendahuluan" class="upload-btn">Unggah</label>
                             <input type="file" id="up-pendahuluan">
                         </div>
                         <div class="upload">
                             <h6>ABSTRAK ( Indonesia - Inggris digabung 1 File PDF / DOC )</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_11223344_ABSTRAK_2024 ) (TAHUN MENYESUAIKAN)</p>
-                            <label for="up-abstrak" class="upload-btn">upload</label>
+                            <label for="up-abstrak" class="upload-btn">Unggah</label>
                             <input type="file" id="up-abstrak">
                         </div>
                         <div class="upload">
                             <h6>ISI LAPORAN BAB I - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB I_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-bab1" class="upload-btn">upload</label>
+                            <label for="up-bab1" class="upload-btn">Unggah</label>
                             <input type="file" id="up-bab1">
                         </div>
                         <div class="upload">
                             <h6>ISI LAPORAN BAB II - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB II_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-bab2" class="upload-btn">upload</label>
+                            <label for="up-bab2" class="upload-btn">Unggah</label>
                             <input type="file" id="up-bab2">
                         </div>
                         <div class="upload">
                             <h6>ISI LAPORAN BAB III - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB III_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-bab3" class="upload-btn">upload</label>
+                            <label for="up-bab3" class="upload-btn">Unggah</label>
                             <input type="file" id="up-bab3">
                         </div>
                         <div class="upload">
                             <h6>ISI LAPORAN BAB IV - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB IV_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-bab4" class="upload-btn">upload</label>
+                            <label for="up-bab4" class="upload-btn">Unggah</label>
                             <input type="file" id="up-bab4">
                         </div>
                         <div class="upload">
                             <h6>ISI LAPORAN BAB V - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB V_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-bab5" class="upload-btn">upload</label>
+                            <label for="up-bab5" class="upload-btn">Unggah</label>
                             <input type="file" id="up-bab5">
                         </div>
                         <div class="upload">
                             <h6>ISI LAPORAN BAB VI - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB VI_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-bab6" class="upload-btn">upload</label>
+                            <label for="up-bab6" class="upload-btn">Unggah</label>
                             <input type="file" id="up-bab6">
                         </div>
                         <div class="upload">
                             <h6>ISI LAPORAN BAB VII - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB VII_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-bab7" class="upload-btn">upload</label>
+                            <label for="up-bab7" class="upload-btn">Unggah</label>
                             <input type="file" id="up-bab7">
                         </div>
                         <div class="upload">
                             <h6>DAFTAR PUSTAKA - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_DAFTAR PUSTAKA_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-dftr-pustaka" class="upload-btn">upload</label>
+                            <label for="up-dftr-pustaka" class="upload-btn">Unggah</label>
                             <input type="file" id="up-dftr-pustaka">
                         </div>
                         <div class="upload">
                             <h6>LAMPIRAN - ( PDF/DOC )</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_LAMPIRAN_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-lampiran" class="upload-btn">upload</label>
+                            <label for="up-lampiran" class="upload-btn">Unggah</label>
                             <input type="file" id="up-lampiran">
                         </div>
                         <div class="upload">
                             <h6>KOMPILASI LAPORAN AKHIR ( 1 FILE PENUH PDF )</h6>
                             <p class="last">Softcopy Gabungan Laporan Akhir Lengkap dengan TTD, Stempel, Materai 10.000 Mulai COVER - PENDAHULUAN - ABSTRAK - BAB 1 s.d BAB 5 / 7 - DAFTAR PUSTAKA - LAMPIRAN dengan Penulisan nama File ( D4 TI_11223344_KOMPILASI_2024 ) ( TAHUN MENYESUAIKAN )</p>
-                            <label for="up-kompilasi" class="upload-btn">upload</label>
+                            <label for="up-kompilasi" class="upload-btn">Unggah</label>
                             <input type="file" id="up-kompilasi">
                         </div>
 
@@ -190,7 +190,7 @@
                         <div class="upload">
                             <h6>SOFTCOPY JURNAL</h6>
                             <p class="last">Khusus Mahasiswa D4 ( Format PDF ) " Jurnal sudah di acc (paraf) oleh Dosen Pembimbing</p>
-                            <label for="up-softcopy-jurnal" class="upload-btn">upload</label>
+                            <label for="up-softcopy-jurnal" class="upload-btn">Unggah</label>
                             <input type="file" id="up-softcopy-jurnal">
                         </div>
 
@@ -229,7 +229,7 @@
                         <div class="upload">
                             <h6>Unggah / Upload Bukti Resi Hard Copy Laporan Akhir/ Skripsi / Tesis Yang Dikirim Melalui Ekspedisi atau Sejenis</h6>
                             <p class="last">Lampiran Untuk Resi Bukti bahwa Hard Copy Tugas Akhir dikirim melalui Jasa Ekspedisi atau Sejenis yang dialamatkan ke <br> UPT Perpustakaan Politeknik Negeri Malang, Gedung Graha Polinema Lt 3, Jl Soekarno-Hatta No.09 Malang ( Bentuk PDF atau Gambar ). <br> Bagi yang menyerahkan langsung ke Perpustakaan Tidak Perlu Melampirkan atau Upload Bukti Kirim</p>
-                            <label for="up-resi" class="upload-btn">upload</label>
+                            <label for="up-resi" class="upload-btn">Unggah</label>
                             <input type="file" id="up-resi">
                         </div>
 

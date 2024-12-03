@@ -177,13 +177,13 @@ select {
 
 .form-container .update-btn {
     justify-self: right;
-    background-color: #14AE5C;
+    background-color: rgba(254, 183, 75, 1);
     transition: background-color .3s ease;
     margin-bottom: 0;
 }
 
 .update-btn:hover {
-    background-color: rgba(20, 174, 92, .8);
+    background-color: rgba(254, 183, 75, .8);
 }
 
 .form button {
@@ -216,11 +216,11 @@ input[type="file"] {
 form #submit-btn {
     margin-top: 10px;
     justify-self: right;
-    background-color: rgba(20, 122, 196, 1);
+    background-color: rgba(20, 174, 92, 1);
     padding: 7px 25px;
     transition: background-color .3s ease;
 }
 
 form #submit-btn:hover {
-    background-color: rgba(20, 122, 196, .8);
+    background-color: rgba(20, 174, 92, .8);
 }
