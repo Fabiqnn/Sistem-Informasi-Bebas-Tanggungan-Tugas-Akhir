@@ -10,9 +10,10 @@
         $queryMhs = "SELECT * FROM MAHASISWA WHERE ID_USER = ?";
 
         $params = array($noInduk, $pass);
+        $paramsMhs = array($noInduk);
 
         $result = sqlsrv_query($conn, $query, $params);
-        $resultMhs = sqlsrv_query($conn, $queryMhs, $params = [0]);
+        $resultMhs = sqlsrv_query($conn, $queryMhs, $paramsMhs);
 
         if ($result && $resultMhs) {
             $row = sqlsrv_fetch_array($result);
@@ -21,7 +22,10 @@
             if ($row) {
                 if ($row['ROLE'] == "mahasiswa") {
                     $_SESSION['logged-in'] = true;
-                    $_SESSION['nama'] = $row['NAMA_MHS'];
+                    $_SESSION['nama'] = $rowMhs['NAMA_MHS'];
+                    $_SESSION['noInduk'] = $rowMhs['NIM'];
+                    $_SESSION['prodi'] = $rowMhs['PRODI'];
+                    $_SESSION['angkatan'] = $rowMhs['ANGKATAN'];
                     header("Location: ../../Mahasiswa/DashboardMahasiswa.php");
                     exit();
                 } 

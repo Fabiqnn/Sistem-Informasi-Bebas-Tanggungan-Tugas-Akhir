@@ -80,6 +80,15 @@ body {
     font-weight: 500;
 }
 
+#credential .sub-credential {
+    display: flex;
+    gap: 10px;
+}
+
+#credential .credential-value {
+    font-weight: 400;
+}
+
 .card-container .request {
     background: #B6CCD7;
     display: flex;

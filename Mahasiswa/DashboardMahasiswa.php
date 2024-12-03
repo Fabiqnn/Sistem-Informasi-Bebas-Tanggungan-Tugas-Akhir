@@ -45,12 +45,28 @@
                         <img src="../assets/images/profildummy1.jpg" alt="profile picture">
                     </div>
                     <div id="credential">
-                        <h4 id="h4-1">Hai' </h4> <h4 id="h4-2">Nama Pengguna</h4>
+                        <h4 id="h4-1">Hai' </h4> <h4 id="h4-2"><?php if (isset($_SESSION['nama'])) {
+                            echo $_SESSION['nama'];
+                        } ?></h4>
                         <hr id="hr-2">
-                        <h5>No Induk : </h5>
-                        <h5>Jurusan  : </h5>
-                        <h5>Prodi    : </h5>
-                        <h5>Angkatan : </h5>
+                        <div class="sub-credential">
+                            <h5>No Induk : </h5> 
+                            <h5 class="credential-value"><?php if (isset($_SESSION['noInduk'])) {
+                                echo $_SESSION['noInduk'];
+                            }?></h5>
+                        </div>
+                        <div class="sub-credential">
+                            <h5>Prodi : </h5> 
+                            <h5 class="credential-value"><?php if (isset($_SESSION['prodi'])) {
+                                echo $_SESSION['prodi'];
+                            }?></h5>
+                        </div>
+                        <div class="sub-credential">
+                            <h5>Angkatan : </h5> 
+                            <h5 class="credential-value"><?php if (isset($_SESSION['angkatan'])) {
+                                echo $_SESSION['angkatan'];
+                            } ?></h5>
+                        </div>
                     </div>
                 </div>
 

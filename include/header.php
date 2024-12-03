@@ -9,9 +9,13 @@
             <div class="pfp-img">
 
             </div>
-            <h1>
+            <h1 id="nama_pengguna">
                 <?php
-                    isset($_SESSION['nama']);
+                    if(isset($_SESSION['nama'])) {
+                        echo $_SESSION['nama'];
+                    } else {
+                        echo "Guest";
+                    }
                 ?>
             </h1>
         </a>
