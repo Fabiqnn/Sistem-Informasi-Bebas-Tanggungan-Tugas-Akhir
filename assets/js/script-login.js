@@ -5,8 +5,8 @@ document.getElementById("login-form").addEventListener("submit", validation);
 function validation() {
     event.preventDefault();
 
-    const noInduk = document.getElementById("noInduk");
-    const pass = document.getElementById("pass");
+    let noInduk = document.getElementById("noInduk");
+    let pass = document.getElementById("pass");
 
     noInduk.classList.remove("empty-input");
     pass.classList.remove("empty-input");

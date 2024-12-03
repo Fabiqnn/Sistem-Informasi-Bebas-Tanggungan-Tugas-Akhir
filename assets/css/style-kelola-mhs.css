@@ -49,11 +49,11 @@ body {
 }
 
 .table {
-    border: 1px solid rgba(254, 183, 75, 1);
+    border: 1px solid rgba(56, 172, 255, 1);
 }
 
 .table-header {
-    background-color: rgba(254, 183, 75, 1);
+    background-color: rgba(56, 172, 255, 1);
     padding: 20px 25px;
 }
 

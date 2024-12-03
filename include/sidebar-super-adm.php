@@ -19,7 +19,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a href="../assets/php/logout-handler.php">
+            <a href="../super-admin/kelola-mhs.php">
                 <i class="lni lni-folder-1"></i>
                 <span>Edit User Mahasiswa</span>
             </a>
@@ -33,4 +33,5 @@
     </ul>
 </nav>
 <script src="../assets/js/script-sidebar-super-adm.js" defer></script>
+<link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css">
 <link rel="stylesheet" href="../assets/css/style-sidebar-sup-adm.css">
