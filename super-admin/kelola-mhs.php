@@ -1,3 +1,17 @@
+<?php
+    session_start();
+
+    if (!isset($_SESSION['logged-in']) || $_SESSION['logged-in'] !== true) {
+        header("Location: ../index.php");
+        exit();
+    } 
+
+    if ($_SESSION['role'] !== 'super_adm') {
+        header("Location: ../index.php");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,3 +1,17 @@
+<?php
+    session_start();
+
+    if (!isset($_SESSION['logged-in']) || $_SESSION['logged-in'] !== true) {
+        header("Location: ../index.php");
+        exit();
+    } 
+
+    if ($_SESSION['role'] !== 'super_adm') {
+        header("Location: ../index.php");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +42,9 @@
                         <img src="../assets/images/profildummy1.jpg" alt="profile picture">
                     </div>
                     <div id="credential">
-                        <h4 id="h4-1">Hai' </h4> <h4 id="h4-2">Nama Pengguna</h4>
+                        <h4 id="h4-1">Hai' </h4> <h4 id="h4-2"><?php if (isset($_SESSION['nama'])) {
+                            echo $_SESSION['nama'];
+                        }?></h4>
                         <hr id="hr-2">
                         <h5>No Induk : </h5>
                         <h5>Jabatan  : </h5>

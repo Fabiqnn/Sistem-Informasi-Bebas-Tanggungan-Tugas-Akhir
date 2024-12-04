@@ -6,6 +6,10 @@
         exit();
     } 
     
+    if ($_SESSION['role'] !== 'mahasiswa') {
+        header("Location: ../index.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
