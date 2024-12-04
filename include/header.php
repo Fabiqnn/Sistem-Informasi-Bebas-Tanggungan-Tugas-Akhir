@@ -13,8 +13,6 @@
                 <?php
                     if(isset($_SESSION['nama'])) {
                         echo $_SESSION['nama'];
-                    } else {
-                        echo "Guest";
                     }
                 ?>
             </h1>

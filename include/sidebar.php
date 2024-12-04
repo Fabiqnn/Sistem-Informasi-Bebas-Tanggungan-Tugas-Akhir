@@ -27,13 +27,13 @@
             <div class="dropdown-content">
                 <ul>
                     <li>
-                        <a href="../Mahasiswa/form-prodi.php">
+                        <a href="../Mahasiswa/form-TA-lt7.php">
                             <span>Tanggunan Skripsi/TA</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../Mahasiswa/form-jurusan.php">
-                            <span>Tanggunan Jurusan</span>
+                        <a href="../Mahasiswa/form-Prodi.php">
+                            <span>Tanggunan Prodi</span>
                         </a>
                     </li>
                     <li>

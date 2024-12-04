@@ -14,33 +14,28 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/style-form-prodi.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
+
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- dropzone -->
-    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
-    <title>Form Bebas Tanggungan TA Prodi</title>
+
+    <link rel="stylesheet" href="../assets/css/style-form-jurusan.css">
+    <title>Form Jurusan</title>
 </head>
-
 <body>
-<?php
-    include '../include/header.php';
-?>
-
-    <div class="body">
-    <?php
-        include '../include/sidebar.php';
+    <?php 
+        include '../include/header.php';
     ?>
 
+    <div class="body">
+        <?php
+            include '../include/sidebar.php';
+        ?>
         <div class="main-content">
             <?php
                 include '../include/banner.php';
@@ -62,21 +57,18 @@
                     <h4>Formulir Tanggungan Prodi</h4>
                     <form action="" method="post" enctype="multipart/form-data">
 
-                        <label>Bukti Distribusi Buku Skripsi / Laporan Akhir</label>
+                        <label>Laporan Tugas Akhir/Skripsi</label>
+                        <label for="up-laporan-ta" class="upload-btn">Unggah</label>
+                        <input type="file" name="up-laporan-ta" id="up-laporan-ta">
                         
-                        <label for="up-skripsi" class="upload-btn">Unggah</label> <!--button-->
-                        <input type="file" name="up-skripsi" id="up-skripsi">
+                        <label>Program/Aplikasi Tugas Akhir/Skripsi</label>
+                        <label for="up-program" class="upload-btn">Unggah</label>
+                        <input type="file" name="up-program" id="up-program">
                         
-                        <label>Bukti Distribusi Laporan PKL</label>
-                        
-                        <label for="up-pkl" class="upload-btn">Unggah</label> <!--button-->
-                        <input type="file" name="up-pkl" id="up-pkl">
-                        
-                        <label>Bukti Bebas Kompen</label>
-                        
-                        <label for="up-kompen" class="upload-btn">Unggah</label> <!--button-->
-                        <input type="file" name="up-kompen" id="up-kompen">
-                        
+                        <label>Bukti Publikasi</label>
+                        <label for="up-publikasi" class="upload-btn">Unggah</label>
+                        <input type="file" name="up-publikasi" id="up-publikasi">
+
                         <button type="submit" id="submit-btn">Kirim</button>
                     </form>
                 </div>
@@ -84,8 +76,6 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="../assets/js/script-form-prodi.js"></script>
+    <script src="../assets/js/script-form-jurusan.js"></script>
 </body>
-
 </html>

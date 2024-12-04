@@ -45,7 +45,7 @@ body {
 
 #hr-1 {
     margin: 0px 10px 20px 10px;
-    opacity: .5;
+    opacity: .3;
 }
 
 .table {
@@ -70,7 +70,7 @@ body {
 
 .table-content button {
     padding: 3px 15px 3px 0;
-    background-color: rgba(58, 188, 105, 1);
+    background-color: rgb(27, 188, 155);
     border: none;
     margin-bottom: 15px;
     color: white;
@@ -83,7 +83,7 @@ body {
 }
 
 .table-content button:hover {
-    background-color: rgba(58, 188, 105, .8);
+    background-color: rgba(27, 188, 155, .8);
 }
 
 .form {

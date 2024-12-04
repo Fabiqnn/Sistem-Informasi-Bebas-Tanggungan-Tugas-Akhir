@@ -149,11 +149,11 @@ input[type="file"] {
 form #submit-btn {
     margin-top: 10px;
     justify-self: right;
-    background-color: rgba(20, 174, 92, 1);
+    background-color: rgb(27, 188, 155);
     padding: 7px 25px;
     transition: background-color .3s ease;
 }
 
 form #submit-btn:hover {
-    background-color: rgba(20, 174, 92, .8);
+    background-color: rgba(27, 188, 155, .8);
 }
