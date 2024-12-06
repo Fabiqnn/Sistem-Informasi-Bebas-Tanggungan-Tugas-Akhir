@@ -32,6 +32,6 @@
         </li>
     </ul>
 </nav>
-<script src="../assets/js/script-sidebar-super-adm.js" defer></script>
+<script src="../assets/js/script-sidebar-adm.js" defer></script>
 <link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css">
-<link rel="stylesheet" href="../assets/css/style-sidebar-sup-adm.css">
+<link rel="stylesheet" href="../assets/css/style-sidebar-adm.css">

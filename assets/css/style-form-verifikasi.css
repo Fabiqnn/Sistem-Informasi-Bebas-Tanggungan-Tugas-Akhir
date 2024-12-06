@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+html {
+    line-height: 2rem;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: block;
+}
+
+.body {
+    margin-top: 50px;
+    height: calc(100vh - 50px);
+}
+
+/* main content */
+
+.form-container {
+    padding: 25px;
+}
+
+.form-container h3 {
+    font-weight: 300;
+    font-size: 25px;
+    padding: 10px;
+    margin-top: 10px;
+    color: #14AE5C;
+
+}
+
+.form-container #hr-1 {
+    margin: 0 10px 20px 10px;
+    opacity: .5px;
+}

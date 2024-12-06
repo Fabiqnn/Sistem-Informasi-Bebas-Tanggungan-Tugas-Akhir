@@ -24,22 +24,52 @@
 
             if ($row) {
                 $_SESSION['logged-in'] = true;
-                if ($row['ROLE'] === "mahasiswa") {
-                    $_SESSION['nama'] = $rowMhs['NAMA_MHS'];
-                    $_SESSION['noInduk'] = $rowMhs['NIM'];
-                    $_SESSION['prodi'] = $rowMhs['PRODI'];
-                    $_SESSION['angkatan'] = $rowMhs['ANGKATAN'];
-                    $_SESSION['profil'] = $rowMhs['PATH_PROFIL_MHS'];
-                    $_SESSION['role'] = $row['ROLE'];
-                    header("Location: ../../Mahasiswa/DashboardMahasiswa.php");
-                    exit();
-                } else if ($row['ROLE'] !== "mahasiswa") {
-                    $_SESSION['nama'] = $rowAdm['NAMA'];
-                    $_SESSION['noInduk'] = $rowAdm['NIP'];
-                    $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
-                    $_SESSION['role'] = $row['ROLE'];
-                    header("Location: ../../super-admin/super-admin-dashboard.php");
-                    exit();
+                switch ($row['ROLE']) {
+                    case 'mahasiswa':
+                        $_SESSION['nama'] = $rowMhs['NAMA_MHS'];
+                        $_SESSION['noInduk'] = $rowMhs['NIM'];
+                        $_SESSION['prodi'] = $rowMhs['PRODI'];
+                        $_SESSION['angkatan'] = $rowMhs['ANGKATAN'];
+                        $_SESSION['profil'] = $rowMhs['PATH_PROFIL_MHS'];
+                        $_SESSION['role'] = $row['ROLE'];
+                        header("Location: ../../Mahasiswa/DashboardMahasiswa.php");
+                        break;
+
+                    case 'adm_lt7':
+                        $_SESSION['nama'] = $rowAdm['NAMA'];
+                        $_SESSION['noInduk'] = $rowAdm['NIP'];
+                        $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
+                        $_SESSION['role'] = $row['ROLE'];
+                        header("Location: ../../admin-TA/dashboard-ta.php");
+                        break;
+
+                    case 'super_adm':
+                        $_SESSION['nama'] = $rowAdm['NAMA'];
+                        $_SESSION['noInduk'] = $rowAdm['NIP'];
+                        $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
+                        $_SESSION['role'] = $row['ROLE'];
+                        header("Location: ../../super-admin/super-admin-dashboard.php");
+                        break;
+                        
+                    case 'adm_prodi':
+                        $_SESSION['nama'] = $rowAdm['NAMA'];
+                        $_SESSION['noInduk'] = $rowAdm['NIP'];
+                        $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
+                        $_SESSION['role'] = $row['ROLE'];
+                        header("Location: ../../admin-prodi/dashboard-prodi.php");
+                        break;
+                        
+                    case 'adm_pustaka':
+                        $_SESSION['nama'] = $rowAdm['NAMA'];
+                        $_SESSION['noInduk'] = $rowAdm['NIP'];
+                        $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
+                        $_SESSION['role'] = $row['ROLE'];
+                        header("Location: ../../admin-pustaka/dashboard-pustaka.php");
+                        break;
+                    
+                    default:
+                        # code...
+                        break;
                 }
             } else {
                 $_SESSION['error'] = "No Induk Atau Kata Sandi Salah";

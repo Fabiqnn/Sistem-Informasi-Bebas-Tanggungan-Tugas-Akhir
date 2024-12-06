@@ -191,7 +191,7 @@
                         </div>
                         <div class="upload">
                             <h6>KOMPILASI LAPORAN AKHIR ( 1 FILE PENUH PDF )</h6>
-                            <p class="last">Softcopy Gabungan Laporan Akhir Lengkap dengan TTD, Stempel, Materai 10.000 Mulai COVER - PENDAHULUAN - ABSTRAK - BAB 1 s.d BAB 5 / 7 - DAFTAR PUSTAKA - LAMPIRAN dengan Penulisan nama File ( D4 TI_11223344_KOMPILASI_2024 ) ( TAHUN MENYESUAIKAN )</p>
+                            <p class="last">Softcopy Gabungan Laporan Akhir Lengkap dengan TTD, Stempel, Materai 10.000 Mulai COVER - PENDAHULUAN - ABSTRAK - BAB 1 s.d BAB 5 / 7 - DAFTAR PUSTAKA - LAMPIRAN dengan Penulisan nama File ( D4 TI_11223344_KOMPILASI_2024 ) <br>( TAHUN MENYESUAIKAN )</p>
                             <label for="up-kompilasi" class="upload-btn">Unggah</label>
                             <input type="file" id="up-kompilasi">
                         </div>

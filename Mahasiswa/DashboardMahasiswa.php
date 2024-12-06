@@ -54,7 +54,7 @@
                         } ?></h4>
                         <hr id="hr-2">
                         <div class="sub-credential">
-                            <h5>No Induk : </h5> 
+                            <h5>NIM : </h5> 
                             <h5 class="credential-value"><?php if (isset($_SESSION['noInduk'])) {
                                 echo $_SESSION['noInduk'];
                             }?></h5>

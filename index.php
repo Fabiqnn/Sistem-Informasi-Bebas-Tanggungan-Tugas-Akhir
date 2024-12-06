@@ -45,7 +45,7 @@
         </div>
     
         <div class="informasi">
-            <img src="assets/images/logo-pbl.png" alt="">
+            <img src="assets/images/Logo Fiks.png" alt="">
             <h1>Selamat Datang</h1>
             <p>Platform resmi ‘SIBETA’ untuk memfasilitasi proses administrasi pelepasan tanggungan mahasiswa. Akses status tanggungan Anda dengan mudah dan pastikan kelancaran proses kelulusan Anda di sini.</p>
         </div>

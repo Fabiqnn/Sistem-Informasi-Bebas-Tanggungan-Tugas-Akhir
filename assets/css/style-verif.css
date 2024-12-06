@@ -20,6 +20,8 @@ body {
     height: calc(100vh - 50px);
 }
 
+/* main content */
+
 .card-container {
     padding: 25px 20px;
 }
@@ -28,24 +30,13 @@ body {
     font-weight: 300;
     font-size: 25px;
     color: #14AE5C;
-    padding: 0 10px;
+    padding: 10px;
     margin-top: 10px;
-}
-
-.card-container h4 {
-    font-size: 20px;
-    font-weight: 400;
-    padding: 0 10px 10px 10px;
-    
-}
-
-.card-container #uname {
-    color: rgba(23, 44, 118, 1);
 }
 
 #hr-1 {
     margin: 0px 10px 20px 10px;
-    opacity: .3;
+    opacity: .5;
 }
 
 .table {
@@ -66,47 +57,6 @@ body {
 
 .table-content {
     padding: 20px;
-}
-
-.table-content button {
-    padding: 3px 15px 3px 0;
-    background-color: rgb(27, 188, 155);
-    border: none;
-    margin-bottom: 15px;
-    color: white;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    transition: background-color .3s ease;
-}
-
-.table-content button:hover {
-    background-color: rgba(27, 188, 155, .8);
-}
-
-.form {
-    padding: 10px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    font-size: 20px;
-}
-
-.form-group input {
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid rgba(0, 0, 0, .5);
-}
-
-.form-group input.empty-input {
-    border-color: rgb(213, 81, 132);
 }
 
 table {

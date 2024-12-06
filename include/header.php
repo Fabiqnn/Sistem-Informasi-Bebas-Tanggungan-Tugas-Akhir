@@ -1,7 +1,9 @@
 <link rel="stylesheet" href="../assets/css/style-header.css">
 <header>
     <h1>
-        <img src="../assets/images/logo-pbl.png" alt="logo">
+        <div class="logo">
+            <img src="../assets/images/Logo Fiks.png" alt="logo">
+        </div>
         SIBETA
     </h1>
     <div class="username"> 
