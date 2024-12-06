@@ -24,17 +24,19 @@
 
             if ($row) {
                 $_SESSION['logged-in'] = true;
-                if ($row['ROLE'] == "mahasiswa") {
+                if ($row['ROLE'] === "mahasiswa") {
                     $_SESSION['nama'] = $rowMhs['NAMA_MHS'];
                     $_SESSION['noInduk'] = $rowMhs['NIM'];
                     $_SESSION['prodi'] = $rowMhs['PRODI'];
                     $_SESSION['angkatan'] = $rowMhs['ANGKATAN'];
+                    $_SESSION['profil'] = $rowMhs['PATH_PROFIL_MHS'];
                     $_SESSION['role'] = $row['ROLE'];
                     header("Location: ../../Mahasiswa/DashboardMahasiswa.php");
                     exit();
-                } else if ($row['ROLE'] == "super_adm") {
+                } else if ($row['ROLE'] !== "mahasiswa") {
                     $_SESSION['nama'] = $rowAdm['NAMA'];
                     $_SESSION['noInduk'] = $rowAdm['NIP'];
+                    $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
                     $_SESSION['role'] = $row['ROLE'];
                     header("Location: ../../super-admin/super-admin-dashboard.php");
                     exit();

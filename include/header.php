@@ -8,10 +8,10 @@
         <a href="edit-profile.php">
             <div class="pfp-img">
                 <?php 
-                    if (isset($_SESSION[''])) {
-                        # code...
+                    if (isset($_SESSION['profil'])) {
+                        ?> <img src="<?php $_SESSION['profil']; ?>" alt="profile picture"><?php
                     } else {
-                        # code...
+                       ?> <img src="../assets/images/profildummy1.jpg" alt=""><?php 
                     }
                     
                 ?>
