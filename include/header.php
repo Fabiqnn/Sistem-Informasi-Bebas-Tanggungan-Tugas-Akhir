@@ -7,7 +7,14 @@
     <div class="username"> 
         <a href="edit-profile.php">
             <div class="pfp-img">
-
+                <?php 
+                    if (isset($_SESSION[''])) {
+                        # code...
+                    } else {
+                        # code...
+                    }
+                    
+                ?>
             </div>
             <h1 id="nama_pengguna">
                 <?php

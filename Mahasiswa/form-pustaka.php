@@ -52,7 +52,6 @@
                 </div>
 
                 <div class="form">
-                    <button class="update-btn">Perbarui</button>
                     <h4>Formulir Tanggungan Pustaka</h4>
                     <form action="" method="post" enctype="multipart/form-data">
 

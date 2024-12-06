@@ -90,6 +90,7 @@
                                 <th>No Wa</th>
                                 <th>Jabatan</th>
                                 <th>Status Verifikasi</th>
+                                <th>Update</th>
                             </tr>
                         </table>
                     </div>
@@ -107,6 +108,7 @@
                                 <th>No Wa</th>
                                 <th>Jabatan</th>
                                 <th>Status Verifikasi</th>
+                                <th>Update</th>
                             </tr>
                         </table>
                     </div>
@@ -124,6 +126,7 @@
                                 <th>No Wa</th>
                                 <th>Jabatan</th>
                                 <th>Status Verifikasi</th>
+                                <th>Update</th>
                             </tr>
                         </table>
                     </div>

@@ -40,7 +40,7 @@
                     </div>
                     <button type="submit">Masuk</button>
                 </form>
-                <a href="">Lupa Sandi? Klik disini</a>
+                <a href="lupa-sandi.php">Lupa Sandi? Klik disini</a>
             </div>
         </div>
     

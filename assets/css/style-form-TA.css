@@ -77,6 +77,7 @@ body {
     color: #14AE5C;
     font-size: 25px;
     font-weight: 400;
+    margin-top: 40px;
 }
 
 .form form {
@@ -106,17 +107,6 @@ form #fnumber:valid {
 
 form #fnumber:invalid {
     border-color: #ae1414;
-}
-
-.form-container .update-btn {
-    justify-self: right;
-    background-color: rgba(254, 183, 75, 1);
-    transition: background-color .3s ease;
-    margin-bottom: 0;
-}
-
-.update-btn:hover {
-    background-color: rgba(254, 183, 75, .8);
 }
 
 .form button {
