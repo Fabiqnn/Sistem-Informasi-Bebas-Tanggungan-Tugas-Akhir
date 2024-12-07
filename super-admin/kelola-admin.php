@@ -10,6 +10,22 @@
         header("Location: ../index.php");
         exit();
     }
+
+    include '../config/db-connect.php';
+    $query = "SELECT 
+                  [USER].ID_USER, 
+                  [USER].PASS, 
+                  [USER].ROLE, 
+                  [ADMIN].NIP, 
+                  [ADMIN].NAMA
+              FROM [USER]
+              JOIN [ADMIN] ON [USER].ID_USER = [ADMIN].ID_USER";
+    
+    $result = sqlsrv_query($conn, $query);
+
+    if ($result === false) {
+        die("Query gagal: " . print_r(sqlsrv_errors(), true));;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +72,19 @@
                                 <th>update</th>
                                 <th>Delete</th>
                             </tr>
+                            <?php
+                                while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
+                                    echo "<tr>";
+                                    echo "<td>" . $row['NAMA'] . "</td>";
+                                    echo "<td>" . $row['ROLE'] . "</td>";
+                                    echo "<td>" . $row['NIP'] . "</td>";
+                                    echo "<td>******</td>"; 
+                                    echo "<td><a href='edit_admin.php?id=" . $row['ID_USER'] . "' class='btn btn-warning'>Update</a></td>";
+                                    echo "<td><a href='kelola_admin.php?delete_id=" . $row['ID_USER'] . "' class='btn btn-danger' onclick='return confirm(\"Are you sure?\")'>Delete</a></td>";
+                                    echo "</tr>";
+                                
+                                }
+                            ?>
                         </table>
                     </div>
                 </div>
@@ -64,7 +93,7 @@
     </div>
 
     <!-- Modal -->
-    <form action="" method="post" id="form-add-admin">
+    <form action="add_admin.php" method="post" id="form-add-admin">
         <div class="modal fade" id="add-admin-modal" tabindex="-1" aria-labelledby="add-admin-modalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">

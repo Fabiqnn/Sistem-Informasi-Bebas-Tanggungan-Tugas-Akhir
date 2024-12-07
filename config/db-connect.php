@@ -1,5 +1,5 @@
 <?php
-    $serverName = "DESKTOP-1HF1HOA";
+    $serverName = "DESKTOP-20REMAB";
     $database = "BebasTanggunganTA";
     $uid = "";
     $pass = "";
@@ -12,7 +12,7 @@
 
     $conn = sqlsrv_connect($serverName, $connect);
 
-    if (!$conn) {
+    if ($conn === false) {
         die(print_r(sqlsrv_errors(), true));
     }
 ?>
