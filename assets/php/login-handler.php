@@ -39,7 +39,7 @@
                         $_SESSION['nama'] = $rowAdm['NAMA'];
                         $_SESSION['noInduk'] = $rowAdm['NIP'];
                         $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
-                        $_SESSION['role'] = $row['ROLE'];
+                        $_SESSION['role'] = "Admin TA";
                         header("Location: ../../admin-TA/dashboard-ta.php");
                         break;
 
@@ -47,7 +47,7 @@
                         $_SESSION['nama'] = $rowAdm['NAMA'];
                         $_SESSION['noInduk'] = $rowAdm['NIP'];
                         $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
-                        $_SESSION['role'] = $row['ROLE'];
+                        $_SESSION['role'] = "Super Admin";
                         header("Location: ../../super-admin/super-admin-dashboard.php");
                         break;
                         
@@ -55,7 +55,7 @@
                         $_SESSION['nama'] = $rowAdm['NAMA'];
                         $_SESSION['noInduk'] = $rowAdm['NIP'];
                         $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
-                        $_SESSION['role'] = $row['ROLE'];
+                        $_SESSION['role'] = "Admin Prodi";
                         header("Location: ../../admin-prodi/dashboard-prodi.php");
                         break;
                         
@@ -63,7 +63,7 @@
                         $_SESSION['nama'] = $rowAdm['NAMA'];
                         $_SESSION['noInduk'] = $rowAdm['NIP'];
                         $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
-                        $_SESSION['role'] = $row['ROLE'];
+                        $_SESSION['role'] = "Admin Pustaka";
                         header("Location: ../../admin-pustaka/dashboard-pustaka.php");
                         break;
                     

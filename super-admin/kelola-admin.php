@@ -6,7 +6,7 @@
         exit();
     } 
 
-    if ($_SESSION['role'] !== 'super_adm') {
+    if ($_SESSION['role'] !== 'Super Admin') {
         header("Location: ../index.php");
         exit();
     }
@@ -51,7 +51,7 @@
 
             <div class="card-container">
                 <h3>SELAMAT DATANG</h3>
-                <h4 id="uname">Nama Pengguna</h4>
+                <h4 id="uname"><?=$_SESSION['nama']?></h4>
                 <hr id="hr-1">
 
                 <div class="table">
@@ -75,14 +75,20 @@
                             <?php
                                 while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
                                     echo "<tr>";
-                                    echo "<td>" . $row['NAMA'] . "</td>";
-                                    echo "<td>" . $row['ROLE'] . "</td>";
-                                    echo "<td>" . $row['NIP'] . "</td>";
-                                    echo "<td>******</td>"; 
-                                    echo "<td><a href='edit_admin.php?id=" . $row['ID_USER'] . "' class='btn btn-warning'>Update</a></td>";
-                                    echo "<td><a href='kelola_admin.php?delete_id=" . $row['ID_USER'] . "' class='btn btn-danger' onclick='return confirm(\"Are you sure?\")'>Delete</a></td>";
+                                        echo "<td>" . $row['NAMA'] . "</td>";
+                                        echo "<td>" . $row['ROLE'] . "</td>";
+                                        echo "<td>" . $row['NIP'] . "</td>";
+                                        echo "<td>******</td>"; 
+                                        echo "<td class='update-col'><a 
+                                            href='#' 
+                                            class='update-btn' 
+                                            data-bs-toggle='modal' 
+                                            data-bs-target='#edit-admin-modal'
+                                            data-nama = '".$row['NAMA']."'
+                                            data-nip = '".$row['NIP']."'
+                                            data-pass = '".$row['PASS']."' >Perbarui</a></td>";
+                                        echo "<td class='delete-col'><a href='../assets/php/delete-admin.php?delete_id=" . $row['ID_USER'] . "' class='delete-btn' onclick='return confirm(\"Apakah anda yakin untuk menghapus user berikut?\")'>Hapus</a></td>";
                                     echo "</tr>";
-                                
                                 }
                             ?>
                         </table>
@@ -93,7 +99,7 @@
     </div>
 
     <!-- Modal -->
-    <form action="add_admin.php" method="post" id="form-add-admin">
+    <form action="../assets/php/add-admin.php" method="post" id="form-add-admin">
         <div class="modal fade" id="add-admin-modal" tabindex="-1" aria-labelledby="add-admin-modalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -109,7 +115,12 @@
                         </div>
                         <div class="form-group">
                             <label for="role">Posisi/Jabatan</label>
-                            <input type="text" name="role" id="role">
+                            <select name="role" id="role">
+                                <option value="adm_lt7">Admin TA</option>
+                                <option value="adm_prodi">Admin Prodi</option>
+                                <option value="adm_pustaka">Admin Pustaka</option>
+                                <option value="super_adm">Super Admin</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="nip">NIP</label>
@@ -130,7 +141,47 @@
         </div>
     </form>
 
-    <script src="../assets/js/script-kelola-adm.js"></script>
+    <!-- Modal edit-->
+    <form action="../assets/php/edit-admin.php" method="post" id="form-edit-admin">
+        <div class="modal fade" id="edit-admin-modal" tabindex="-1" aria-labelledby="edit-admin-modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="edit-admin-modalLabel">Edit Admin</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="name-edit">Nama</label>
+                            <input type="text" name="name-edit" id="name-edit">
+                        </div>
+                        <div class="form-group">
+                            <label for="role-edit">Posisi/Jabatan</label>
+                            <select name="role-edit" id="role-edit">
+                                <option value="adm_lt7">Admin TA</option>
+                                <option value="adm_prodi">Admin Prodi</option>
+                                <option value="adm_pustaka">Admin Pustaka</option>
+                                <option value="super_adm">Super Admin</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pass-edit">Kata Sandi</label>
+                            <input type="pass" name="pass-edit" id="pass-edit">
+                        </div>
+                        <input type="hidden" name="nip-edit" id="nip-edit">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-primary">Konfirmasi</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="../assets/js/script-kelola-adm.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

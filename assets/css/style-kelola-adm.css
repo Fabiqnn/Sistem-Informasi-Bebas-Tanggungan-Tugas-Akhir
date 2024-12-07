@@ -109,6 +109,11 @@ body {
     border-color: rgb(213, 81, 132);
 }
 
+.form-group select {
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
 table {
     text-align: left;
     width: 100%;
@@ -116,9 +121,52 @@ table {
 }
 
 table th {
-    border: 1px solid rgba(0, 0, 0, .3);
-    padding: 7px 7px;
-    font-size: 14px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    padding: 7px;
+    font-size: 16px;
     font-weight: 600;
     background-color: rgba(255, 255, 255, 1);
+}
+
+table td {
+    border: 1px solid rgba(0, 0, 0, .2);
+    padding: 15px 7px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+table td.delete-col , table td.update-col {
+    width: 100px;
+}
+
+table .update-btn {
+    background-color: #FEB74B;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    justify-self: center;
+    margin: 0 10px;
+    transition: background-color .3s ease;
+}
+
+table .update-btn:hover {
+    background-color: rgba(254, 183, 75, .7);
+}
+
+table .delete-btn {
+    background-color: rgba(248, 32, 32, 1);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    justify-self: center;
+    margin: 0 10px;
+    transition: background-color .3s ease;
+}
+
+table .delete-btn:hover {
+    background-color: rgba(248, 32, 32, .7);
 }

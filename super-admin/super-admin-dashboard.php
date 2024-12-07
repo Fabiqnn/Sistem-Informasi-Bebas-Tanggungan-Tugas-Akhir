@@ -6,7 +6,7 @@
         exit();
     } 
 
-    if ($_SESSION['role'] !== 'super_adm') {
+    if ($_SESSION['role'] !== 'Super Admin') {
         header("Location: ../index.php");
         exit();
     }
@@ -46,8 +46,14 @@
                             echo $_SESSION['nama'];
                         }?></h4>
                         <hr id="hr-2">
-                        <h5>NIP : </h5>
-                        <h5>Jabatan  : </h5>
+                        <div class="sub-credential">
+                            <h5>NIP : </h5>
+                            <p><?= $_SESSION['noInduk']?></p>
+                        </div>
+                        <div class="sub-credential">
+                            <h5>Jabatan : </h5>
+                            <p><?= $_SESSION['role']?></p>
+                        </div>
                     </div>
                 </div>
             </div>

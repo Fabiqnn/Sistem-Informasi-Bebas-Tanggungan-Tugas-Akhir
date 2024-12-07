@@ -6,7 +6,7 @@
         exit();
     } 
 
-    if ($_SESSION['role'] !== 'super_adm') {
+    if ($_SESSION['role'] !== 'Super Admin') {
         header("Location: ../index.php");
         exit();
     }
@@ -35,7 +35,7 @@
 
             <div class="card-container">
                 <h3>SELAMAT DATANG</h3>
-                <h4 id="uname">Nama Pengguna</h4>
+                <h4 id="uname"><?= $_SESSION['nama']?></h4>
                 <hr id="hr-1">
 
                 <div class="table">

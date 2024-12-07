@@ -116,3 +116,13 @@ body {
     margin-bottom: 10px;
     font-weight: 500;
 }
+
+.sub-credential {
+    display: flex;
+    gap: 10px;
+}
+
+.sub-credential p {
+    font-weight: 400;
+    font-size: 23px;
+}

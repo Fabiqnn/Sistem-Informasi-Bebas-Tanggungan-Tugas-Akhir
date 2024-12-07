@@ -31,3 +31,17 @@ function validation() {
         event.target.submit();
     }
 }
+
+var updateBtn = document.querySelectorAll('.update-btn');
+
+updateBtn.forEach(function(button) {
+    button.addEventListener('click', function () { 
+        var nama = button.getAttribute('data-nama');
+        var nip = button.getAttribute('data-nip');
+        var pass = button.getAttribute('data-pass');
+
+        document.getElementById('name-edit').value = nama;
+        document.getElementById('nip-edit').value = nip;
+        document.getElementById('pass-edit').value = pass;
+    }); 
+});
