@@ -50,8 +50,13 @@
                 </div>
 
                 <div class="form">
+<<<<<<< Updated upstream
                     <h4>Formulir Tanggungan Prodi</h4>
                     <form action="" method="post" enctype="multipart/form-data">
+=======
+                    <h4>Formulir Tanggungan Skripsi/TA</h4>
+                    <form action="../assets/php/upload-TA.php" method="post" enctype="multipart/form-data">
+>>>>>>> Stashed changes
 
                         <label>Laporan Tugas Akhir/Skripsi</label>
                         <label for="up-laporan-ta" class="upload-btn">Unggah</label>

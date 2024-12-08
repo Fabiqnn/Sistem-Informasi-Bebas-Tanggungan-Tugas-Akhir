@@ -12,18 +12,19 @@
     }
 
     include '../config/db-connect.php';
-    $query = "SELECT 
-                  [USER].ID_USER, 
-                  [USER].PASS, 
-                  [USER].ROLE, 
-                  [ADMIN].NIP, 
-                  [ADMIN].NAMA
-              FROM [USER]
-              JOIN [ADMIN] ON [USER].ID_USER = [ADMIN].ID_USER";
-    
-    $result = sqlsrv_query($conn, $query);
 
-    if ($result === false) {
+    $noInduk = $_SESSION['noInduk'];
+    $queryTable = "SELECT 
+                [USER].ID_USER, 
+                [USER].PASS, 
+                [USER].ROLE, 
+                ADMIN.NIP, 
+                ADMIN.NAMA
+            FROM [USER]JOIN [ADMIN] ON [USER].ID_USER = ADMIN.ID_USER";
+    
+    $resultTable = sqlsrv_query($conn, $queryTable);
+
+    if (!$resultTable) {
         die("Query gagal: " . print_r(sqlsrv_errors(), true));;
     }
 ?>
@@ -73,21 +74,21 @@
                                 <th>Delete</th>
                             </tr>
                             <?php
-                                while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
+                                while ($rowTable = sqlsrv_fetch_array($resultTable, SQLSRV_FETCH_ASSOC)) {
                                     echo "<tr>";
-                                        echo "<td>" . $row['NAMA'] . "</td>";
-                                        echo "<td>" . $row['ROLE'] . "</td>";
-                                        echo "<td>" . $row['NIP'] . "</td>";
+                                        echo "<td>" . $rowTable['NAMA'] . "</td>";
+                                        echo "<td>" . $rowTable['ROLE'] . "</td>";
+                                        echo "<td>" . $rowTable['NIP'] . "</td>";
                                         echo "<td>******</td>"; 
                                         echo "<td class='update-col'><a 
                                             href='#' 
                                             class='update-btn' 
                                             data-bs-toggle='modal' 
                                             data-bs-target='#edit-admin-modal'
-                                            data-nama = '".$row['NAMA']."'
-                                            data-nip = '".$row['NIP']."'
-                                            data-pass = '".$row['PASS']."' >Perbarui</a></td>";
-                                        echo "<td class='delete-col'><a href='../assets/php/delete-admin.php?delete_id=" . $row['ID_USER'] . "' class='delete-btn' onclick='return confirm(\"Apakah anda yakin untuk menghapus user berikut?\")'>Hapus</a></td>";
+                                            data-nama = '".$rowTable['NAMA']."'
+                                            data-nip = '".$rowTable['NIP']."'
+                                            data-pass = '".$rowTable['PASS']."' >Perbarui</a></td>";
+                                        echo "<td class='delete-col'><a href='../assets/php/delete-admin.php?delete_id=" . $rowTable['ID_USER'] . "' class='delete-btn' onclick='return confirm(\"Apakah anda yakin untuk menghapus user berikut?\")'>Hapus</a></td>";
                                     echo "</tr>";
                                 }
                             ?>

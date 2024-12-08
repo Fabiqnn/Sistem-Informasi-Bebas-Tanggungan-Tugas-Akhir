@@ -52,8 +52,13 @@
                 </div>
 
                 <div class="form">
+<<<<<<< Updated upstream
                     <h4>Formulir Tanggungan Skripsi/TA</h4>
                     <form action="" method="post" enctype="multipart/form-data">
+=======
+                    <h4>Formulir Tanggungan Prodi</h4>
+                    <form action="../assets/php/upload-prodi.php" method="post" enctype="multipart/form-data">
+>>>>>>> Stashed changes
 
                         <label>Bukti Distribusi Buku Skripsi / Laporan Akhir</label>
                         
