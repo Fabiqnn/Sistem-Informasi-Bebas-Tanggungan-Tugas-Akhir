@@ -84,37 +84,24 @@ body {
     display: grid;
 }
 
-form input {
-    padding: 8px;
-    border-radius: 5px;
-    border: none;
-    margin-bottom: 20px;
-}
-
-form #fnumber {
-    outline: 0;
-    border: 2px solid black;
-    transition: border-color 0.3s ease;
-}
-
-form #fnumber:not(:focus):not(:placeholder-shown) {
-    border-color: transparent;
-}
-
-form #fnumber:valid {
-    border-color: #14AE5C;
-}
-
-form #fnumber:invalid {
-    border-color: #ae1414;
-}
-
 .form button {
     padding: 7px 18px;
     font-size: 15px;
     color: white;
     border-radius: 8px;
     border: none;
+}
+
+.file-upload {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 5px 0 20px 0;
+}
+
+.file-upload span {
+    font-weight: 400;
+    font-size: 15px;
 }
 
 input[type="file"] {
@@ -124,10 +111,9 @@ input[type="file"] {
 .upload-btn {
     background-color: rgb(44, 44, 44);
     color: white;
-    padding: 7px 15px;
+    padding: 5px 15px;
     justify-self: left;
     border-radius: 8px;
-    margin: 5px 0 20px 0;
     transition: background-color .3s ease;
     cursor: pointer;
 }

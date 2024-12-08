@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../assets/css/style-form-prodi.css">
+    <link rel="stylesheet" href="../assets/css/style-form-TA.css">
     <title>SIBETA | Sistem Bebas Tanggungan | Form TA</title>
 </head>
 <body>
@@ -50,25 +50,29 @@
                 </div>
 
                 <div class="form">
-<<<<<<< Updated upstream
-                    <h4>Formulir Tanggungan Prodi</h4>
-                    <form action="" method="post" enctype="multipart/form-data">
-=======
                     <h4>Formulir Tanggungan Skripsi/TA</h4>
                     <form action="../assets/php/upload-TA.php" method="post" enctype="multipart/form-data">
->>>>>>> Stashed changes
 
                         <label>Laporan Tugas Akhir/Skripsi</label>
-                        <label for="up-laporan-ta" class="upload-btn">Unggah</label>
-                        <input type="file" name="up-laporan-ta" id="up-laporan-ta">
+                        <div class="file-upload">
+                            <label for="up-laporan-ta" class="upload-btn">Unggah</label>
+                            <input type="file" name="up-laporan-ta" id="up-laporan-ta">
+                            <span id="laporan-ta-name">No File Choosen.</span>
+                        </div>
                         
                         <label>Program/Aplikasi Tugas Akhir/Skripsi</label>
-                        <label for="up-program" class="upload-btn">Unggah</label>
-                        <input type="file" name="up-program" id="up-program">
+                        <div class="file-upload">
+                            <label for="up-program" class="upload-btn">Unggah</label>
+                            <input type="file" name="up-program" id="up-program">
+                            <span id="program-name">No File Choosen.</span>
+                        </div>
                         
-                        <label>Bukti Publikasi</label>
-                        <label for="up-publikasi" class="upload-btn">Unggah</label>
-                        <input type="file" name="up-publikasi" id="up-publikasi">
+                        <label>Bukti Publikasi Tugas Akhir</label>
+                        <div class="file-upload">
+                            <label for="up-publikasi" class="upload-btn">Unggah</label>
+                            <input type="file" name="up-publikasi" id="up-publikasi">
+                            <span id="publikasi-name">No File Choosen.</span>
+                        </div>
 
                         <button type="submit" id="submit-btn">Kirim</button>
                     </form>
@@ -77,6 +81,26 @@
         </div>
     </div>
 
-    <script src="../assets/js/script-form-jurusan.js"></script>
+    <script>
+        const laporanTa = document.getElementById('up-laporan-ta');
+        const programTa = document.getElementById('up-program');
+        const publikasi = document.getElementById('up-publikasi');
+
+        laporanTa.addEventListener('change', function () {
+            if (laporanTa.value) {
+                document.getElementById('laporan-ta-name').innerHTML = laporanTa.files[0].name;
+            }
+        });
+        programTa.addEventListener('change', function () {
+            if (programTa.value) {
+                document.getElementById('program-name').innerHTML = programTa.files[0].name;
+            }
+        });
+        publikasi.addEventListener('change', function () {
+            if (publikasi.value) {
+                document.getElementById('publikasi-name').innerHTML = publikasi.files[0].name;
+            }
+        });
+    </script>
 </body>
 </html>

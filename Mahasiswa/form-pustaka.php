@@ -117,8 +117,11 @@
                         <input type="date" name="tgl-yudisium" id="tgl-yudisium">
 
                         <p>Bukti Bebas Kompen</p>
-                        <label for="up-kompen" class="upload-btn">Upload</label>
-                        <input type="file" id="up-kompen">
+                        <div class="upload-file">
+                            <label for="up-kompen" class="upload-btn">Unggah</label>
+                            <input type="file" id="up-kompen">
+                            <span id="kompen-name">No Choosen File.</span>
+                        </div>
 
                         <p class="subjudul">Upload File SoftCopy Laporan Akhir</p>
 
@@ -126,74 +129,110 @@
                             <h6>Pendahuluan ( Digabung Menjadi 1 File PDF )</h6>
                             <p>Contoh Penulisan Nama File ( D4 TI_2341720170_PENDAHULUAN_2024 ) ( Tahun Menyesuaikan )</p>
                             <p class="last">( Isi Pendahuluan = Cover s.d Halaman Lampiran )</p>
-                            <label for="up-pendahuluan" class="upload-btn">Unggah</label>
-                            <input type="file" id="up-pendahuluan">
+                            <div class="upload-file">
+                                <label for="up-pendahuluan" class="upload-btn">Unggah</label>
+                                <input type="file" id="up-pendahuluan">
+                                <span class="pendahuluan-name">No Choosen File.</span>
+                            </div>
                         </div>
                         <div class="upload">
                             <h6>ABSTRAK ( Indonesia - Inggris digabung 1 File PDF / DOC )</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_11223344_ABSTRAK_2024 ) (TAHUN MENYESUAIKAN)</p>
-                            <label for="up-abstrak" class="upload-btn">Unggah</label>
-                            <input type="file" id="up-abstrak">
+                            <div class="upload-file">
+                                <label for="up-abstrak" class="upload-btn">Unggah</label>
+                                <input type="file" id="up-abstrak">
+                                <span class="abstrak-name">No Choosen File.</span>
+                            </div>
                         </div>
                         <div class="upload">
                             <h6>ISI LAPORAN BAB I - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB I_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-bab1" class="upload-btn">Unggah</label>
-                            <input type="file" id="up-bab1">
+                            <div class="upload-file">
+                                <label for="up-bab1" class="upload-btn">Unggah</label>
+                                <input type="file" id="up-bab1">
+                                <span class="bab1-name">No Choosen File.</span>
+                            </div>
                         </div>
                         <div class="upload">
                             <h6>ISI LAPORAN BAB II - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB II_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-bab2" class="upload-btn">Unggah</label>
-                            <input type="file" id="up-bab2">
+                            <div class="upload-file">
+                                <label for="up-bab2" class="upload-btn">Unggah</label>
+                                <input type="file" id="up-bab2">
+                                <span class="bab2-name">No Choosen File.</span>
+                            </div>
                         </div>
                         <div class="upload">
                             <h6>ISI LAPORAN BAB III - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB III_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-bab3" class="upload-btn">Unggah</label>
-                            <input type="file" id="up-bab3">
+                            <div class="upload-file">
+                                <label for="up-bab3" class="upload-btn">Unggah</label>
+                                <input type="file" id="up-bab3">
+                                <span class="bab3-name">No Choosen File.</span>
+                            </div>
                         </div>
                         <div class="upload">
                             <h6>ISI LAPORAN BAB IV - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB IV_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-bab4" class="upload-btn">Unggah</label>
-                            <input type="file" id="up-bab4">
+                            <div class="upload-file">
+                                <label for="up-bab4" class="upload-btn">Unggah</label>
+                                <input type="file" id="up-bab4">
+                                <span class="bab4-name">No Choosen File.</span>
+                            </div>
                         </div>
                         <div class="upload">
                             <h6>ISI LAPORAN BAB V - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB V_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-bab5" class="upload-btn">Unggah</label>
-                            <input type="file" id="up-bab5">
+                            <div class="upload-file">
+                                <label for="up-bab5" class="upload-btn">Unggah</label>
+                                <input type="file" id="up-bab5">
+                                <span class="bab5-name">No Choosen File.</span>
+                            </div>
                         </div>
                         <div class="upload">
                             <h6>ISI LAPORAN BAB VI - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB VI_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-bab6" class="upload-btn">Unggah</label>
-                            <input type="file" id="up-bab6">
+                            <div class="upload-file">
+                                <label for="up-bab6" class="upload-btn">Unggah</label>
+                                <input type="file" id="up-bab6">
+                                <span class="bab6-name">No Choosen File.</span>
+                            </div>
                         </div>
                         <div class="upload">
                             <h6>ISI LAPORAN BAB VII - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB VII_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-bab7" class="upload-btn">Unggah</label>
-                            <input type="file" id="up-bab7">
+                            <div class="upload-file">
+                                <label for="up-bab7" class="upload-btn">Unggah</label>
+                                <input type="file" id="up-bab7">
+                                <span class="bab7-name">No Choosen File.</span>
+                            </div>
                         </div>
                         <div class="upload">
                             <h6>DAFTAR PUSTAKA - PDF</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_DAFTAR PUSTAKA_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-dftr-pustaka" class="upload-btn">Unggah</label>
-                            <input type="file" id="up-dftr-pustaka">
+                            <div class="upload-file">
+                                <label for="up-dftr-pustaka" class="upload-btn">Unggah</label>
+                                <input type="file" id="up-dftr-pustaka">
+                                <span class="pustaka-name">No Choosen File.</span>  
+                            </div>
                         </div>
                         <div class="upload">
                             <h6>LAMPIRAN - ( PDF/DOC )</h6>
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_LAMPIRAN_2024 ) ( Tahun Menyesuaikan )</p>
-                            <label for="up-lampiran" class="upload-btn">Unggah</label>
-                            <input type="file" id="up-lampiran">
+                            <div class="upload-file">
+                                <label for="up-lampiran" class="upload-btn">Unggah</label>
+                                <input type="file" id="up-lampiran">
+                                <span class="lampiran-name">No Choosen File.</span>
+                            </div>
                         </div>
                         <div class="upload">
                             <h6>KOMPILASI LAPORAN AKHIR ( 1 FILE PENUH PDF )</h6>
                             <p class="last">Softcopy Gabungan Laporan Akhir Lengkap dengan TTD, Stempel, Materai 10.000 Mulai COVER - PENDAHULUAN - ABSTRAK - BAB 1 s.d BAB 5 / 7 - DAFTAR PUSTAKA - LAMPIRAN dengan Penulisan nama File ( D4 TI_11223344_KOMPILASI_2024 ) <br>( TAHUN MENYESUAIKAN )</p>
-                            <label for="up-kompilasi" class="upload-btn">Unggah</label>
-                            <input type="file" id="up-kompilasi">
+                            <div class="upload-file">
+                                <label for="up-kompilasi" class="upload-btn">Unggah</label>
+                                <input type="file" id="up-kompilasi">
+                                <span class="kompilasi-name">No Choosen File.</span>
+                            </div>
                         </div>
 
                         <h6>LINK PUBLIKASI JURNAL</h6>
@@ -203,8 +242,11 @@
                         <div class="upload">
                             <h6>SOFTCOPY JURNAL</h6>
                             <p class="last">Khusus Mahasiswa D4 ( Format PDF ) " Jurnal sudah di acc (paraf) oleh Dosen Pembimbing</p>
-                            <label for="up-softcopy-jurnal" class="upload-btn">Unggah</label>
-                            <input type="file" id="up-softcopy-jurnal">
+                            <div class="upload-file">
+                                <label for="up-softcopy-jurnal" class="upload-btn">Unggah</label>
+                                <input type="file" id="up-softcopy-jurnal">
+                                <span class="jurnal-name">No Choosen File.</span>
+                            </div>
                         </div>
 
                         <p class="label">Dengan ini saya memberikan ijin kepada perpustakaan polinema untuk mengolah Laporan Akhir / Tugas Akhir saya dengan ketentuan yang ada untuk kemajuan ilmu pengetahuan dan institusi.</p>
@@ -242,8 +284,11 @@
                         <div class="upload">
                             <h6>Unggah / Upload Bukti Resi Hard Copy Laporan Akhir/ Skripsi / Tesis Yang Dikirim Melalui Ekspedisi atau Sejenis</h6>
                             <p class="last">Lampiran Untuk Resi Bukti bahwa Hard Copy Tugas Akhir dikirim melalui Jasa Ekspedisi atau Sejenis yang dialamatkan ke <br> UPT Perpustakaan Politeknik Negeri Malang, Gedung Graha Polinema Lt 3, Jl Soekarno-Hatta No.09 Malang ( Bentuk PDF atau Gambar ). <br> Bagi yang menyerahkan langsung ke Perpustakaan Tidak Perlu Melampirkan atau Upload Bukti Kirim</p>
-                            <label for="up-resi" class="upload-btn">Unggah</label>
-                            <input type="file" id="up-resi">
+                            <div class="upload-file">
+                                <label for="up-resi" class="upload-btn">Unggah</label>
+                                <input type="file" id="up-resi">
+                                <span class="resi-name">No Choosen File.</span>
+                            </div>
                         </div>
 
                         <button type="submit" id="submit-btn">Kirim</button>
@@ -253,7 +298,104 @@
         </div>
     </div>
 
-    <script src="../assets/js/script-form-pustaka.js"></script>
+    <script>
+        const kompen = document.getElementById('up-kompen');
+        const pendahuluan = document.getElementById('up-pendahuluan');
+        const abstrak = document.getElementById('up-abstrak');
+        const bab1 = document.getElementById('up-bab1');
+        const bab2 = document.getElementById('up-bab2');
+        const bab3 = document.getElementById('up-bab3');
+        const bab4 = document.getElementById('up-bab4');
+        const bab5 = document.getElementById('up-bab5');
+        const bab6 = document.getElementById('up-bab6');
+        const bab7 = document.getElementById('up-bab7');
+        const pustaka = document.getElementById('up-dftr-pustaka');
+        const lampiran = document.getElementById('up-lampiran');
+        const kompilasi = document.getElementById('up-kompilasi');
+        const jurnal = document.getElementById('up-softcopy-jurnal');
+        const resi = document.getElementById('up-resi');
+
+
+        
+        kompen.addEventListener('change', function () {
+            if (kompen.value) {
+                document.getElementById('kompen-name').innerHTML = kompen.files[0].name;
+            }
+        });
+
+        pendahuluan.addEventListener('change', function () {
+            if (pendahuluan.value) {
+                document.getElementById('pendahuluan-name').innerHTML = pendahuluan.files[0].name;
+            }
+        });
+        abstrak.addEventListener('change', function () {
+            if (abstrak.value) {
+                document.getElementById('abstrak-name').innerHTML = abstrak.files[0].name;
+            }
+        });
+        bab1.addEventListener('change', function () {
+            if (bab1.value) {
+                document.getElementById('bab1-name').innerHTML = bab1.files[0].name;
+            }
+        });
+        bab2.addEventListener('change', function () {
+            if (bab2.value) {
+                document.getElementById('bab2-name').innerHTML = bab2.files[0].name;
+            }
+        });
+        bab3.addEventListener('change', function () {
+            if (bab3.value) {
+                document.getElementById('bab3-name').innerHTML = bab3.files[0].name;
+            }
+        });
+        bab4.addEventListener('change', function () {
+            if (bab4.value) {
+                document.getElementById('bab4-name').innerHTML = bab4.files[0].name;
+            }
+        });
+        bab5.addEventListener('change', function () {
+            if (bab5.value) {
+                document.getElementById('bab5-name').innerHTML = bab5.files[0].name;
+            }
+        });
+        bab6.addEventListener('change', function () {
+            if (bab6.value) {
+                document.getElementById('bab6-name').innerHTML = bab6.files[0].name;
+            }
+        });
+        bab7.addEventListener('change', function () {
+            if (bab7.value) {
+                document.getElementById('bab7-name').innerHTML = bab7.files[0].name;
+            }
+        });
+        pustaka.addEventListener('change', function () {
+            if (pustaka.value) {
+                document.getElementById('pustaka-name').innerHTML = pustaka.files[0].name;
+            }
+        });
+        lampiran.addEventListener('change', function () {
+            if (lampiran.value) {
+                document.getElementById('lampiran-name').innerHTML = lampiran.files[0].name;
+            }
+        });
+        kompilasi.addEventListener('change', function () {
+            if (kompilasi.value) {
+                document.getElementById('kompilasi-name').innerHTML = kompilasi.files[0].name;
+            }
+        });
+        jurnal.addEventListener('change', function () {
+            if (jurnal.value) {
+                document.getElementById('jurnal-name').innerHTML = jurnal.files[0].name;
+            }
+        });
+        resi.addEventListener('change', function () {
+            if (resi.value) {
+                document.getElementById('resi-name').innerHTML = resi.files[0].name;
+            }
+        });
+
+
+    </script>
 </body>
 
 </html>

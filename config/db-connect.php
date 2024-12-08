@@ -1,5 +1,5 @@
 <?php
-    $serverName = "DESKTOP-20REMAB";
+    $serverName = "DESKTOP-1HF1HOA";
     $database = "BebasTanggunganTA";
     $uid = "";
     $pass = "";
