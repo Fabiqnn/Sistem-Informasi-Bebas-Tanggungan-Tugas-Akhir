@@ -10,6 +10,24 @@
         header("Location: ../index.php");
         exit();
     }
+
+    include '../config/db-connect.php';
+
+    $noInduk = $_SESSION['noInduk'];
+    $queryTable = "SELECT 
+                    MAHASISWA.NAMA_MHS,
+                    [USER].ID_USER, 
+                    [USER].PASS,
+                    MAHASISWA.ANGKATAN,
+                    MAHASISWA.PRODI
+                FROM [USER] JOIN MAHASISWA ON [USER].ID_USER = MAHASISWA.ID_USER";
+
+    $resultTable = sqlsrv_query($conn, $queryTable);
+    
+    if (!$resultTable) {
+        die("Query gagal: " . print_r(sqlsrv_errors(), true));;
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -50,49 +68,123 @@
                         <table>
                             <tr>
                                 <th>Nama</th>
-                                <th>NIP</th>
+                                <th>NIM</th>
                                 <th>Kata Sandi</th>
+                                <th>Angkatan</th>
+                                <th>Progam Studi</th>
                                 <th>update</th>
                                 <th>Delete</th>
                             </tr>
+                            <?php
+                                while ($rowTable = sqlsrv_fetch_array($resultTable, SQLSRV_FETCH_ASSOC)) {
+                                    echo "<tr>";
+                                        echo "<td>" . $rowTable['NAMA_MHS'] . "</td>";
+                                        echo "<td>" . $rowTable['ID_USER'] . "</td>";
+                                        echo "<td>******</td>";
+                                        echo "<td>" . $rowTable['ANGKATAN'] . "</td>";
+                                        echo "<td>" . $rowTable['PRODI'] . "</td>";
+                                        echo "<td class='update-col'><a 
+                                            href='#' 
+                                            class='update-btn' 
+                                            data-bs-toggle='modal' 
+                                            data-bs-target='#edit-mhs-modal'
+                                            data-nama = '".$rowTable['NAMA_MHS']."'
+                                            data-nim = '".$rowTable['ID_USER']."'
+                                            data-pass = '".$rowTable['PASS']."'
+                                            data-angkatan = '".$rowTable['ANGKATAN']."'
+                                            data-prodi = '".$rowTable['PRODI']."' >Perbarui</a></td>";
+                                        echo "<td class='delete-col'><a href='../assets/php/delete-mhs.php?delete_id=" . $rowTable['ID_USER'] . "' class='delete-btn' onclick='return confirm(\"Apakah anda yakin untuk menghapus user berikut?\")'>Hapus</a></td>";
+                                    echo "</tr>";
+                                }
+                            ?>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Modal -->
+        <form action="../assets/php/add-mhs.php" method="post" id="form-add-mhs">
+            <div class="modal fade" id="add-mhs-modal" tabindex="-1" aria-labelledby="add-mhs-modalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="add-mhs-modalLabel">Tambah Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" name="name" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="nim">NIM</label>
+                            <input type="nim" name="nim" id="nim">
+                        </div>
+                        <div class="form-group">
+                            <label for="angkatan">Angkatan</label>
+                            <input type="text" name="angkatan" id="angkatan">
+                        </div>
+                        <div class="form-group">
+                            <label for="prodi">Prodi</label>
+                            <select name="prodi" id="prodi">
+                                <option value="D4 Sistem Informasi Bisnis (D4-SIB)">D4 Sistem Informasi Bisnis (D4-SIB)</option>
+                                <option value="D2 Pengembangan Perangkat (Piranti) Lunak Situs (D2-PPLS)">D2 Pengembangan Perangkat (Piranti) Lunak Situs (D2-PPLS)</option>
+                                <option value="D4 Teknik Informatika (D4-TI)">D4 Teknik Informatika (D4-TI)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">Kata Sandi</label>
+                            <input type="pass" name="pass" id="pass">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-primary">Tambah</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 
-    <!-- Modal -->
-    <form action="" method="post" id="form-add-mhs">
-        <div class="modal fade" id="add-mhs-modal" tabindex="-1" aria-labelledby="add-mhs-modalLabel" aria-hidden="true">
+
+    <!-- Modal-edit -->
+    <form action="../assets/php/edit-mhs.php" method="post" id="form-edit-mhs">
+        <div class="modal fade" id="edit-mhs-modal" tabindex="-1" aria-labelledby="edit-mhs-modalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="add-mhs-modalLabel">Tambah Mahasiswa</h5>
+                    <h5 class="modal-title" id="edit-mhs-modalLabel">Tambah Mahasiswa</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                 <div class="form">
                     <div class="form-group">
-                        <label for="name">Nama</label>
-                        <input type="text" name="name" id="name">
+                        <label for="name-edit">Nama</label>
+                        <input type="text" name="name-edit" id="name-edit">
                     </div>
                     <div class="form-group">
-                        <label for="angkatan">Angkatan</label>
-                        <input type="text" name="angkatan" id="angkatan">
+                        <label for="angkatan-edit">Angkatan</label>
+                        <input type="text" name="angkatan-edit" id="angkatan-edit">
                     </div>
                     <div class="form-group">
-                        <label for="nim">NIM</label>
-                        <input type="text" name="nim" id="nim">
+                        <label for="prodi-edit">Prodi</label>
+                        <select name="prodi-edit" id="prodi-edit">
+                            <option value="D4 Sistem Informasi Bisnis (D4-SIB)">D4 Sistem Informasi Bisnis (D4-SIB)</option>
+                            <option value="D2 Pengembangan Perangkat (Piranti) Lunak Situs (D2-PPLS)">D2 Pengembangan Perangkat (Piranti) Lunak Situs (D2-PPLS)</option>
+                            <option value="D4 Teknik Informatika (D4-TI)">D4 Teknik Informatika (D4-TI)</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="pass">Kata Sandi</label>
-                        <input type="pass" name="pass" id="pass">
+                        <label for="pass-edit">Kata Sandi</label>
+                        <input type="pass" name="pass-edit" id="pass-edit">
                     </div>
+                    <input type="hidden" name="nim-edit" id="nim-edit">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                    <button type="submit" class="btn btn-primary">Tambah</button>
+                    <button type="submit" class="btn btn-primary">Konfirmasi</button>
                 </div>
                 </div>
             </div>

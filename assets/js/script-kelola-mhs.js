@@ -31,3 +31,21 @@ function validation() {
         event.target.submit();
     }
 }
+
+var updateBtn = document.querySelectorAll('.update-btn');
+
+updateBtn.forEach(function(button) {
+    button.addEventListener('click', function () { 
+        var nama = button.getAttribute('data-nama');
+        var nip = button.getAttribute('data-nim');
+        var pass = button.getAttribute('data-pass');
+        var angkatan = button.getAttribute('data-angkatan');
+        var prodi = button.getAttribute('data-prodi');
+
+        document.getElementById('name-edit').value = nama;
+        document.getElementById('nim-edit').value = nip;
+        document.getElementById('pass-edit').value = pass;
+        document.getElementById('angkatan-edit').value = angkatan;
+        document.getElementById('prodi-edit').value = prodi;
+    }); 
+});
