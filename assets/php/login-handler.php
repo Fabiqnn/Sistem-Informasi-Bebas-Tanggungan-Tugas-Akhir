@@ -30,7 +30,7 @@
                         $_SESSION['noInduk'] = $rowMhs['NIM'];
                         $_SESSION['prodi'] = $rowMhs['PRODI'];
                         $_SESSION['angkatan'] = $rowMhs['ANGKATAN'];
-                        $_SESSION['profil'] = $rowMhs['PATH_PROFIL_MHS'];
+                        $_SESSION['profil'] = $rowMhs['FOTO_MHS'];
                         $_SESSION['noTelp'] = $rowMhs['NO_WA_MHS'];
                         $_SESSION['email'] = $rowMhs['EMAIL_MHS'];
                         $_SESSION['role'] = $row['ROLE'];
@@ -48,11 +48,11 @@
                         break;
 
                     case 'super_adm':
-                        $_SESSION['nama'] = $rowAdm['NAMA'];
+                        $_SESSION['nama'] = $rowAdm['NAMA_ADM'];
                         $_SESSION['noInduk'] = $rowAdm['NIP'];
-                        $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
-                        $_SESSION['noTelp'] = $rowAdm['NOWA_ADMIN'];
-                        $_SESSION['email'] = $rowAdm['EMAIL'];
+                        $_SESSION['profil'] = $rowAdm['FOTO_ADM'];
+                        $_SESSION['noTelp'] = $rowAdm['NO_WA_ADM'];
+                        $_SESSION['email'] = $rowAdm['EMAIL_ADM'];
                         $_SESSION['role'] = "Super Admin";
                         header("Location: ../../super-admin/super-admin-dashboard.php");
                         break;
@@ -60,9 +60,9 @@
                     case 'adm_prodi':
                         $_SESSION['nama'] = $rowAdm['NAMA'];
                         $_SESSION['noInduk'] = $rowAdm['NIP'];
-                        $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
-                        $_SESSION['noTelp'] = $rowAdm['NOWA_ADMIN'];
-                        $_SESSION['email'] = $rowAdm['EMAIL'];
+                        $_SESSION['profil'] = $rowAdm['FOTO_ADM'];
+                        $_SESSION['noTelp'] = $rowAdm['NO_WA_ADM'];
+                        $_SESSION['email'] = $rowAdm['EMAIL_ADM'];
                         $_SESSION['role'] = "Admin Prodi";
                         header("Location: ../../admin-prodi/dashboard-prodi.php");
                         break;
@@ -70,9 +70,9 @@
                     case 'adm_pustaka':
                         $_SESSION['nama'] = $rowAdm['NAMA'];
                         $_SESSION['noInduk'] = $rowAdm['NIP'];
-                        $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
-                        $_SESSION['noTelp'] = $rowAdm['NOWA_ADMIN'];
-                        $_SESSION['email'] = $rowAdm['EMAIL'];
+                        $_SESSION['profil'] = $rowAdm['FOTO_ADM'];
+                        $_SESSION['noTelp'] = $rowAdm['NO_WA_ADM'];
+                        $_SESSION['email'] = $rowAdm['EMAIL_ADM'];
                         $_SESSION['role'] = "Admin Pustaka";
                         header("Location: ../../admin-pustaka/dashboard-pustaka.php");
                         break;

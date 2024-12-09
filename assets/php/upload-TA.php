@@ -1,16 +1,22 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['logged-in']) || $_SESSION['logged-in'] !== true) {
+    header("Location: ../index.php");
+    exit();
+} 
+
+if ($_SESSION['role'] !== 'mahasiswa') {
+    header("Location: ../index.php");
+    exit();
+}
 include '../../config/db-connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (!isset($_SESSION['id']) || $_SESSION['role'] !== 'mahasiswa') {
-        header("Location: ../index.php");
-        exit();
-    }
 
-    $id_user = $_SESSION['id']; 
+    $id_user = $_SESSION['noInduk']; 
 
-    $upload_dir = '../uploads/';
+    $upload_dir = '../uploaded-file/form-prodi';
     if (!is_dir($upload_dir)) {
         mkdir($upload_dir, 0777, true);
     }
@@ -34,13 +40,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $file_publikasi = uploadFile($_FILES['up-publikasi'], $upload_dir, 'Bukti Publikasi');
 
     $current_timestamp = date('Y-m-d H:i:s');
-    $sql = "INSERT INTO FORM_PRODI (
-                ID_USER,
+    $sql = "INSERT INTO FORM_TA (
+                NIM,
                 FILE_LAPORAN_TA,
-                FILE_PROGRAM_TA,
-                FILE_BUKTI_PUBLIKASI,
-                FORM_PRODI_CREATED_AT,
-                FORM_PRODI_UPDATED_AT
+                PROGRAM_TA,
+                PUBLIKASI,
+                FORM_TA_CREATED,
+                FORM_TA_UPDATED
             ) VALUES (?, ?, ?, ?, ?, ?)";
 
     $params = array(
@@ -55,9 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = sqlsrv_query($conn, $sql, $params);
 
     if ($stmt === false) {
-        die("Gagal menyimpan data ke database: " . print_r(sqlsrv_errors(), true));
+        die("$file_laporan_ta " . print_r(sqlsrv_errors(), true));
     } else {
-        header("Location: success_page.php");
+        header("Location: ../../Mahasiswa/form-TA-lt7.php");
         exit();
     }
 }

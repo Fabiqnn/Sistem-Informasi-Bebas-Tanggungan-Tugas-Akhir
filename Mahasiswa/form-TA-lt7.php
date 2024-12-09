@@ -10,6 +10,18 @@
         header("Location: ../index.php");
         exit();
     }
+
+    include '../config/db-connect.php';
+
+    $queyCheck = "SELECT * FROM FORM_TA 
+                join MAHASISWA ON FORM_TA.NIM = MAHASISWA.NIM 
+                WHERE FORM_TA.NIM = ?";
+    $params = array($_SESSION['noInduk']);
+    $result = sqlsrv_query($conn, $queyCheck, $params);
+
+    $data = sqlsrv_fetch_array($result);
+
+    $isSubmitted = $data ? 'true' : 'false';
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +86,7 @@
                             <span id="publikasi-name">No File Choosen.</span>
                         </div>
 
-                        <button type="submit" id="submit-btn">Kirim</button>
+                        <button type="submit" id="submit-btn" data-submitted="<?= $isSubmitted; ?>" onclick="checkSubmit()">Kirim</button>
                     </form>
                 </div>
             </div>
@@ -101,6 +113,18 @@
                 document.getElementById('publikasi-name').innerHTML = publikasi.files[0].name;
             }
         });
+
+        function checkSubmit() {
+            const submit = document.getElementById('submit-btn');
+            const isSubmited = submit.getAttribute('data-submitted') === 'true';
+    
+            if (isSubmited) {
+                event.preventDefault();
+                const message = document.createElement('p');
+                message.textContent = 'Anda Sudah Mengunggah Formulir.';
+                document.querySelector('.form').appendChild(message);
+            }
+        }
     </script>
 </body>
 </html>
