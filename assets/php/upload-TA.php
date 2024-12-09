@@ -16,9 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $id_user = $_SESSION['noInduk']; 
 
-    $upload_dir = '../uploaded-file/form-prodi';
+    $upload_dir = '../uploaded-file/form-ta';
     if (!is_dir($upload_dir)) {
         mkdir($upload_dir, 0777, true);
+    } else if (!is_writable($upload_dir)) {
+        die("Folder Tidak Bisa Di Tulis");
     }
 
     function uploadFile($file, $upload_dir, $field_name) {

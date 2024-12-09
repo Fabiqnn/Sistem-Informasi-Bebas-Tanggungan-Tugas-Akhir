@@ -10,6 +10,18 @@
         header("Location: ../index.php");
         exit();
     }
+
+    include '../config/db-connect.php';
+
+    $queyCheck = "SELECT * FROM FORM_PRODI 
+                join MAHASISWA ON FORM_PRODI.NIM = MAHASISWA.NIM 
+                WHERE FORM_PRODI.NIM = ?";
+    $params = array($_SESSION['noInduk']);
+    $result = sqlsrv_query($conn, $queyCheck, $params);
+
+    $data = sqlsrv_fetch_array($result);
+
+    $isSubmitted = $data ? 'true' : 'false';
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +72,7 @@
                         <div class="upload-file">
                             <label for="up-skripsi" class="upload-btn">Unggah</label> 
                             <input type="file" name="up-skripsi" id="up-skripsi">
-                            <span class="skripsi-name">No File Choosen.</span>
+                            <span id="skripsi-name">No File Choosen.</span>
                         </div>
                         
                         <label>Bukti Distribusi Laporan PKL</label>
@@ -68,7 +80,7 @@
                         <div class="upload-file">
                             <label for="up-pkl" class="upload-btn">Unggah</label> 
                             <input type="file" name="up-pkl" id="up-pkl">
-                            <span class="pkl-name">No File Choosen.</span>
+                            <span id="pkl-name">No File Choosen.</span>
                         </div>
                         
                         <label>Bukti Bebas Kompen</label>
@@ -76,9 +88,9 @@
                         <div class="upload-file">
                             <label for="up-kompen" class="upload-btn">Unggah</label> 
                             <input type="file" name="up-kompen" id="up-kompen">
-                            <span class="kompen-name">No File Choosen.</span>
+                            <span id="kompen-name">No File Choosen.</span>
                         </div>
-                        <button type="submit" id="submit-btn">Kirim</button>
+                        <button type="submit" id="submit-btn" data-submitted="<?= $isSubmitted; ?>" onclick="checkSubmit()">Kirim</button>
                     </form>
                 </div>
             </div>
@@ -107,6 +119,18 @@
                 document.getElementById('kompen-name').innerHTML = kompen.files[0].name;
             }
         });
+
+        function checkSubmit() {
+            const submit = document.getElementById('submit-btn');
+            const isSubmited = submit.getAttribute('data-submitted') === 'true';
+    
+            if (isSubmited) {
+                event.preventDefault();
+                const message = document.createElement('p');
+                message.textContent = 'Anda Sudah Mengunggah Formulir.';
+                document.querySelector('.form').appendChild(message);
+            }
+        }
     </script>
 </body>
 

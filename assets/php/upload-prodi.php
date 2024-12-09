@@ -2,21 +2,23 @@
 session_start();
 include '../../config/db-connect.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (!isset($_SESSION['id']) || $_SESSION['role'] !== 'mahasiswa') {
-        header("Location: ../index.php");
-        exit();
-    }
+if (!isset($_SESSION['logged-in']) || $_SESSION['logged-in'] !== true) {
+    header("Location: ../index.php");
+    exit();
+} 
 
-    $id_user = $_SESSION['id']; 
-    $upload_dir = '../uploads/';
+if ($_SESSION['role'] !== 'mahasiswa') {
+    header("Location: ../index.php");
+    exit();
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $id_user = $_SESSION['noInduk']; 
+    $upload_dir = '../uploaded-file/form-prodi';
     if (!is_dir($upload_dir)) {
         mkdir($upload_dir, 0777, true);
     }
-
-    $file_buku_skripsi = null;
-    $file_laporan_pkl = null;
-    $file_bukti_bebas_kompen = null;
 
     function uploadFile($file, $upload_dir, $field_name) {
         if (isset($file['name']) && $file['error'] === 0) {
@@ -32,19 +34,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         return null;
     }
 
-    $file_buku_skripsi = uploadFile($_FILES['up-buku-skripsi'], $upload_dir, 'Buku Skripsi');
-    $file_laporan_pkl = uploadFile($_FILES['up-laporan-pkl'], $upload_dir, 'Laporan PKL');
-    $file_bukti_bebas_kompen = uploadFile($_FILES['up-bebas-kompen'], $upload_dir, 'Bukti Bebas Kompen');
+    $file_buku_skripsi = uploadFile($_FILES['up-skripsi'], $upload_dir, 'Buku Skripsi');
+    $file_laporan_pkl = uploadFile($_FILES['up-pkl'], $upload_dir, 'Laporan PKL');
+    $file_bukti_bebas_kompen = uploadFile($_FILES['up-kompen'], $upload_dir, 'Bukti Bebas Kompen');
 
     $current_timestamp = date('Y-m-d H:i:s');
 
     $sql = "INSERT INTO FORM_PRODI (
-                ID_USER,
-                FILE_BUKU_SKRIPSI,
-                FILE_LAPORAN_PKL,
-                FILE_BUKTI_BEBAS_KOMPEN,
-                FORM_PRODI_CREATED_AT,
-                FORM_PRODI_UPDATED_AT
+                NIM,
+                BUKU_SKRIPSI,
+                LAPORAN_PKL,
+                BEBAS_KOMPEN,
+                FORM_PRODI_CREATED,
+                FORM_PRODI_UPDATED
             ) VALUES (?, ?, ?, ?, ?, ?)";
     
     $params = array(
@@ -62,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Gagal menyimpan data ke database: " . print_r(sqlsrv_errors(), true));
     } else {
         echo "Data berhasil disimpan!";
-        header("Location: success_page.php"); 
+        header("Location: ../../Mahasiswa/form-prodi.php"); 
         exit();
     }
 }
