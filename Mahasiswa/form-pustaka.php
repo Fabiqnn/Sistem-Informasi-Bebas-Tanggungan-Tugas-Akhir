@@ -10,6 +10,18 @@
         header("Location: ../index.php");
         exit();
     }
+
+    include '../config/db-connect.php';
+
+    $queyCheck = "SELECT * FROM FORM_PUSTAKA 
+                join MAHASISWA ON FORM_PUSTAKA.NIM = MAHASISWA.NIM 
+                WHERE FORM_PUSTAKA.NIM = ?";
+    $params = array($_SESSION['noInduk']);
+    $result = sqlsrv_query($conn, $queyCheck, $params);
+
+    $data = sqlsrv_fetch_array($result);
+
+    $isSubmitted = $data ? 'true' : 'false';
 ?>
 
 <!DOCTYPE html>
@@ -53,19 +65,7 @@
 
                 <div class="form">
                     <h4>Formulir Tanggungan Pustaka</h4>
-                    <form action="" method="post" enctype="multipart/form-data">
-
-                        <p class="label">Jenjang Pendidikan</p>
-                        <div class="radio-container">
-                            <div class="radio">
-                                <input type="radio" name="jenjang" class="radio-check" id="d-2">
-                                <label for="d-2">D-2</label>
-                            </div>
-                            <div class="radio">
-                                <input type="radio" name="jenjang" class="radio-check" id="d-4">
-                                <label for="d-4">D-4</label>
-                            </div>
-                        </div>
+                    <form action="../assets/php/upload-pustaka.php" method="post" enctype="multipart/form-data">
 
                         <p class="label">Jenis Karya Ilmiah</p>
                         <div class="radio-container">
@@ -82,16 +82,8 @@
                         <label for="judul-skripsi">Judul Karya Ilmiah (Laporan Akhir)</label>
                         <input type="text" name="judul" id="judul-skripsi">
 
-                        <label for="prodi">Program Studi</label>
-                        <select id="prodi">
-                            <option value="D2 Pengembangan Perangkat (Piranti) Lunak Situs ( D2 - PPL )">D2 Pengembangan Perangkat (Piranti) Lunak Situs ( D2 - PPL )</option>
-                            <option value="D4 Teknik Informatika ( D4 - SKL )">D4 Teknik Informatika ( D4 - SKL )</option>
-                            <option value="D4 Sistem Informasi Bisnis ( D4 - SIB )">D4 Sistem Informasi Bisnis ( D4 - SIB )</option>
-                        </select>
-
-
                         <label for="tahun-skripsi">Tahun Karya Ilmiah Akhir Terbit (Laporan Akhir)</label>
-                        <select id="tahun-skripsi">
+                        <select id="tahun-skripsi" name="tahun-skripsi">
                             <option value="2010">2010</option>
                             <option value="2011">2011</option>
                             <option value="2012">2012</option>
@@ -119,7 +111,7 @@
                         <p>Bukti Bebas Kompen</p>
                         <div class="upload-file">
                             <label for="up-kompen" class="upload-btn">Unggah</label>
-                            <input type="file" id="up-kompen">
+                            <input type="file" id="up-kompen" name="up-kompen">
                             <span id="kompen-name">No Choosen File.</span>
                         </div>
 
@@ -131,8 +123,8 @@
                             <p class="last">( Isi Pendahuluan = Cover s.d Halaman Lampiran )</p>
                             <div class="upload-file">
                                 <label for="up-pendahuluan" class="upload-btn">Unggah</label>
-                                <input type="file" id="up-pendahuluan">
-                                <span class="pendahuluan-name">No Choosen File.</span>
+                                <input type="file" id="up-pendahuluan" name="up-pendahuluan">
+                                <span id="pendahuluan-name">No Choosen File.</span>
                             </div>
                         </div>
                         <div class="upload">
@@ -140,8 +132,8 @@
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_11223344_ABSTRAK_2024 ) (TAHUN MENYESUAIKAN)</p>
                             <div class="upload-file">
                                 <label for="up-abstrak" class="upload-btn">Unggah</label>
-                                <input type="file" id="up-abstrak">
-                                <span class="abstrak-name">No Choosen File.</span>
+                                <input type="file" id="up-abstrak" name="up-abstrak">
+                                <span id="abstrak-name">No Choosen File.</span>
                             </div>
                         </div>
                         <div class="upload">
@@ -149,8 +141,8 @@
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB I_2024 ) ( Tahun Menyesuaikan )</p>
                             <div class="upload-file">
                                 <label for="up-bab1" class="upload-btn">Unggah</label>
-                                <input type="file" id="up-bab1">
-                                <span class="bab1-name">No Choosen File.</span>
+                                <input type="file" id="up-bab1" name="up-bab1">
+                                <span id="bab1-name">No Choosen File.</span>
                             </div>
                         </div>
                         <div class="upload">
@@ -158,8 +150,8 @@
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB II_2024 ) ( Tahun Menyesuaikan )</p>
                             <div class="upload-file">
                                 <label for="up-bab2" class="upload-btn">Unggah</label>
-                                <input type="file" id="up-bab2">
-                                <span class="bab2-name">No Choosen File.</span>
+                                <input type="file" id="up-bab2" name="up-bab2">
+                                <span id="bab2-name">No Choosen File.</span>
                             </div>
                         </div>
                         <div class="upload">
@@ -167,8 +159,8 @@
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB III_2024 ) ( Tahun Menyesuaikan )</p>
                             <div class="upload-file">
                                 <label for="up-bab3" class="upload-btn">Unggah</label>
-                                <input type="file" id="up-bab3">
-                                <span class="bab3-name">No Choosen File.</span>
+                                <input type="file" id="up-bab3" name="up-bab3">
+                                <span id="bab3-name">No Choosen File.</span>
                             </div>
                         </div>
                         <div class="upload">
@@ -176,8 +168,8 @@
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB IV_2024 ) ( Tahun Menyesuaikan )</p>
                             <div class="upload-file">
                                 <label for="up-bab4" class="upload-btn">Unggah</label>
-                                <input type="file" id="up-bab4">
-                                <span class="bab4-name">No Choosen File.</span>
+                                <input type="file" id="up-bab4" name="up-bab4">
+                                <span id="bab4-name">No Choosen File.</span>
                             </div>
                         </div>
                         <div class="upload">
@@ -185,8 +177,8 @@
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB V_2024 ) ( Tahun Menyesuaikan )</p>
                             <div class="upload-file">
                                 <label for="up-bab5" class="upload-btn">Unggah</label>
-                                <input type="file" id="up-bab5">
-                                <span class="bab5-name">No Choosen File.</span>
+                                <input type="file" id="up-bab5" name="up-bab5">
+                                <span id="bab5-name">No Choosen File.</span>
                             </div>
                         </div>
                         <div class="upload">
@@ -194,8 +186,8 @@
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB VI_2024 ) ( Tahun Menyesuaikan )</p>
                             <div class="upload-file">
                                 <label for="up-bab6" class="upload-btn">Unggah</label>
-                                <input type="file" id="up-bab6">
-                                <span class="bab6-name">No Choosen File.</span>
+                                <input type="file" id="up-bab6" name="up-bab6">
+                                <span id="bab6-name">No Choosen File.</span>
                             </div>
                         </div>
                         <div class="upload">
@@ -203,8 +195,8 @@
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_BAB VII_2024 ) ( Tahun Menyesuaikan )</p>
                             <div class="upload-file">
                                 <label for="up-bab7" class="upload-btn">Unggah</label>
-                                <input type="file" id="up-bab7">
-                                <span class="bab7-name">No Choosen File.</span>
+                                <input type="file" id="up-bab7" name="up-bab7">
+                                <span id="bab7-name">No Choosen File.</span>
                             </div>
                         </div>
                         <div class="upload">
@@ -212,8 +204,8 @@
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_DAFTAR PUSTAKA_2024 ) ( Tahun Menyesuaikan )</p>
                             <div class="upload-file">
                                 <label for="up-dftr-pustaka" class="upload-btn">Unggah</label>
-                                <input type="file" id="up-dftr-pustaka">
-                                <span class="pustaka-name">No Choosen File.</span>  
+                                <input type="file" id="up-dftr-pustaka" name="up-dftr-pustaka">
+                                <span id="pustaka-name">No Choosen File.</span>  
                             </div>
                         </div>
                         <div class="upload">
@@ -221,8 +213,8 @@
                             <p class="last">Contoh Penulisan Nama File ( D4 TI_2341720170_LAMPIRAN_2024 ) ( Tahun Menyesuaikan )</p>
                             <div class="upload-file">
                                 <label for="up-lampiran" class="upload-btn">Unggah</label>
-                                <input type="file" id="up-lampiran">
-                                <span class="lampiran-name">No Choosen File.</span>
+                                <input type="file" id="up-lampiran" name="up-lampiran">
+                                <span id="lampiran-name">No Choosen File.</span>
                             </div>
                         </div>
                         <div class="upload">
@@ -230,22 +222,22 @@
                             <p class="last">Softcopy Gabungan Laporan Akhir Lengkap dengan TTD, Stempel, Materai 10.000 Mulai COVER - PENDAHULUAN - ABSTRAK - BAB 1 s.d BAB 5 / 7 - DAFTAR PUSTAKA - LAMPIRAN dengan Penulisan nama File ( D4 TI_11223344_KOMPILASI_2024 ) <br>( TAHUN MENYESUAIKAN )</p>
                             <div class="upload-file">
                                 <label for="up-kompilasi" class="upload-btn">Unggah</label>
-                                <input type="file" id="up-kompilasi">
-                                <span class="kompilasi-name">No Choosen File.</span>
+                                <input type="file" id="up-kompilasi" name="up-kompilasi">
+                                <span id="kompilasi-name">No Choosen File.</span>
                             </div>
                         </div>
 
                         <h6>LINK PUBLIKASI JURNAL</h6>
                         <p>Khusus mahasiswa D4 ( Link dimana Jurnal anda dipublikasikan sesuai alamat URL ) ( bila ada silahkan dilampirkan ) (bila tidak ada bisa dikosongkan)</p>
-                        <input type="text" id="link-publikasi">
+                        <input type="text" id="link-publikasi" name="link-publikasi">
 
                         <div class="upload">
                             <h6>SOFTCOPY JURNAL</h6>
                             <p class="last">Khusus Mahasiswa D4 ( Format PDF ) " Jurnal sudah di acc (paraf) oleh Dosen Pembimbing</p>
                             <div class="upload-file">
                                 <label for="up-softcopy-jurnal" class="upload-btn">Unggah</label>
-                                <input type="file" id="up-softcopy-jurnal">
-                                <span class="jurnal-name">No Choosen File.</span>
+                                <input type="file" id="up-softcopy-jurnal" name="up-softcopy-jurnal">
+                                <span id="jurnal-name">No Choosen File.</span>
                             </div>
                         </div>
 
@@ -286,12 +278,12 @@
                             <p class="last">Lampiran Untuk Resi Bukti bahwa Hard Copy Tugas Akhir dikirim melalui Jasa Ekspedisi atau Sejenis yang dialamatkan ke <br> UPT Perpustakaan Politeknik Negeri Malang, Gedung Graha Polinema Lt 3, Jl Soekarno-Hatta No.09 Malang ( Bentuk PDF atau Gambar ). <br> Bagi yang menyerahkan langsung ke Perpustakaan Tidak Perlu Melampirkan atau Upload Bukti Kirim</p>
                             <div class="upload-file">
                                 <label for="up-resi" class="upload-btn">Unggah</label>
-                                <input type="file" id="up-resi">
-                                <span class="resi-name">No Choosen File.</span>
+                                <input type="file" id="up-resi" name="up-resi">
+                                <span id="resi-name">No Choosen File.</span>
                             </div>
                         </div>
 
-                        <button type="submit" id="submit-btn">Kirim</button>
+                        <button type="submit" id="submit-btn" data-submitted="<?= $isSubmitted?>" onclick="checkSubmit()">Kirim</button>
                     </form>
                 </div>
             </div>
@@ -394,7 +386,17 @@
             }
         });
 
-
+        function checkSubmit() {
+            const submit = document.getElementById('submit-btn');
+            const isSubmited = submit.getAttribute('data-submitted') === 'true';
+    
+            if (isSubmited) {
+                event.preventDefault();
+                const message = document.createElement('p');
+                message.textContent = 'Anda Sudah Mengunggah Formulir.';
+                document.querySelector('.form').appendChild(message);
+            }
+        }
     </script>
 </body>
 
