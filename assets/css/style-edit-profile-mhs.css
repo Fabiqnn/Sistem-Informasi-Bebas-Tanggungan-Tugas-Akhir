@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+html {
+    line-height: 2rem;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: block;
+}
+
+.body {
+    margin-top: 50px;
+    height: calc(100vh - 50px);
+}
+
+.card-container {
+    padding: 25px 20px;
+}
+
+.card-container h3 {
+    font-weight: 300;
+    font-size: 25px;
+    color: #14AE5C;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#hr-1 {
+    margin: 0px 10px 20px 10px;
+    opacity: .5;
+}
+
+.profile-img img {
+    width: 215px;
+    height: 300px;
+}
+
+.card-data {
+    display: flex;
+    gap: 20px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.credential-info{ 
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    margin-bottom: 0;
+    align-items: center;
+}
+
+.credential-info h4 {
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.credential-info p {
+    margin-bottom: 0;
+}
+
+.credential {
+   display: flex;
+   flex-direction: column;
+   gap: 24px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.button-container #foto-btn {
+    margin-left: 35px;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 7px;
+    background-color: rgba(217, 217, 217, 1);
+}
+
+.button-container #foto-btn:hover {
+    background-color: rgba(217, 217, 217, .8);
+}
+
+.button-container #profil {
+    padding: 5px 20px;
+    border: none;
+    border-radius: 7px;
+    background-color: rgba(27, 188, 155, 1);
+    color: white;
+}
+
+.button-container #profil:hover {
+    background-color: rgba(27, 188, 155, .8);
+}
+
+/* modal */
+
+.modal-body .profile-img {
+    justify-content: center;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.upload-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-img label {
+    background-color: rgba(44, 44, 44, 1);
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    
+}
+
+.upload-img label:hover {
+    background-color: rgba(44, 44, 44, .8)
+}
+
+.upload-img input {
+    display: none;
+}
+
+.upload-img span {
+    font-weight: 400;
+
+}
+
+/* modal2 */
+.modal-body .input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-form input{
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.input-form select {
+    padding: 7px;
+    margin-bottom: 10px;
+}

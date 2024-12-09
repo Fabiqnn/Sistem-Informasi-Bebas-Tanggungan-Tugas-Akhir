@@ -31,6 +31,8 @@
                         $_SESSION['prodi'] = $rowMhs['PRODI'];
                         $_SESSION['angkatan'] = $rowMhs['ANGKATAN'];
                         $_SESSION['profil'] = $rowMhs['PATH_PROFIL_MHS'];
+                        $_SESSION['noTelp'] = $rowMhs['NO_WA_MHS'];
+                        $_SESSION['email'] = $rowMhs['EMAIL_MHS'];
                         $_SESSION['role'] = $row['ROLE'];
                         header("Location: ../../Mahasiswa/DashboardMahasiswa.php");
                         break;
@@ -39,6 +41,8 @@
                         $_SESSION['nama'] = $rowAdm['NAMA'];
                         $_SESSION['noInduk'] = $rowAdm['NIP'];
                         $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
+                        $_SESSION['noTelp'] = $rowAdm['NOWA_ADMIN'];
+                        $_SESSION['email'] = $rowAdm['EMAIL'];
                         $_SESSION['role'] = "Admin TA";
                         header("Location: ../../admin-TA/dashboard-ta.php");
                         break;
@@ -47,6 +51,8 @@
                         $_SESSION['nama'] = $rowAdm['NAMA'];
                         $_SESSION['noInduk'] = $rowAdm['NIP'];
                         $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
+                        $_SESSION['noTelp'] = $rowAdm['NOWA_ADMIN'];
+                        $_SESSION['email'] = $rowAdm['EMAIL'];
                         $_SESSION['role'] = "Super Admin";
                         header("Location: ../../super-admin/super-admin-dashboard.php");
                         break;
@@ -55,6 +61,8 @@
                         $_SESSION['nama'] = $rowAdm['NAMA'];
                         $_SESSION['noInduk'] = $rowAdm['NIP'];
                         $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
+                        $_SESSION['noTelp'] = $rowAdm['NOWA_ADMIN'];
+                        $_SESSION['email'] = $rowAdm['EMAIL'];
                         $_SESSION['role'] = "Admin Prodi";
                         header("Location: ../../admin-prodi/dashboard-prodi.php");
                         break;
@@ -63,6 +71,8 @@
                         $_SESSION['nama'] = $rowAdm['NAMA'];
                         $_SESSION['noInduk'] = $rowAdm['NIP'];
                         $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
+                        $_SESSION['noTelp'] = $rowAdm['NOWA_ADMIN'];
+                        $_SESSION['email'] = $rowAdm['EMAIL'];
                         $_SESSION['role'] = "Admin Pustaka";
                         header("Location: ../../admin-pustaka/dashboard-pustaka.php");
                         break;

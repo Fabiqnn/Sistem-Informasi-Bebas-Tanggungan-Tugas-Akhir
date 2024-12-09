@@ -1,4 +1,16 @@
 <link rel="stylesheet" href="../assets/css/style-header.css">
+
+<?php 
+    $editProfileLink = "error";
+    if (isset($_SESSION['role'])) {
+        if ($_SESSION['role'] === "mahasiswa") {
+            $editProfileLink = "../Mahasiswa/edit-profile-mhs.php";
+        } else {
+            $editProfileLink = "/kokam";
+        }
+    }
+?>
+
 <header>
     <h1>
         <div class="logo">
@@ -7,7 +19,7 @@
         SIBETA
     </h1>
     <div class="username"> 
-        <a href="edit-profile.php">
+        <a href="<?= $editProfileLink ?>">
             <div class="pfp-img">
                 <?php 
                     if (isset($_SESSION['profil'])) {
