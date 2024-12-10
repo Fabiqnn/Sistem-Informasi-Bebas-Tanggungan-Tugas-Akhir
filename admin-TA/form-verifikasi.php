@@ -6,10 +6,33 @@
         exit();
     } 
 
-    if ($_SESSION['role'] !== 'adm_lt7') {
+    if ($_SESSION['role'] !== 'Admin TA') {
         header("Location: ../index.php");
         exit();
     }
+
+    include '../config/db-connect.php';
+
+    if (isset($_GET['id'])) {
+        $idMhs = $_GET['id'];
+
+        $queryCheck = " SELECT * FROM FORM_TA 
+                        JOIN MAHASISWA ON FORM_TA.NIM = MAHASISWA.NIM
+                        WHERE FORM_TA.NIM = ?";
+        $params = array($idMhs);
+        $result = sqlsrv_query($conn, $queryCheck, $params);
+
+        if ($result) {
+            $getData = sqlsrv_fetch_array($result);
+
+            $skripsi = $getData['FILE_LAPORAN_TA'];
+            $program = $getData['PROGRAM_TA'];
+            $publikasi = $getData['PUBLIKASI'];
+        } else {
+            die(print_r(sqlsrv_errors(), true));
+        }
+    } 
+    
 ?>
 
 <!DOCTYPE html>
@@ -37,10 +60,94 @@
                 <h3>Verifikasi Upload Mahasiswa</h3>
                 <hr id="hr-1">
                 <div class="form-verifikasi">
-                    
+                    <h4>Formulir Tanggungan Skripsi/TA</h4>
+
+                    <label>Nama</label>
+                    <div class="box">
+                        <h5><?= $getData['NAMA_MHS']?></h5>
+                    </div>
+
+                    <label>NIM</label>
+                    <div class="box">
+                        <h5><?= $getData['NIM']?></h5>
+                    </div>
+
+                    <label>No. Whatsapp</label>
+                    <div class="box">
+                        <h5><?= $getData['NO_WA_MHS']?></h5>
+                    </div>
+
+                    <label>Email</label>
+                    <div class="box">
+                        <h5><?= $getData['EMAIL_MHS']?></h5>
+                    </div>
+
+                    <!-- download button -->
+                    <label>Laporan Tugas Akhir/Skripsi</label>
+                    <div class="download-btn">
+                        <a href="../assets/php/download-handler.php?file=<?= $skripsi?>">Download</a>
+                        <span id="skripsi-name"><?= $skripsi;?></span>
+                    </div>
+
+                    <label>Program/Aplikasi Tugas Akhir</label>
+                    <div class="download-btn">
+                        <a href="../assets/php/download-handler.php?file=<?= $program?>">Download</a>
+                        <span id="program-name"><?= $program;?></span>
+                    </div>
+
+                    <label>Bukti Publikasi</label>
+                    <div class="download-btn">
+                        <a href="../assets/php/download-handler.php?file=<?= $publikasi?>">Download</a>
+                        <span id="publikasi-name"><?= $publikasi;?></span>
+                    </div>
+
+                    <hr>
+
+                    <!-- form verifikasi -->
+                    <form action="../assets/php/verifikasi-adm.php?id=<?= $idMhs?>" method="post">
+                        <div class="form-verif">
+                            <div class="input">
+                                <label for="catatan">Catatan Untuk Mahasiswa</label>
+                                <input type="text" name="catatan" id="catatan">
+                            </div>
+                            <div class="status-verifikasi">
+                                <button type="submit" name="status" value="Disetujui" id="setuju">Setuju</button>
+                                <button type="submit" name="status" value="Ditolak" id="tolak">Tolak</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        const btnSetuju = document.getElementById('setuju');
+        const btnTolak = document.getElementById('tolak');
+
+        btnSetuju.addEventListener("click", function (event) {
+
+            if (confirm("Apakah Anda yakin ingin menyetujui?")) {
+                const form = event.target.closest("form");
+                if (form) {
+                    form.submit();
+                }
+            } else {
+                event.preventDefault();
+            }
+        });
+
+        btnTolak.addEventListener("click", function (event) {
+
+            if (confirm("Apakah Anda yakin ingin menolak?")) {
+                const form = event.target.closest("form");
+                if (form) {
+                    form.submit(); 
+                }
+            } else {
+                event.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>

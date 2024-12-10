@@ -6,9 +6,23 @@
         exit();
     } 
 
-    if ($_SESSION['role'] !== 'adm_lt7') {
+    if ($_SESSION['role'] !== 'Admin TA') {
         header("Location: ../index.php");
         exit();
+    }
+
+    include '../config/db-connect.php';
+
+    $queryCheck = " SELECT * FROM FORM_TA 
+                    JOIN MAHASISWA ON FORM_TA.NIM = MAHASISWA.NIM
+                    LEFT JOIN VERIFIKASI ON FORM_TA.ID_VERIFIKASI = VERIFIKASI.ID_VERIFIKASI";
+
+    $result = sqlsrv_query($conn, $queryCheck);
+
+    if ($result) {
+        $getData = sqlsrv_fetch_array($result);
+    } else {
+        die(print_r(sqlsrv_errors(), true));
     }
 ?>
 
@@ -47,7 +61,32 @@
                                 <th>NIM</th>
                                 <th>Email</th>
                                 <th>No. Telp</th>
+                                <th>Statuts Verifikasi</th>
                                 <th>Cek Data</th>
+                            </tr>
+                            <a href=""></a>
+                            <tr>
+                                <?php
+                                if (isset($getData)) {
+                                    echo "<td>". $getData['NAMA_MHS']. "</td>";
+                                    echo "<td>". $getData['NIM'] ."</td>";
+                                    echo "<td>". $getData['EMAIL_MHS']. "</td>";
+                                    echo "<td>". $getData['NO_WA_MHS']. "</td>";
+                                    if (isset($getData['STATUS_VERIFIKASI'])) {
+                                        $status = $getData['STATUS_VERIFIKASI'];
+                                        if ($status = "Disetuju") {
+                                            echo "<td> <p id='setuju'>". $status. "</p></td>";
+                                        } else {
+                                            echo "<td> <p id='tolak'>". $status. "</p></td>";
+                                        }
+                                        
+                                        
+                                    } else {
+                                        echo "<td> Belum Di Verifikasi </td>";
+                                    }
+                                    echo "<td id='check-form'> <a href='form-verifikasi.php?id=" . $getData['NIM'] ."'>Cek Data Upload Mahasiswa</a></td>";
+                                }
+                                ?>
                             </tr>
                         </table>
                     </div>

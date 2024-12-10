@@ -4,15 +4,15 @@ $verifikasiLink = 'error';
 
 if (isset($_SESSION['role'])) {
     switch ($_SESSION['role']) {
-        case 'adm_lt7':
+        case 'Admin TA':
             $dashboardLink = '../admin-TA/dashboard-ta.php';
             $verifikasiLink = '../admin-TA/verifikasi-ta.php';
             break;
-        case 'adm_prodi':
+        case 'Admin Prodi':
             $dashboardLink = '../admin-prodi/dashboard-prodi.php';
             $verifikasiLink = '../admin-prodi/verifikasi-prodi.php';
             break;
-        case 'adm_pustaka':
+        case 'Admin Pustaka':
             $dashboardLink = '../admin-pustaka/dashboard-pustaka.php';
             $verifikasiLink = '../admin-pustaka/verifikasi-pustaka.php';
             break;

@@ -6,7 +6,7 @@
         exit();
     } 
 
-    if ($_SESSION['role'] !== 'adm_pustaka') {
+    if ($_SESSION['role'] !== 'Admin Pustaka') {
         header("Location: ../index.php");
         exit();
     }

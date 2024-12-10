@@ -15,7 +15,7 @@ if ($_SESSION['role'] !== 'mahasiswa') {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $id_user = $_SESSION['noInduk']; 
-    $upload_dir = '../uploaded-file/form-pustaka';
+    $upload_dir = '../uploaded-file/form-pustaka/';
     if (!is_dir($upload_dir)) {
         mkdir($upload_dir, 0777, true);
     }
