@@ -1,20 +1,24 @@
 <?php
 $dashboardLink = 'error';
 $verifikasiLink = 'error';
+$riwayatVerifLink = 'error';
 
 if (isset($_SESSION['role'])) {
     switch ($_SESSION['role']) {
         case 'Admin TA':
             $dashboardLink = '../admin-TA/dashboard-ta.php';
             $verifikasiLink = '../admin-TA/verifikasi-ta.php';
+            $riwayatVerifLink = '../admin-TA/verifikasi-ta.php#riwayat-verif';
             break;
         case 'Admin Prodi':
             $dashboardLink = '../admin-prodi/dashboard-prodi.php';
             $verifikasiLink = '../admin-prodi/verifikasi-prodi.php';
+            $riwayatVerifLink;
             break;
         case 'Admin Pustaka':
             $dashboardLink = '../admin-pustaka/dashboard-pustaka.php';
             $verifikasiLink = '../admin-pustaka/verifikasi-pustaka.php';
+            $riwayatVerifLink;
             break;
         default:
             // Tetap gunakan fallback (error.php)
@@ -43,7 +47,7 @@ if (isset($_SESSION['role'])) {
             </a>
         </li>
         <li class="sidebar-item">
-            <a href="kelola-admin.php">
+            <a href="<?php echo $riwayatVerifLink?>">
                 <i class="lni lni-folder-1"></i>
                 <span>Riwayat Verifikasi</span>
             </a>
