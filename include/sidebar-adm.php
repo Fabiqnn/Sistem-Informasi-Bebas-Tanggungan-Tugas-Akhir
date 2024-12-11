@@ -13,12 +13,12 @@ if (isset($_SESSION['role'])) {
         case 'Admin Prodi':
             $dashboardLink = '../admin-prodi/dashboard-prodi.php';
             $verifikasiLink = '../admin-prodi/verifikasi-prodi.php';
-            $riwayatVerifLink;
+            $riwayatVerifLink = '../admin-prodi/verifikasi-prodi.php#riwayat-verif';
             break;
         case 'Admin Pustaka':
             $dashboardLink = '../admin-pustaka/dashboard-pustaka.php';
             $verifikasiLink = '../admin-pustaka/verifikasi-pustaka.php';
-            $riwayatVerifLink;
+            $riwayatVerifLink; '../admin-pustaka/verifikasi-pustaka.php#riwayat-verif';
             break;
         default:
             // Tetap gunakan fallback (error.php)
