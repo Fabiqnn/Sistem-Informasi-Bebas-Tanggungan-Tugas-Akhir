@@ -10,6 +10,52 @@
         header("Location: ../index.php");
         exit();
     }
+
+    include '../config/db-connect.php';
+
+    $queryTa = "SELECT 
+                    [ADMIN].NAMA_ADM, 
+                    [ADMIN].EMAIL_ADM, 
+                    [ADMIN].NO_WA_ADM, 
+                    [USER].[ROLE], 
+                    VERIFIKASI.STATUS_VERIFIKASI, 
+                    VERIFIKASI.catatan 
+                FROM VERIFIKASI
+                JOIN FORM_TA ON FORM_TA.ID_VERIFIKASI = VERIFIKASI.ID_VERIFIKASI
+                JOIN [ADMIN] ON VERIFIKASI.NIP = [ADMIN].NIP
+                JOIN [USER] on [ADMIN].ID_USER = [USER].ID_USER
+                WHERE FORM_TA.NIM = ?";
+    $queryProdi = "SELECT 
+                    [ADMIN].NAMA_ADM, 
+                    [ADMIN].EMAIL_ADM, 
+                    [ADMIN].NO_WA_ADM, 
+                    [USER].[ROLE], 
+                    VERIFIKASI.STATUS_VERIFIKASI, 
+                    VERIFIKASI.catatan 
+                FROM VERIFIKASI
+                JOIN FORM_PRODI ON FORM_PRODI.ID_VERIFIKASI = VERIFIKASI.ID_VERIFIKASI
+                JOIN [ADMIN] ON VERIFIKASI.NIP = [ADMIN].NIP
+                JOIN [USER] on [ADMIN].ID_USER = [USER].ID_USER
+                WHERE FORM_PRODI.NIM = ?";
+    $queryPustaka = "SELECT 
+                    [ADMIN].NAMA_ADM, 
+                    [ADMIN].EMAIL_ADM, 
+                    [ADMIN].NO_WA_ADM, 
+                    [USER].[ROLE], 
+                    VERIFIKASI.STATUS_VERIFIKASI, 
+                    VERIFIKASI.catatan 
+                FROM VERIFIKASI
+                JOIN FORM_PUSTAKA ON FORM_PUSTAKA.ID_VERIFIKASI = VERIFIKASI.ID_VERIFIKASI
+                JOIN [ADMIN] ON VERIFIKASI.NIP = [ADMIN].NIP
+                JOIN [USER] on [ADMIN].ID_USER = [USER].ID_USER
+                WHERE FORM_PUSTAKA.NIM = ?";
+
+    $params = array($_SESSION['noInduk']);
+
+    $resultTa = sqlsrv_query($conn, $queryTa, $params);
+    $resultProdi = sqlsrv_query($conn, $queryProdi, $params);
+    $resultPustaka = sqlsrv_query($conn, $queryPustaka, $params);
+
 ?>
 
 <!DOCTYPE html>
@@ -93,6 +139,20 @@
                                 <th>Catatan</th>
                                 <th>Update</th>
                             </tr>
+                            <tr>
+                                <?php
+                                    if ($resultTa) {
+                                        $row = sqlsrv_fetch_array($resultTa);
+                                        echo "<td>" . $row['NAMA_ADM']. "</td>";
+                                        echo "<td>" . $row['EMAIL_ADM'] . "</td>";
+                                        echo "<td>" . $row['NO_WA_ADM'] . "</td>";
+                                        echo "<td>" . $row['ROLE'] . "</td>";
+                                        echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
+                                        echo "<td>" . $row['catatan'] . "</td>";
+                                        echo "<td><a>Perbarui</a></td>";
+                                    }
+                                ?>
+                            </tr>
                         </table>
                     </div>
 
@@ -112,6 +172,20 @@
                                 <th>Catatan</th>
                                 <th>Update</th>
                             </tr>
+                            <tr>
+                            <?php
+                                if ($resultProdi) {
+                                    $row = sqlsrv_fetch_array($resultProdi);
+                                    echo "<td>" . $row['NAMA_ADM']. "</td>";
+                                    echo "<td>" . $row['EMAIL_ADM'] . "</td>";
+                                    echo "<td>" . $row['NO_WA_ADM'] . "</td>";
+                                    echo "<td>" . $row['ROLE'] . "</td>";
+                                    echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
+                                    echo "<td>" . $row['catatan'] . "</td>";
+                                    echo "<td><a>Perbarui</a></td>";
+                                }
+                            ?>
+                            </tr>
                         </table>
                     </div>
 
@@ -130,6 +204,20 @@
                                 <th>Status Verifikasi</th>
                                 <th>Catatan</th>
                                 <th>Update</th>
+                            </tr>
+                            <tr>
+                            <?php
+                                if ($resultPustaka) {
+                                    $row = sqlsrv_fetch_array($resultPustaka);
+                                    echo "<td>" . $row['NAMA_ADM']. "</td>";
+                                    echo "<td>" . $row['EMAIL_ADM'] . "</td>";
+                                    echo "<td>" . $row['NO_WA_ADM'] . "</td>";
+                                    echo "<td>" . $row['ROLE'] . "</td>";
+                                    echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
+                                    echo "<td>" . $row['catatan'] . "</td>";
+                                    echo "<td><a>Perbarui</a></td>";
+                                }
+                            ?>
                             </tr>
                         </table>
                     </div>

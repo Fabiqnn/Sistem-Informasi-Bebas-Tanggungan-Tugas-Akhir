@@ -141,7 +141,7 @@ body {
     padding: 0 8px;
 }
 
-table {
+/* table {
     text-align: left;
     width: 100%;
     border-collapse: collapse;
@@ -153,4 +153,66 @@ table th {
     font-weight: 600;
     font-size: 14px;
     padding: 3px 7px;
+} */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: none;
+}
+
+table th {
+    font-size: 16px;
+    padding: 5px 7px;
+}
+
+table td {
+    font-size: 14px;
+    padding: 3px 7px;
+}
+
+table th, table td {
+    background-color: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    color: #3a3e42;
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+table th:nth-child(1), table td:nth-child(1) { width: 15%; } /* Nama Admin */
+table th:nth-child(2), table td:nth-child(2) { width: 20%; } /* Email */
+table th:nth-child(3), table td:nth-child(3) { width: 15%; } /* No Wa */
+table th:nth-child(4), table td:nth-child(4) { width: 10%; } /* Jabatan */
+table th:nth-child(5), table td:nth-child(5) { width: 15%; } /* Status Verifikasi */
+table th:nth-child(6), table td:nth-child(6) { width: 20%; } /* Catatan */
+table th:nth-child(7), table td:nth-child(7) { width: 5%;  } /* Update */
+
+table tr {
+    transition: background-color 0.3s ease;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f4f6;
+}
+
+table tr:hover {
+    background-color: #e9ecef;
+}
+
+table td:last-child a {
+    display: inline-block;
+    padding: 3px 10px;
+    background-color: rgba(254, 183, 75, 1);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;;
+    transition: background-color 0.3s ease;
+}
+
+table td:last-child a:hover {
+    background-color: rgba(254, 183, 75, .8);
+    cursor: pointer;
 }

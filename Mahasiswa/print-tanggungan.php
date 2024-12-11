@@ -35,7 +35,7 @@
     } else {
         $statusTa = sqlsrv_fetch_array($resultTa);
         $statusProdi = sqlsrv_fetch_array($resultProdi);
-        $statusPustaka = sqlsrv_fetch_array($resultTa);
+        $statusPustaka = sqlsrv_fetch_array($resultPustaka);
     }
 ?>
 
