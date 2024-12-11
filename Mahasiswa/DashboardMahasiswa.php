@@ -143,13 +143,15 @@
                                 <?php
                                     if ($resultTa) {
                                         $row = sqlsrv_fetch_array($resultTa);
-                                        echo "<td>" . $row['NAMA_ADM']. "</td>";
-                                        echo "<td>" . $row['EMAIL_ADM'] . "</td>";
-                                        echo "<td>" . $row['NO_WA_ADM'] . "</td>";
-                                        echo "<td>" . $row['ROLE'] . "</td>";
-                                        echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
-                                        echo "<td>" . $row['catatan'] . "</td>";
-                                        echo "<td><a>Perbarui</a></td>";
+                                        if (isset($row)) {
+                                            echo "<td>" . $row['NAMA_ADM']. "</td>";
+                                            echo "<td>" . $row['EMAIL_ADM'] . "</td>";
+                                            echo "<td>" . $row['NO_WA_ADM'] . "</td>";
+                                            echo "<td>" . $row['ROLE'] . "</td>";
+                                            echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
+                                            echo "<td>" . $row['catatan'] . "</td>";
+                                            echo "<td><a>Perbarui</a></td>";
+                                        }
                                     }
                                 ?>
                             </tr>
@@ -176,13 +178,15 @@
                             <?php
                                 if ($resultProdi) {
                                     $row = sqlsrv_fetch_array($resultProdi);
-                                    echo "<td>" . $row['NAMA_ADM']. "</td>";
-                                    echo "<td>" . $row['EMAIL_ADM'] . "</td>";
-                                    echo "<td>" . $row['NO_WA_ADM'] . "</td>";
-                                    echo "<td>" . $row['ROLE'] . "</td>";
-                                    echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
-                                    echo "<td>" . $row['catatan'] . "</td>";
-                                    echo "<td><a>Perbarui</a></td>";
+                                    if (isset($row)) {
+                                        echo "<td>" . $row['NAMA_ADM']. "</td>";
+                                        echo "<td>" . $row['EMAIL_ADM'] . "</td>";
+                                        echo "<td>" . $row['NO_WA_ADM'] . "</td>";
+                                        echo "<td>" . $row['ROLE'] . "</td>";
+                                        echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
+                                        echo "<td>" . $row['catatan'] . "</td>";
+                                        echo "<td><a>Perbarui</a></td>";
+                                    }
                                 }
                             ?>
                             </tr>
@@ -209,13 +213,15 @@
                             <?php
                                 if ($resultPustaka) {
                                     $row = sqlsrv_fetch_array($resultPustaka);
-                                    echo "<td>" . $row['NAMA_ADM']. "</td>";
-                                    echo "<td>" . $row['EMAIL_ADM'] . "</td>";
-                                    echo "<td>" . $row['NO_WA_ADM'] . "</td>";
-                                    echo "<td>" . $row['ROLE'] . "</td>";
-                                    echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
-                                    echo "<td>" . $row['catatan'] . "</td>";
-                                    echo "<td><a>Perbarui</a></td>";
+                                    if (isset($row)) {
+                                        echo "<td>" . $row['NAMA_ADM']. "</td>";
+                                        echo "<td>" . $row['EMAIL_ADM'] . "</td>";
+                                        echo "<td>" . $row['NO_WA_ADM'] . "</td>";
+                                        echo "<td>" . $row['ROLE'] . "</td>";
+                                        echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
+                                        echo "<td>" . $row['catatan'] . "</td>";
+                                        echo "<td><a>Perbarui</a></td>";
+                                    }
                                 }
                             ?>
                             </tr>

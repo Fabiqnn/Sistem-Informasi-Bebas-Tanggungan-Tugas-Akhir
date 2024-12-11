@@ -141,20 +141,6 @@ body {
     padding: 0 8px;
 }
 
-/* table {
-    text-align: left;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table th {
-    background-color: rgba(255, 255, 255, 1);
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    font-weight: 600;
-    font-size: 14px;
-    padding: 3px 7px;
-} */
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -187,8 +173,8 @@ table th:nth-child(2), table td:nth-child(2) { width: 20%; } /* Email */
 table th:nth-child(3), table td:nth-child(3) { width: 15%; } /* No Wa */
 table th:nth-child(4), table td:nth-child(4) { width: 10%; } /* Jabatan */
 table th:nth-child(5), table td:nth-child(5) { width: 15%; } /* Status Verifikasi */
-table th:nth-child(6), table td:nth-child(6) { width: 20%; } /* Catatan */
-table th:nth-child(7), table td:nth-child(7) { width: 5%;  } /* Update */
+table th:nth-child(6), table td:nth-child(6) { width: 18%; } /* Catatan */
+table th:nth-child(7), table td:nth-child(7) { width: 7%;  } /* Update */
 
 table tr {
     transition: background-color 0.3s ease;
