@@ -71,17 +71,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $linkPublik = $_POST['link-publikasi'];
     $izin = $_POST['izin'];
     $penyerahan = $_POST['penyerahan'];
+    $jenisKarya = $_POST['karya-ilmiah'];
 
     $current_timestamp = date('Y-m-d H:i:s');
 
     $sql = "INSERT INTO FORM_PUSTAKA (
                 NIM,
+                JENIS_KARYA,
                 JUDUL_KARYA_ILMIAH,
                 TAHUN_KARYA_ILMIAH,
                 TANGGAL_UJIAN_SKRIPSI,
                 TANGGAL_YUDISIUM,
                 IZIN_MENGOLAH,
                 PENYERAHAN_SKRIPSI,
+                LINK_JURNAL,
+                FILE_PENDAHULUAN,
                 FILE_BEBAS_KOMPEN,
                 FILE_ABSTRAK,
                 BAB_1,
@@ -97,18 +101,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 FILE_SOFTCOPY_JURNAL,
                 RESI_PENGIRIMAN_SKRIPSI,
                 FORM_PUSTAKA_CREATED
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
     $params = array(
         $id_user,
+        $jenisKarya,
         $judul,
         $tahunTerbit,
         $tglSkripsi,
         $tglYudisium,
         $izin,
         $penyerahan,
-        $filePath['bebas-kompen'],
+        $linkPublik,
         $filePath['pendahuluan'],
+        $filePath['bebas-kompen'],
         $filePath['abstrak'],
         $filePath['bab1'],
         $filePath['bab2'],
@@ -128,6 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = sqlsrv_query($conn, $sql, $params);
 
     if ($stmt === false) {
+        echo $current_timestamp . " ";
         die("Gagal menyimpan data ke database: " . print_r(sqlsrv_errors(), true));
     } else {
         echo "Data berhasil disimpan!";

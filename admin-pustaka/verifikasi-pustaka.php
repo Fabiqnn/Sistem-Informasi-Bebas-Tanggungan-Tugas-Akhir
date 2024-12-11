@@ -11,6 +11,19 @@
         exit();
     }
 
+    include '../config/db-connect.php';
+
+    $queryCheck = " SELECT * FROM FORM_PUSTAKA 
+                    JOIN MAHASISWA ON FORM_PUSTAKA.NIM = MAHASISWA.NIM
+                    LEFT JOIN VERIFIKASI ON FORM_PUSTAKA.ID_VERIFIKASI = VERIFIKASI.ID_VERIFIKASI";
+
+    $result = sqlsrv_query($conn, $queryCheck);
+
+    if ($result) {
+        $getData = sqlsrv_fetch_array($result);
+    } else {
+        die(print_r(sqlsrv_errors(), true));
+    }
 ?>
 
 <!DOCTYPE html>
@@ -36,10 +49,10 @@
 
         <div class="card-container">
             <h3>Verifikasi Upload Mahasiswa</h3>
-            <hr id="hr-1">
+            <hr class="hr-1">
             <div class="table">
                 <div class="table-header">
-                    <h4>Form Bebas Tanggungan Prodi</h4>
+                    <h4>Form Bebas Tanggungan Pustaka</h4>
                 </div>
                 <div class="table-content">
                     <table>
@@ -48,12 +61,67 @@
                             <th>NIM</th>
                             <th>Email</th>
                             <th>No. Telp</th>
+                            <th>Statuts Verifikasi</th>
                             <th>Cek Data</th>
+                        </tr>
+                        <tr>
+                            <?php
+                                 if (isset($getData) && empty(isset($getData['STATUS_VERIFIKASI']))) {
+                                    echo "<td>". $getData['NAMA_MHS']. "</td>";
+                                    echo "<td>". $getData['NIM'] ."</td>";
+                                    echo "<td>". $getData['EMAIL_MHS']. "</td>";
+                                    echo "<td>". $getData['NO_WA_MHS']. "</td>";
+                                    echo "<td> Belum Di Verifikasi </td>";
+                                    echo "<td id='check-form'> <a href='form-verifikasi-pustaka.php?id=" . $getData['NIM'] ."'>Cek Data Upload Mahasiswa</a></td>";
+                                }
+                            ?>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
+
+        <!-- tabel riwayat -->
+        <div class="card-container2" id="riwayat-verif">
+                <h3>Riwayat Verifikasi Upload Mahasiswa</h3>
+                <hr class="hr-1">
+                <div class="table2">
+                    <div class="table-header">
+                        <h4>Form Bebas Tanggungan Pustaka</h4>
+                    </div>
+                    <div class="table-content">
+                        <table>
+                            <tr>
+                                <th>Nama Pengguna</th>
+                                <th>NIM</th>
+                                <th>Email</th>
+                                <th>No. Telp</th>
+                                <th>Statuts Verifikasi</th>
+                                <th>Update Data</th>
+                            </tr>
+                            <a href=""></a>
+                            <tr>
+                                <?php
+                                if (isset($getData) && isset($getData['STATUS_VERIFIKASI'])) {
+                                    $status = $getData['STATUS_VERIFIKASI'];
+
+                                    echo "<td>". $getData['NAMA_MHS']. "</td>";
+                                    echo "<td>". $getData['NIM'] ."</td>";
+                                    echo "<td>". $getData['EMAIL_MHS']. "</td>";
+                                    echo "<td>". $getData['NO_WA_MHS']. "</td>";
+                                    if ($status === "Disetujui") {
+                                        echo "<td> <p id='setuju'>". $status. "</p></td>";
+                                    } else {
+                                        echo "<td> <p id='tolak'>". $status. "</p></td>";
+                                    }
+                                    echo "<td id='check-form'> <a href='form-update-verifikasi-pustaka.php?id=" . $getData['NIM'] ."'>Update Verifikasi Mahasiswa</a></td>";
+                                }
+                                ?>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
     </div>
 </div>
 </body>

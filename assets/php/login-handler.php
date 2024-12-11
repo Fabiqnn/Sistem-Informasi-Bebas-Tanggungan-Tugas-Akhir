@@ -68,7 +68,7 @@
                         break;
                         
                     case 'adm_pustaka':
-                        $_SESSION['nama'] = $rowAdm['NAMA_AD'];
+                        $_SESSION['nama'] = $rowAdm['NAMA_ADM'];
                         $_SESSION['noInduk'] = $rowAdm['NIP'];
                         $_SESSION['profil'] = $rowAdm['FOTO_ADM'];
                         $_SESSION['noTelp'] = $rowAdm['NO_WA_ADM'];

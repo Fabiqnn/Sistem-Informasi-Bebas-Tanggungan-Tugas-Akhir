@@ -18,7 +18,7 @@ if (isset($_SESSION['role'])) {
         case 'Admin Pustaka':
             $dashboardLink = '../admin-pustaka/dashboard-pustaka.php';
             $verifikasiLink = '../admin-pustaka/verifikasi-pustaka.php';
-            $riwayatVerifLink; '../admin-pustaka/verifikasi-pustaka.php#riwayat-verif';
+            $riwayatVerifLink = '../admin-pustaka/verifikasi-pustaka.php#riwayat-verif';
             break;
         default:
             // Tetap gunakan fallback (error.php)

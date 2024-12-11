@@ -55,6 +55,7 @@ body {
 .informasi-admin h5 {
     font-weight: 400;
     font-size: 14px;
+    margin-bottom: 10px;
 }
 
 .informasi-admin hr {

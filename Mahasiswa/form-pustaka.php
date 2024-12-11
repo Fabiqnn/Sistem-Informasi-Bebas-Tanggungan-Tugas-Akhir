@@ -70,11 +70,11 @@
                         <p class="label">Jenis Karya Ilmiah</p>
                         <div class="radio-container">
                             <div class="radio">
-                                <input type="radio" name="karya-ilmiah" class="radio-check" id="laporan-d2">
+                                <input type="radio" name="karya-ilmiah" class="radio-check" id="laporan-d2" value="Laporan Akhir (D-2)">
                                 <label for="laporan-d2">Laporan Akhir (D-2)</label>
                             </div>
                             <div class="radio">
-                                <input type="radio" name="karya-ilmiah" class="radio-check" id="laporan-d4">
+                                <input type="radio" name="karya-ilmiah" class="radio-check" id="laporan-d4" value="Skripsi (D-4)">
                                 <label for="laporan-d4">Skripsi (D-4)</label>
                             </div>
                         </div>
@@ -244,11 +244,11 @@
                         <p class="label">Dengan ini saya memberikan ijin kepada perpustakaan polinema untuk mengolah Laporan Akhir / Tugas Akhir saya dengan ketentuan yang ada untuk kemajuan ilmu pengetahuan dan institusi.</p>
                         <div class="radio-container">
                             <div class="radio">
-                                <input type="radio" name="izin" class="radio-check" id="iya">
+                                <input type="radio" name="izin" class="radio-check" id="iya" value="Diperbolehkan">
                                 <label for="iya">Diperbolehkan</label>
                             </div>
                             <div class="radio">
-                                <input type="radio" name="izin" class="radio-check" id="tidak">
+                                <input type="radio" name="izin" class="radio-check" id="tidak" value="Tidak Diperbolehkan">
                                 <label for="tidak">Tidak Diperbolehkan</label>
                             </div>
                         </div>
@@ -264,11 +264,11 @@
                         <p class="label">Hard Copy Laporan Akhir/ Skripsi/ Tesis Diserahkan Secara</p>
                         <div class="radio-container">
                             <div class="radio">
-                                <input type="radio" name="penyerahan" class="radio-check" id="langsung">
+                                <input type="radio" name="penyerahan" class="radio-check" id="langsung" value="langsung">
                                 <label for="langsung">Datang Langsung Ke Perpustakaan</label>
                             </div>
                             <div class="radio">
-                                <input type="radio" name="penyerahan" class="radio-check" id="tdk-langsung">
+                                <input type="radio" name="penyerahan" class="radio-check" id="tdk-langsung" value="Tidak Langsung">
                                 <label for="tdk-langsung">Dikirim Melalui Jasa Ekspedisi</label>
                             </div>
                         </div>

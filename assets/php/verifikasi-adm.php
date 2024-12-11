@@ -93,13 +93,13 @@ session_start();
                     $row = sqlsrv_fetch_array($result);
                     $getVerifikasiId = $row['ID_VERIFIKASI'];
     
-                    $queryUpdate = "UPDATE FORM_TA
+                    $queryUpdate = "UPDATE FORM_PUSTAKA
                                     SET ID_VERIFIKASI = ?
                                     WHERE NIM = ?";
                     $paramsUpdate = array($getVerifikasiId, $nim);
                     $resultUpdate = sqlsrv_query($conn, $queryUpdate, $paramsUpdate);
                     if ($resultUpdate) {
-                        header("Location: ../../admin-TA/verifikasi-ta.php");
+                        header("Location: ../../admin-pustaka/verifikasi-pustaka.php");
                     } else {
                         echo "Tidak Berhasil melakukan Update";
                     }
