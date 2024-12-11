@@ -111,6 +111,14 @@ body {
     margin-bottom: 15px;
 }
 
+.input select {
+    font-size: 16px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
 .status-verifikasi {
     justify-content: right;
     display: flex;
@@ -142,5 +150,24 @@ body {
 }
 
 .status-verifikasi #setuju:hover {
+    background-color: rgba(27, 188, 155, .8);
+}
+
+.simpan {
+    display: flex;
+    justify-content: right;
+}
+
+.simpan button {
+    background-color: rgba(27, 188, 155, 1);
+    padding: 5px 30px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    transition: background-color .3s ease;
+}
+
+.simpan button:hover {
     background-color: rgba(27, 188, 155, .8);
 }

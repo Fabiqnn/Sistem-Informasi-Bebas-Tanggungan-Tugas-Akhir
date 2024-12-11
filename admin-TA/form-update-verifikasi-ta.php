@@ -18,6 +18,7 @@
 
         $queryCheck = " SELECT * FROM FORM_TA 
                         JOIN MAHASISWA ON FORM_TA.NIM = MAHASISWA.NIM
+                        JOIN VERIFIKASI ON FORM_TA.ID_VERIFIKASI = VERIFIKASI.ID_VERIFIKASI
                         WHERE FORM_TA.NIM = ?";
         $params = array($idMhs);
         $result = sqlsrv_query($conn, $queryCheck, $params);
@@ -25,6 +26,7 @@
         if ($result) {
             $getData = sqlsrv_fetch_array($result);
 
+            $idVerif = $getData['ID_VERIFIKASI'];
             $skripsi = $getData['FILE_LAPORAN_TA'];
             $program = $getData['PROGRAM_TA'];
             $publikasi = $getData['PUBLIKASI'];
@@ -45,7 +47,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <title>SIBETA | Sistem Bebas Tanggungan | Form Verifikasi</title>
+    <title>SIBETA | Sistem Bebas Tanggungan | Form Update Verifikasi</title>
 </head>
 <body>
     <?php include '../include/header.php'?>
@@ -104,15 +106,21 @@
                     <hr>
 
                     <!-- form verifikasi -->
-                    <form action="../assets/php/verifikasi-adm.php?id=<?= $idMhs?>" method="post">
+                    <form action="../assets/php/verifikasi-update-adm.php?id=<?= $idMhs?>&idVerif=<?= $idVerif?>" method="post">
                         <div class="form-verif">
                             <div class="input">
                                 <label for="catatan">Catatan Untuk Mahasiswa</label>
-                                <input type="text" name="catatan" id="catatan">
+                                <input type="text" name="catatan" id="catatan" value="<?= $getData['catatan'] ?>">
                             </div>
-                            <div class="status-verifikasi">
-                                <button type="submit" name="status" value="Disetujui" id="setuju">Setuju</button>
-                                <button type="submit" name="status" value="Ditolak" id="tolak">Tolak</button>
+                            <div class="input">
+                                <label for="status">Status Verifikasi</label>
+                                <select name="status" id="status">
+                                    <option value="Disetujui" <?= ($getData['STATUS_VERIFIKASI'] == 'Disetujui') ? 'selected' : '' ?>>Setuju</option>
+                                    <option value="Ditolak" <?= ($getData['STATUS_VERIFIKASI'] == 'Ditolak') ? 'selected' : '' ?>>Tolak</option>
+                                </select>
+                            </div>
+                            <div class="simpan">
+                                <button type="submit" name="simpan" id="simpan">Simpan</button>
                             </div>
                         </div>
                     </form>
@@ -121,33 +129,5 @@
         </div>
     </div>
 
-    <script>
-        const btnSetuju = document.getElementById('setuju');
-        const btnTolak = document.getElementById('tolak');
-
-        btnSetuju.addEventListener("click", function (event) {
-
-            if (confirm("Apakah Anda yakin ingin menyetujui?")) {
-                const form = event.target.closest("form");
-                if (form) {
-                    form.submit();
-                }
-            } else {
-                event.preventDefault();
-            }
-        });
-
-        btnTolak.addEventListener("click", function (event) {
-
-            if (confirm("Apakah Anda yakin ingin menolak?")) {
-                const form = event.target.closest("form");
-                if (form) {
-                    form.submit(); 
-                }
-            } else {
-                event.preventDefault();
-            }
-        });
-    </script>
 </body>
 </html>
