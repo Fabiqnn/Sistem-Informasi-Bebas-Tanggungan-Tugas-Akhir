@@ -13,7 +13,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a href="#">
+            <a href="../Mahasiswa/print-tanggungan.php">
                 <i class="lni lni-bulb-4"></i>
                 <span>Informasi Tanggungan</span>
             </a>

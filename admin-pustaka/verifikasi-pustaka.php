@@ -20,7 +20,10 @@
     $result = sqlsrv_query($conn, $queryCheck);
 
     if ($result) {
-        $getData = sqlsrv_fetch_array($result);
+        $dataArr = [];
+        while ($row = sqlsrv_fetch_array($result)) {
+            $dataArr[] = $row;
+        }
     } else {
         die(print_r(sqlsrv_errors(), true));
     }
@@ -66,7 +69,8 @@
                         </tr>
                         <tr>
                             <?php
-                                 if (isset($getData) && empty(isset($getData['STATUS_VERIFIKASI']))) {
+                            foreach ($dataArr as $getData) {
+                                if (isset($getData) && empty(isset($getData['STATUS_VERIFIKASI']))) {
                                     echo "<td>". $getData['NAMA_MHS']. "</td>";
                                     echo "<td>". $getData['NIM'] ."</td>";
                                     echo "<td>". $getData['EMAIL_MHS']. "</td>";
@@ -74,6 +78,7 @@
                                     echo "<td> Belum Di Verifikasi </td>";
                                     echo "<td id='check-form'> <a href='form-verifikasi-pustaka.php?id=" . $getData['NIM'] ."'>Cek Data Upload Mahasiswa</a></td>";
                                 }
+                            }
                             ?>
                         </tr>
                     </table>
@@ -102,19 +107,21 @@
                             <a href=""></a>
                             <tr>
                                 <?php
-                                if (isset($getData) && isset($getData['STATUS_VERIFIKASI'])) {
-                                    $status = $getData['STATUS_VERIFIKASI'];
-
-                                    echo "<td>". $getData['NAMA_MHS']. "</td>";
-                                    echo "<td>". $getData['NIM'] ."</td>";
-                                    echo "<td>". $getData['EMAIL_MHS']. "</td>";
-                                    echo "<td>". $getData['NO_WA_MHS']. "</td>";
-                                    if ($status === "Disetujui") {
-                                        echo "<td> <p id='setuju'>". $status. "</p></td>";
-                                    } else {
-                                        echo "<td> <p id='tolak'>". $status. "</p></td>";
+                                foreach ($dataArr as $getData) {
+                                    if (isset($getData['STATUS_VERIFIKASI'])) {
+                                        $status = $getData['STATUS_VERIFIKASI'];
+    
+                                        echo "<td>". $getData['NAMA_MHS']. "</td>";
+                                        echo "<td>". $getData['NIM'] ."</td>";
+                                        echo "<td>". $getData['EMAIL_MHS']. "</td>";
+                                        echo "<td>". $getData['NO_WA_MHS']. "</td>";
+                                        if ($status === "Disetujui") {
+                                            echo "<td> <p id='setuju'>". $status. "</p></td>";
+                                        } else {
+                                            echo "<td> <p id='tolak'>". $status. "</p></td>";
+                                        }
+                                        echo "<td id='check-form'> <a href='form-update-verifikasi-pustaka.php?id=" . $getData['NIM'] ."'>Update Verifikasi Mahasiswa</a></td>";
                                     }
-                                    echo "<td id='check-form'> <a href='form-update-verifikasi-pustaka.php?id=" . $getData['NIM'] ."'>Update Verifikasi Mahasiswa</a></td>";
                                 }
                                 ?>
                             </tr>

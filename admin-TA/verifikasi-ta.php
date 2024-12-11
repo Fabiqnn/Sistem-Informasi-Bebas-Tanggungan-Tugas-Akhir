@@ -19,10 +19,13 @@
 
     $result = sqlsrv_query($conn, $queryCheck);
 
-    if ($result) {
-        $getData = sqlsrv_fetch_array($result);
-    } else {
+    if (!$result) {
         die(print_r(sqlsrv_errors(), true));
+    } else {
+        $data = [];
+        while ($row = sqlsrv_fetch_array($result)) {
+            $data[] = $row;
+        }
     }
 ?>
 
@@ -64,18 +67,20 @@
                                 <th>Statuts Verifikasi</th>
                                 <th>Cek Data</th>
                             </tr>
-                            <tr>
-                                <?php
-                                if (isset($getData) && empty(isset($getData['STATUS_VERIFIKASI']))) {
+                            <?php
+                            foreach ($data as $getData) {
+                                if (empty($getData['STATUS_VERIFIKASI'])) {
+                                    echo "<tr>";
                                     echo "<td>". $getData['NAMA_MHS']. "</td>";
                                     echo "<td>". $getData['NIM'] ."</td>";
                                     echo "<td>". $getData['EMAIL_MHS']. "</td>";
                                     echo "<td>". $getData['NO_WA_MHS']. "</td>";
                                     echo "<td> Belum Di Verifikasi </td>";
                                     echo "<td id='check-form'> <a href='form-verifikasi-ta.php?id=" . $getData['NIM'] ."'>Cek Data Upload Mahasiswa</a></td>";
+                                    echo "</tr>";
                                 }
-                                ?>
-                            </tr>
+                            }
+                            ?>
                         </table>
                     </div>
                 </div>
@@ -95,15 +100,14 @@
                                 <th>NIM</th>
                                 <th>Email</th>
                                 <th>No. Telp</th>
-                                <th>Statuts Verifikasi</th>
+                                <th>Status Verifikasi</th> 
                                 <th>Update Data</th>
                             </tr>
-                            <a href=""></a>
-                            <tr>
-                                <?php
-                                if (isset($getData) && isset($getData['STATUS_VERIFIKASI'])) {
+                            <?php
+                            foreach ($data as $getData) {
+                                if (!empty($getData['STATUS_VERIFIKASI'])) {
                                     $status = $getData['STATUS_VERIFIKASI'];
-
+                                    echo "<tr>";
                                     echo "<td>". $getData['NAMA_MHS']. "</td>";
                                     echo "<td>". $getData['NIM'] ."</td>";
                                     echo "<td>". $getData['EMAIL_MHS']. "</td>";
@@ -114,9 +118,12 @@
                                         echo "<td> <p id='tolak'>". $status. "</p></td>";
                                     }
                                     echo "<td id='check-form'> <a href='form-update-verifikasi-ta.php?id=" . $getData['NIM'] ."'>Update Verifikasi Mahasiswa</a></td>";
+                                    echo "</tr>";
+                                } else {
+                                    echo "Tidak ada sayang";
                                 }
-                                ?>
-                            </tr>
+                            }
+                            ?>
                         </table>
                     </div>
                 </div>
