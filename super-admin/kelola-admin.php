@@ -19,7 +19,7 @@
                 [USER].PASS, 
                 [USER].ROLE, 
                 ADMIN.NIP, 
-                ADMIN.NAMA
+                ADMIN.NAMA_ADM
             FROM [USER]JOIN [ADMIN] ON [USER].ID_USER = ADMIN.ID_USER";
     
     $resultTable = sqlsrv_query($conn, $queryTable);
@@ -76,7 +76,7 @@
                             <?php
                                 while ($rowTable = sqlsrv_fetch_array($resultTable, SQLSRV_FETCH_ASSOC)) {
                                     echo "<tr>";
-                                        echo "<td>" . $rowTable['NAMA'] . "</td>";
+                                        echo "<td>" . $rowTable['NAMA_ADM'] . "</td>";
                                         echo "<td>" . $rowTable['ROLE'] . "</td>";
                                         echo "<td>" . $rowTable['NIP'] . "</td>";
                                         echo "<td>******</td>"; 
@@ -85,7 +85,7 @@
                                             class='update-btn' 
                                             data-bs-toggle='modal' 
                                             data-bs-target='#edit-admin-modal'
-                                            data-nama = '".$rowTable['NAMA']."'
+                                            data-nama = '".$rowTable['NAMA_ADM']."'
                                             data-nip = '".$rowTable['NIP']."'
                                             data-pass = '".$rowTable['PASS']."' >Perbarui</a></td>";
                                         echo "<td class='delete-col'><a href='../assets/php/delete-admin.php?delete_id=" . $rowTable['ID_USER'] . "' class='delete-btn' onclick='return confirm(\"Apakah anda yakin untuk menghapus user berikut?\")'>Hapus</a></td>";
