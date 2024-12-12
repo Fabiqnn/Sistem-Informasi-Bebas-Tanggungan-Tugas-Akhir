@@ -67,20 +67,20 @@
                                 <th>Statuts Verifikasi</th>
                                 <th>Cek Data</th>
                             </tr>
-                            <tr>
                                 <?php
                                 foreach ($dataArr as $getData) {
                                     if (empty(isset($getData['STATUS_VERIFIKASI']))) {
+                                        echo "<tr>";
                                         echo "<td>". $getData['NAMA_MHS']. "</td>";
                                         echo "<td>". $getData['NIM'] ."</td>";
                                         echo "<td>". $getData['EMAIL_MHS']. "</td>";
                                         echo "<td>". $getData['NO_WA_MHS']. "</td>";
                                         echo "<td> Belum Di Verifikasi </td>";
                                         echo "<td id='check-form'> <a href='form-verifikasi-prodi.php?id=" . $getData['NIM'] ."'>Cek Data Upload Mahasiswa</a></td>";
+                                        echo "</tr>";
                                     }
                                 }
                                 ?>
-                            </tr>
                         </table>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
                                 foreach ($dataArr as $getData) {
                                     if (!empty($getData['STATUS_VERIFIKASI'])) {
                                         $status = $getData['STATUS_VERIFIKASI'];
-    
+                                        echo "<tr>";
                                         echo "<td>". $getData['NAMA_MHS']. "</td>";
                                         echo "<td>". $getData['NIM'] ."</td>";
                                         echo "<td>". $getData['EMAIL_MHS']. "</td>";
@@ -119,6 +119,7 @@
                                             echo "<td> <p id='tolak'>". $status. "</p></td>";
                                         }
                                         echo "<td id='check-form'> <a href='form-update-verifikasi-prodi.php?id=" . $getData['NIM'] ."'>Update Verifikasi Mahasiswa</a></td>";
+                                        echo "</tr>";
                                     }
                                 }
                                 ?>

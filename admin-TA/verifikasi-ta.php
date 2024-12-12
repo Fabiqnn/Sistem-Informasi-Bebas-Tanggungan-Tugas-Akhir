@@ -119,9 +119,7 @@
                                     }
                                     echo "<td id='check-form'> <a href='form-update-verifikasi-ta.php?id=" . $getData['NIM'] ."'>Update Verifikasi Mahasiswa</a></td>";
                                     echo "</tr>";
-                                } else {
-                                    echo "Tidak ada sayang";
-                                }
+                                } 
                             }
                             ?>
                         </table>
