@@ -31,10 +31,16 @@
             </div>
 
             <div class=instruction>
-                <p>Masukkan Password Baru</p>
+                <?php
+                    if (isset($error)) {
+                        echo "<p>Password Baru dan Konfirmasi Harus Sama</p>";
+                    } else {
+                        echo "<p>Masukkan Password Baru</p>";
+                    }
+                ?>
             </div>
 
-            <form action="" method="post" id="form-sandi">
+            <form action="assets/php/verif-password.php" method="post" id="form-sandi">
                 <div class="input-form">
                     <input type="password" name="pass" id="pass" placeholder="Password Baru">
                     <i class="lni lni-locked-1"></i>
@@ -43,6 +49,7 @@
                     <input type="password" name="pass-confirm" id="pass-confirm" placeholder="Konfirmasi Password">
                     <i class="lni lni-locked-1"></i>
                 </div>
+                <input type="hidden" name="noInduk" value="<?= $_GET['id'] ?>">
                 <div class="open-pass">
                     <input type="checkbox" onchange="passOpen()" id="show-pass">
                     <label for="show-pass">Tampilkan Password</label>

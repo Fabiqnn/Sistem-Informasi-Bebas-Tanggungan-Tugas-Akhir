@@ -1,3 +1,8 @@
+<?php 
+    $error = isset($_GET['error']) ? $_GET['error'] : null;
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,11 +34,17 @@
             </div>
 
             <div class=instruction>
-                <p>Masukkan NIM dan Email</p>
-                <p>Untuk Memulihkan Akun Anda</p>
+                <?php
+                    if ($error) {
+                        echo "<p>No Induk / Email Salah</p>";
+                    } else {
+                        echo "<p>Masukkan NIM dan Email</p>";
+                        echo "<p>Untuk Memulihkan Akun Anda</p>";
+                    }
+                ?>
             </div>
 
-            <form action="" method="post" id="lupa-sandi">
+            <form action="assets/php/verif-email.php" method="post" id="lupa-sandi">
                 <div class="input-form">
                     <input type="text" name="nim" id="nim" placeholder="Masukkan NIM Anda">
                 </div>

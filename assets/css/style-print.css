@@ -60,11 +60,11 @@ body {
     background-color: rgba(27, 188, 155, .8);
 }
 
-.print-area {
+#print-area {
     padding: 20px;
 }
 
-.print-area * {
+#print-area * {
     font-family: 'Times New Roman', Times, serif;
 }
 
