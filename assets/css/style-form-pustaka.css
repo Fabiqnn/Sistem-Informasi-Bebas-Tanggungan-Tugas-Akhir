@@ -68,6 +68,20 @@ body {
     padding: 20px;
 }
 
+.informasi {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.informasi .data {
+    font-size: 14px;
+}
+
+.data p {
+    margin-bottom: 10px;
+}
+
 .form {
     background: rgba(230, 236, 239, 1);
     padding: 30px;

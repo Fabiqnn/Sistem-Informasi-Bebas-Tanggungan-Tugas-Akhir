@@ -22,6 +22,19 @@
     $data = sqlsrv_fetch_array($result);
 
     $isSubmitted = $data ? 'true' : 'false';
+
+    $queryAdm = "SELECT 
+                    [ADMIN].NAMA_ADM,
+                    [ADMIN].EMAIL_ADM,
+                    [ADMIN].NO_WA_ADM
+                FROM [USER] 
+                JOIN [ADMIN] ON [USER].ID_USER = [ADMIN].ID_USER
+                WHERE [USER].[ROLE] = 'adm_prodi'";
+
+    $resultAdm = sqlsrv_query($conn, $queryAdm);
+
+    $dataAdm = sqlsrv_fetch_array($resultAdm);
+    $jabatan = "Admin Prodi";
 ?>
 
 <!DOCTYPE html>
@@ -57,10 +70,26 @@
                 <div class="informasi-admin">
                     <h4>Informasi Admin</h4>
                     <hr>
-                    <h5>Nama Admin : </h5>
-                    <h5>Email : </h5>
-                    <h5>No HandPhone : </h5>
-                    <h5>Jabatan : </h5>
+                    <div class="informasi">
+                        <div class="label">
+                            <h5>Nama Admin</h5>
+                            <h5>Email</h5>
+                            <h5>No HandPhone</h5>
+                            <h5>Jabatan</h5>
+                        </div>
+                        <div class="titik-dua">
+                            <h5>:</h5>
+                            <h5>:</h5>
+                            <h5>:</h5>
+                            <h5>:</h5>
+                        </div>
+                        <div class="data">
+                            <p><?= $dataAdm['NAMA_ADM'] ?></p>
+                            <p><?= $dataAdm['EMAIL_ADM'] ?></p>
+                            <p><?= $dataAdm['NO_WA_ADM'] ?></p>
+                            <p><?= $jabatan ?></p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form">

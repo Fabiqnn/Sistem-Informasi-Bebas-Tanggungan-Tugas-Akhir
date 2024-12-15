@@ -67,6 +67,15 @@ body {
     padding: 20px;
 }
 
+.informasi {
+    display: flex;
+    gap: 10px;
+}
+
+.informasi .data {
+    font-size: 14px;
+}
+
 .form {
     background: rgba(230, 236, 239, 1);
     padding: 30px;
