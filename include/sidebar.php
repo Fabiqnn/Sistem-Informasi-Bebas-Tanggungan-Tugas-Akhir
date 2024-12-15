@@ -27,17 +27,17 @@
             <div class="dropdown-content">
                 <ul>
                     <li>
-                        <a href="../Mahasiswa/form-TA-lt7.php">
+                        <a href="../Mahasiswa/form-TA-lt7.php?adm=1">
                             <span>Tanggunan Skripsi/TA</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../Mahasiswa/form-Prodi.php">
+                        <a href="../Mahasiswa/form-Prodi.php?adm=2">
                             <span>Tanggunan Prodi</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../Mahasiswa/form-pustaka.php">
+                        <a href="../Mahasiswa/form-pustaka.php?adm=3">
                             <span>Tanggunan Pustaka</span>
                         </a>
                     </li>

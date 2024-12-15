@@ -64,30 +64,7 @@
 
             <div class="form-container">
                 <h3>Bebas Tanggungan Jurusan Teknologi Informasi</h3>
-                <div class="informasi-admin">
-                    <h4>Informasi Admin</h4>
-                    <hr>
-                    <div class="informasi">
-                        <div class="label">
-                            <h5>Nama Admin</h5>
-                            <h5>Email</h5>
-                            <h5>No HandPhone</h5>
-                            <h5>Jabatan</h5>
-                        </div>
-                        <div class="titik-dua">
-                            <h5>:</h5>
-                            <h5>:</h5>
-                            <h5>:</h5>
-                            <h5>:</h5>
-                        </div>
-                        <div class="data">
-                            <p><?= $dataAdm['NAMA_ADM'] ?></p>
-                            <p><?= $dataAdm['EMAIL_ADM'] ?></p>
-                            <p><?= $dataAdm['NO_WA_ADM'] ?></p>
-                            <p><?= $jabatan ?></p>
-                        </div>
-                    </div>
-                </div>
+                <?php include '../include/adm-identitiy.php' ?>
 
                 <div class="form">
                     <h4>Formulir Tanggungan Skripsi/TA</h4>

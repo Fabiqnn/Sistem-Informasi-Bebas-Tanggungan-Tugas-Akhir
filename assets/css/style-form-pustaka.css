@@ -46,42 +46,6 @@ body {
     font-weight: 400;
 }
 
-.informasi-admin h4 {
-    text-align: left;
-    color: #14AE5C;
-    margin-bottom: 0;
-}
-
-.informasi-admin h5 {
-    font-weight: 400;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.informasi-admin hr {
-    margin: 0 0 15px 0;
-    opacity: .25;
-}
-
-.form-container .informasi-admin {
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    padding: 20px;
-}
-
-.informasi {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.informasi .data {
-    font-size: 14px;
-}
-
-.data p {
-    margin-bottom: 10px;
-}
-
 .form {
     background: rgba(230, 236, 239, 1);
     padding: 30px;
