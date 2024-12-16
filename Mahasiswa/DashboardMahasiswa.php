@@ -150,7 +150,7 @@
                                             echo "<td>" . $row['ROLE'] . "</td>";
                                             echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
                                             echo "<td>" . $row['catatan'] . "</td>";
-                                            echo "<td><a>Perbarui</a></td>";
+                                            echo "<td><a href='form-edit-ta.php?adm=1'>Perbarui</a></td>";
                                         }
                                     }
                                 ?>
@@ -185,7 +185,7 @@
                                         echo "<td>" . $row['ROLE'] . "</td>";
                                         echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
                                         echo "<td>" . $row['catatan'] . "</td>";
-                                        echo "<td><a>Perbarui</a></td>";
+                                        echo "<td><a href='form-edit-prodi.php?adm=2' >Perbarui</a></td>";
                                     }
                                 }
                             ?>
@@ -220,7 +220,7 @@
                                         echo "<td>" . $row['ROLE'] . "</td>";
                                         echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
                                         echo "<td>" . $row['catatan'] . "</td>";
-                                        echo "<td><a>Perbarui</a></td>";
+                                        echo "<td><a href='form-edit-pustaka.php?adm=3'>Perbarui</a></td>";
                                     }
                                 }
                             ?>

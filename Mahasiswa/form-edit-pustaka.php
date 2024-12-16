@@ -13,15 +13,20 @@
 
     include '../config/db-connect.php';
 
-    $queyCheck = "SELECT * FROM FORM_PUSTAKA 
-                join MAHASISWA ON FORM_PUSTAKA.NIM = MAHASISWA.NIM 
-                WHERE FORM_PUSTAKA.NIM = ?";
+    $queryCheck = " SELECT * FROM FORM_PUSTAKA 
+                    JOIN MAHASISWA ON FORM_PUSTAKA.NIM = MAHASISWA.NIM
+                    WHERE FORM_PUSTAKA.NIM = ?";
     $params = array($_SESSION['noInduk']);
-    $result = sqlsrv_query($conn, $queyCheck, $params);
+    $result = sqlsrv_query($conn, $queryCheck, $params);
 
-    $data = sqlsrv_fetch_array($result);
+    if ($result) {
+        $getData = sqlsrv_fetch_array($result);
 
-    $isSubmitted = $data ? 'true' : 'false';
+        $tanggalSkripsi = $getData['TANGGAL_UJIAN_SKRIPSI'] ->format('Y-m-d');
+        $tanggalYudisium = $getData['TANGGAL_YUDISIUM'] ->format('Y-m-d');
+    } else {
+        die(print_r(sqlsrv_errors(), true));
+    }
 ?>
 
 <!DOCTYPE html>
@@ -58,54 +63,54 @@
 
                 <div class="form">
                     <h4>Formulir Tanggungan Pustaka</h4>
-                    <form action="../assets/php/upload-pustaka.php" method="post" enctype="multipart/form-data">
+                    <form action="../assets/php/edit-upload.php?adm=3" method="post" enctype="multipart/form-data">
 
                         <p class="label">Jenis Karya Ilmiah</p>
                         <div class="radio-container">
                             <div class="radio">
-                                <input type="radio" name="karya-ilmiah" class="radio-check" id="laporan-d2" value="Laporan Akhir (D-2)">
+                                <input type="radio" name="karya-ilmiah" class="radio-check" id="laporan-d2" value="Laporan Akhir (D-2)" <?= ($getData['JENIS_KARYA'] == 'Laporan Akhir (D-2)') ? 'checked' : '' ?>>
                                 <label for="laporan-d2">Laporan Akhir (D-2)</label>
                             </div>
                             <div class="radio">
-                                <input type="radio" name="karya-ilmiah" class="radio-check" id="laporan-d4" value="Skripsi (D-4)">
+                                <input type="radio" name="karya-ilmiah" class="radio-check" id="laporan-d4" value="Skripsi (D-4)" <?= ($getData['JENIS_KARYA'] == 'Skripsi (D-4)') ? 'checked' : '' ?>>
                                 <label for="laporan-d4">Skripsi (D-4)</label>
                             </div>
                         </div>
 
                         <label for="judul-skripsi">Judul Karya Ilmiah (Laporan Akhir)</label>
-                        <input type="text" name="judul" id="judul-skripsi">
+                        <input type="text" name="judul" id="judul-skripsi" value="<?= $getData['JUDUL_KARYA_ILMIAH'] ?>">
 
                         <label for="tahun-skripsi">Tahun Karya Ilmiah Akhir Terbit (Laporan Akhir)</label>
                         <select id="tahun-skripsi" name="tahun-skripsi">
-                            <option value="2010">2010</option>
-                            <option value="2011">2011</option>
-                            <option value="2012">2012</option>
-                            <option value="2013">2013</option>
-                            <option value="2014">2014</option>
-                            <option value="2015">2015</option>
-                            <option value="2016">2016</option>
-                            <option value="2017">2017</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                            <option value="2025">2025</option>
+                            <option value="2010" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2010') ? 'selected' : '' ?> >2010</option>
+                            <option value="2011" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2011') ? 'selected' : '' ?> >2011</option>
+                            <option value="2012" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2012') ? 'selected' : '' ?> >2012</option>
+                            <option value="2013" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2013') ? 'selected' : '' ?> >2013</option>
+                            <option value="2014" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2014') ? 'selected' : '' ?> >2014</option>
+                            <option value="2015" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2015') ? 'selected' : '' ?> >2015</option>
+                            <option value="2016" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2016') ? 'selected' : '' ?> >2016</option>
+                            <option value="2017" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2017') ? 'selected' : '' ?> >2017</option>
+                            <option value="2018" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2018') ? 'selected' : '' ?> >2018</option>
+                            <option value="2019" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2019') ? 'selected' : '' ?> >2019</option>
+                            <option value="2020" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2020') ? 'selected' : '' ?> >2020</option>
+                            <option value="2021" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2021') ? 'selected' : '' ?> >2021</option>
+                            <option value="2022" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2022') ? 'selected' : '' ?> >2022</option>
+                            <option value="2023" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2023') ? 'selected' : '' ?> >2023</option>
+                            <option value="2024" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2024') ? 'selected' : '' ?> >2024</option>
+                            <option value="2025" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2025') ? 'selected' : '' ?> >2025</option>
                         </select>
 
                         <label for="tgl-skripsi">Tanggal, Bulan, Tahun Ujian Tugas Akhir / Skripsi</label>
-                        <input type="date" name="tgl-skripsi" id="tgl-skripsi">
+                        <input type="date" name="tgl-skripsi" id="tgl-skripsi" value="<?= htmlspecialchars($tanggalSkripsi) ?>">
 
                         <label for="tgl-yudisium">Tanggal, Bulan, Tahun Yudisium</label>
-                        <input type="date" name="tgl-yudisium" id="tgl-yudisium">
+                        <input type="date" name="tgl-yudisium" id="tgl-yudisium" value="<?= htmlspecialchars($tanggalYudisium) ?>">
 
                         <p>Bukti Bebas Kompen</p>
                         <div class="upload-file">
                             <label for="up-kompen" class="upload-btn">Unggah</label>
                             <input type="file" id="up-kompen" name="up-kompen">
-                            <span id="kompen-name">No Choosen File.</span>
+                            <span id="kompen-name"><?= $getData['FILE_BEBAS_KOMPEN'] ?></span>
                         </div>
 
                         <p class="subjudul">Upload File SoftCopy Laporan Akhir</p>
@@ -117,7 +122,7 @@
                             <div class="upload-file">
                                 <label for="up-pendahuluan" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-pendahuluan" name="up-pendahuluan">
-                                <span id="pendahuluan-name">No Choosen File.</span>
+                                <span id="pendahuluan-name"><?= $getData['FILE_PENDAHULUAN'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -126,7 +131,7 @@
                             <div class="upload-file">
                                 <label for="up-abstrak" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-abstrak" name="up-abstrak">
-                                <span id="abstrak-name">No Choosen File.</span>
+                                <span id="abstrak-name"><?= $getData['FILE_ABSTRAK'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -135,7 +140,7 @@
                             <div class="upload-file">
                                 <label for="up-bab1" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-bab1" name="up-bab1">
-                                <span id="bab1-name">No Choosen File.</span>
+                                <span id="bab1-name"><?= $getData['BAB_1'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -144,7 +149,7 @@
                             <div class="upload-file">
                                 <label for="up-bab2" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-bab2" name="up-bab2">
-                                <span id="bab2-name">No Choosen File.</span>
+                                <span id="bab2-name"><?= $getData['BAB_2'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -153,7 +158,7 @@
                             <div class="upload-file">
                                 <label for="up-bab3" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-bab3" name="up-bab3">
-                                <span id="bab3-name">No Choosen File.</span>
+                                <span id="bab3-name"><?= $getData['BAB_3'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -162,7 +167,7 @@
                             <div class="upload-file">
                                 <label for="up-bab4" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-bab4" name="up-bab4">
-                                <span id="bab4-name">No Choosen File.</span>
+                                <span id="bab4-name"><?= $getData['BAB_4'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -171,7 +176,7 @@
                             <div class="upload-file">
                                 <label for="up-bab5" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-bab5" name="up-bab5">
-                                <span id="bab5-name">No Choosen File.</span>
+                                <span id="bab5-name"><?= $getData['BAB_5'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -180,7 +185,7 @@
                             <div class="upload-file">
                                 <label for="up-bab6" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-bab6" name="up-bab6">
-                                <span id="bab6-name">No Choosen File.</span>
+                                <span id="bab6-name"><?= $getData['BAB_6'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -189,7 +194,7 @@
                             <div class="upload-file">
                                 <label for="up-bab7" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-bab7" name="up-bab7">
-                                <span id="bab7-name">No Choosen File.</span>
+                                <span id="bab7-name"><?= $getData['BAB_7'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -198,7 +203,7 @@
                             <div class="upload-file">
                                 <label for="up-dftr-pustaka" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-dftr-pustaka" name="up-dftr-pustaka">
-                                <span id="pustaka-name">No Choosen File.</span>  
+                                <span id="pustaka-name"><?= $getData['FILE_DAFTAR_PUSTAKA'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -207,7 +212,7 @@
                             <div class="upload-file">
                                 <label for="up-lampiran" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-lampiran" name="up-lampiran">
-                                <span id="lampiran-name">No Choosen File.</span>
+                                <span id="lampiran-name"><?= $getData['FILE_LAMPIRAN'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -216,13 +221,13 @@
                             <div class="upload-file">
                                 <label for="up-kompilasi" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-kompilasi" name="up-kompilasi">
-                                <span id="kompilasi-name">No Choosen File.</span>
+                                <span id="kompilasi-name"><?= $getData['FILE_KOMPILASI_LAPORAN_AKHIR'] ?></span>
                             </div>
                         </div>
 
                         <h6>LINK PUBLIKASI JURNAL</h6>
                         <p>Khusus mahasiswa D4 ( Link dimana Jurnal anda dipublikasikan sesuai alamat URL ) ( bila ada silahkan dilampirkan ) (bila tidak ada bisa dikosongkan)</p>
-                        <input type="text" id="link-publikasi" name="link-publikasi">
+                        <input type="text" id="link-publikasi" name="link-publikasi" value="<?= $getData['LINK_JURNAL'] ?>">
 
                         <div class="upload">
                             <h6>SOFTCOPY JURNAL</h6>
@@ -230,18 +235,18 @@
                             <div class="upload-file">
                                 <label for="up-softcopy-jurnal" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-softcopy-jurnal" name="up-softcopy-jurnal">
-                                <span id="jurnal-name">No Choosen File.</span>
+                                <span id="jurnal-name"><?= $getData['FILE_SOFTCOPY_JURNAL'] ?></span>
                             </div>
                         </div>
 
                         <p class="label">Dengan ini saya memberikan ijin kepada perpustakaan polinema untuk mengolah Laporan Akhir / Tugas Akhir saya dengan ketentuan yang ada untuk kemajuan ilmu pengetahuan dan institusi.</p>
                         <div class="radio-container">
                             <div class="radio">
-                                <input type="radio" name="izin" class="radio-check" id="iya" value="Diperbolehkan">
+                                <input type="radio" name="izin" class="radio-check" id="iya" value="Diperbolehkan" <?= ($getData['IZIN_MENGOLAH'] == 'Diperbolehkan') ? 'checked' : '' ?>>
                                 <label for="iya">Diperbolehkan</label>
                             </div>
                             <div class="radio">
-                                <input type="radio" name="izin" class="radio-check" id="tidak" value="Tidak Diperbolehkan">
+                                <input type="radio" name="izin" class="radio-check" id="tidak" value="Tidak Diperbolehkan" <?= ($getData['IZIN_MENGOLAH'] == 'Tidak Diperbolehkan') ? 'checked' : '' ?>>
                                 <label for="tidak">Tidak Diperbolehkan</label>
                             </div>
                         </div>
@@ -257,11 +262,11 @@
                         <p class="label">Hard Copy Laporan Akhir/ Skripsi/ Tesis Diserahkan Secara</p>
                         <div class="radio-container">
                             <div class="radio">
-                                <input type="radio" name="penyerahan" class="radio-check" id="langsung" value="langsung">
+                                <input type="radio" name="penyerahan" class="radio-check" id="langsung" value="langsung" <?= ($getData['PENYERAHAN_SKRIPSI'] == 'langsung') ? 'checked' : '' ?>>
                                 <label for="langsung">Datang Langsung Ke Perpustakaan</label>
                             </div>
                             <div class="radio">
-                                <input type="radio" name="penyerahan" class="radio-check" id="tdk-langsung" value="Tidak Langsung">
+                                <input type="radio" name="penyerahan" class="radio-check" id="tdk-langsung" value="Tidak Langsung" <?= ($getData['PENYERAHAN_SKRIPSI'] == 'Tidak Langsung') ? 'checked' : '' ?>>
                                 <label for="tdk-langsung">Dikirim Melalui Jasa Ekspedisi</label>
                             </div>
                         </div>
@@ -272,11 +277,11 @@
                             <div class="upload-file">
                                 <label for="up-resi" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-resi" name="up-resi">
-                                <span id="resi-name">No Choosen File.</span>
+                                <span id="resi-name"><?= $getData['RESI_PENGIRIMAN_SKRIPSI'] ?></span>
                             </div>
                         </div>
 
-                        <button type="submit" id="submit-btn" data-submitted="<?= $isSubmitted?>" onclick="checkSubmit()">Kirim</button>
+                        <button type="submit" id="submit-btn">Simpan</button>
                     </form>
                 </div>
             </div>
@@ -378,18 +383,6 @@
                 document.getElementById('resi-name').innerHTML = resi.files[0].name;
             }
         });
-
-        function checkSubmit() {
-            const submit = document.getElementById('submit-btn');
-            const isSubmited = submit.getAttribute('data-submitted') === 'true';
-    
-            if (isSubmited) {
-                event.preventDefault();
-                const message = document.createElement('p');
-                message.textContent = 'Anda Sudah Mengunggah Formulir.';
-                document.querySelector('.form').appendChild(message);
-            }
-        }
     </script>
 </body>
 

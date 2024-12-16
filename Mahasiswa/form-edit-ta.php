@@ -19,11 +19,16 @@
     $params = array($_SESSION['noInduk']);
     $result = sqlsrv_query($conn, $queyCheck, $params);
 
-    $data = sqlsrv_fetch_array($result);
-    
-    $isSubmitted = $data ? 'true' : 'false';
-?>
+    if ($result) {
+        $getData = sqlsrv_fetch_array($result);
 
+        $skripsi = $getData['FILE_LAPORAN_TA'];
+        $program = $getData['PROGRAM_TA'];
+        $publikasi = $getData['PUBLIKASI'];
+    } else {
+        die(print_r(sqlsrv_errors(), true));
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,34 +57,34 @@
 
             <div class="form-container">
                 <h3>Bebas Tanggungan Jurusan Teknologi Informasi</h3>
-                <?php include '../include/adm-identitiy.php' ?>
+                <?php include '../include/adm-identitiy.php'?>
 
                 <div class="form">
                     <h4>Formulir Tanggungan Skripsi/TA</h4>
-                    <form action="../assets/php/upload-TA.php" method="post" enctype="multipart/form-data">
+                    <form action="../assets/php/edit-upload.php?adm=1" method="post" enctype="multipart/form-data">
 
                         <label>Laporan Tugas Akhir/Skripsi</label>
                         <div class="file-upload">
                             <label for="up-laporan-ta" class="upload-btn">Unggah</label>
                             <input type="file" name="up-laporan-ta" id="up-laporan-ta">
-                            <span id="laporan-ta-name">No File Choosen.</span>
+                            <span id="laporan-ta-name"><?= $skripsi ?></span>
                         </div>
                         
                         <label>Program/Aplikasi Tugas Akhir/Skripsi</label>
                         <div class="file-upload">
                             <label for="up-program" class="upload-btn">Unggah</label>
                             <input type="file" name="up-program" id="up-program">
-                            <span id="program-name">No File Choosen.</span>
+                            <span id="program-name"><?= $program ?></span>
                         </div>
                         
                         <label>Bukti Publikasi Tugas Akhir</label>
                         <div class="file-upload">
                             <label for="up-publikasi" class="upload-btn">Unggah</label>
                             <input type="file" name="up-publikasi" id="up-publikasi">
-                            <span id="publikasi-name">No File Choosen.</span>
+                            <span id="publikasi-name"><?= $publikasi ?></span>
                         </div>
 
-                        <button type="submit" id="submit-btn" data-submitted="<?= $isSubmitted; ?>" onclick="checkSubmit()">Kirim</button>
+                        <button type="submit" id="submit-btn">Simpan</button>
                     </form>
                 </div>
             </div>
@@ -106,18 +111,6 @@
                 document.getElementById('publikasi-name').innerHTML = publikasi.files[0].name;
             }
         });
-
-        function checkSubmit() {
-            const submit = document.getElementById('submit-btn');
-            const isSubmited = submit.getAttribute('data-submitted') === 'true';
-    
-            if (isSubmited) {
-                event.preventDefault();
-                const message = document.createElement('p');
-                message.textContent = 'Anda Sudah Mengunggah Formulir.';
-                document.querySelector('.form').appendChild(message);
-            }
-        }
     </script>
 </body>
 </html>
