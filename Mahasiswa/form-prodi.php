@@ -122,7 +122,23 @@
                 const message = document.createElement('p');
                 message.textContent = 'Anda Sudah Mengunggah Formulir.';
                 document.querySelector('.form').appendChild(message);
+            } else if (validation() === false) {
+                event.preventDefault();
+                const message = document.createElement('p');
+                message.textContent = 'Lengkapi Form Sebelum Melakukan Kirim.';
+                document.querySelector('.form').appendChild(message);
             }
+        }
+
+        function validation() {
+            if (
+                skripsiName.files.length === 0 ||
+                pkl.files.length === 0 ||
+                kompen.files.length === 0
+            ) {
+                return false;
+            }
+            return true;
         }
     </script>
 </body>

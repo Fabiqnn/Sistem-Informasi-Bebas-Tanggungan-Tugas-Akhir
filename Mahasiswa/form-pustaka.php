@@ -388,7 +388,85 @@
                 const message = document.createElement('p');
                 message.textContent = 'Anda Sudah Mengunggah Formulir.';
                 document.querySelector('.form').appendChild(message);
+            } else if (validation() === false) {
+                event.preventDefault();
+                const message = document.createElement('p');
+                message.textContent = 'Lengkapi Form Sebelum Melakukan Kirim.';
+                document.querySelector('.form').appendChild(message);
             }
+        }
+
+        function validation() {
+
+            let isValid = true; // Flag untuk validasi
+
+            // Radio button karya ilmiah
+            const karyaIlmiah = document.querySelector('input[name="karya-ilmiah"]:checked');
+            if (!karyaIlmiah) {
+                isValid = false;
+            }
+
+            // Input teks
+            const judul = document.getElementById('judul-skripsi').value.trim();
+            if (!judul) {
+                isValid = false;
+            }
+
+            // Select tahun skripsi
+            const tahunSkripsi = document.getElementById('tahun-skripsi').value;
+            if (!tahunSkripsi) {
+                isValid = false;
+            }
+
+            // Input tanggal
+            const tglSkripsi = document.getElementById('tgl-skripsi').value;
+            if (!tglSkripsi) {
+                isValid = false;
+            }
+
+            const tglYudisium = document.getElementById('tgl-yudisium').value;
+            if (!tglYudisium) {
+                isValid = false;
+            }
+
+            // File upload
+            const fileInputs = [
+                { id: 'up-kompen', name: 'Bukti Kompen' },
+                { id: 'up-pendahuluan', name: 'Pendahuluan' },
+                { id: 'up-abstrak', name: 'Abstrak' },
+                { id: 'up-bab1', name: 'BAB 1' },
+                { id: 'up-bab2', name: 'BAB 2' },
+                { id: 'up-bab3', name: 'BAB 3' },
+                { id: 'up-bab4', name: 'BAB 4' },
+                { id: 'up-bab5', name: 'BAB 5' },
+                { id: 'up-bab6', name: 'BAB 6' },
+                { id: 'up-bab7', name: 'BAB 7' },
+                { id: 'up-dftr-pustaka', name: 'Daftar Pustaka' },
+                { id: 'up-lampiran', name: 'Lampiran' },
+                { id: 'up-kompilasi', name: 'Kompilasi' },
+                { id: 'up-resi', name: 'Resi' },
+            ];
+
+            fileInputs.forEach(input => {
+                const fileElement = document.getElementById(input.id);
+                if (!fileElement.files.length) {
+                    isValid = false;
+                }
+            });
+
+            // Radio button izin mengolah
+            const izinMengolah = document.querySelector('input[name="izin"]:checked');
+            if (!izinMengolah) {
+                isValid = false;
+            }
+
+            // Radio button penyerahan
+            const penyerahan = document.querySelector('input[name="penyerahan"]:checked');
+            if (!penyerahan) {
+                isValid = false;
+            }
+
+            return isValid;
         }
     </script>
 </body>

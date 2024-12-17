@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_user = $_SESSION['noInduk']; 
     $current_timestamp = date('Y-m-d H:i:s');
 
-    if ($_GETp['adm' === '1']) {
+    if ($_GET['adm'] === '1') {
         $upload_dir = '../uploaded-file/form-ta/';
         $delete_dir = '../uploaded-file/delete-ta/';
         
@@ -299,7 +299,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }        
     } else {
-        header('Location: ../../Mahasiswa/DashboardMahasiswa.php?error=InisialisasikanVarAdm');
+        echo $_GET['adm'];
     }
 }
 

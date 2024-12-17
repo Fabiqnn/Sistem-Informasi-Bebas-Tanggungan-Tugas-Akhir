@@ -110,13 +110,28 @@
         function checkSubmit() {
             const submit = document.getElementById('submit-btn');
             const isSubmited = submit.getAttribute('data-submitted') === 'true';
-    
+            
             if (isSubmited) {
                 event.preventDefault();
                 const message = document.createElement('p');
                 message.textContent = 'Anda Sudah Mengunggah Formulir.';
                 document.querySelector('.form').appendChild(message);
-            }
+            } else if (validation() === false) {
+                event.preventDefault();
+                const message = document.createElement('p');
+                message.textContent = 'Lengkapi Form Sebelum Melakukan Kirim.';
+                document.querySelector('.form').appendChild(message);
+            } 
+        }
+
+        function validation() {
+            if (laporanTa.files.length === 0 ||
+                programTa.files.length === 0 ||
+                publikasi.files.length === 0
+            ) {
+                return false;
+            } 
+            return true;
         }
     </script>
 </body>
