@@ -303,81 +303,149 @@
 
         
         kompen.addEventListener('change', function () {
-            if (kompen.value) {
+            if (!sizeCheck(kompen)) {
+                document.getElementById('kompen-name').classList = "err";
+                document.getElementById('kompen-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (kompen.value) {
                 document.getElementById('kompen-name').innerHTML = kompen.files[0].name;
             }
         });
-
         pendahuluan.addEventListener('change', function () {
-            if (pendahuluan.value) {
+            if (!sizeCheck(pendahuluan)) {
+                document.getElementById('pendahuluan-name').classList = "err";
+                document.getElementById('pendahuluan-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (pendahuluan.value) {
                 document.getElementById('pendahuluan-name').innerHTML = pendahuluan.files[0].name;
             }
         });
         abstrak.addEventListener('change', function () {
-            if (abstrak.value) {
+            if (!sizeCheck(abstrak)) {
+                document.getElementById('abstrak-name').classList = "err";
+                document.getElementById('abstrak-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (abstrak.value) {
                 document.getElementById('abstrak-name').innerHTML = abstrak.files[0].name;
             }
         });
         bab1.addEventListener('change', function () {
-            if (bab1.value) {
+            if (!sizeCheck(bab1)) {
+                document.getElementById('bab1-name').classList = "err";
+                document.getElementById('bab1-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (bab1.value) {
                 document.getElementById('bab1-name').innerHTML = bab1.files[0].name;
             }
         });
         bab2.addEventListener('change', function () {
-            if (bab2.value) {
+            if (!sizeCheck(bab2)) {
+                document.getElementById('bab2-name').classList = "err";
+                document.getElementById('bab2-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (bab2.value) {
                 document.getElementById('bab2-name').innerHTML = bab2.files[0].name;
             }
         });
         bab3.addEventListener('change', function () {
-            if (bab3.value) {
+            if (!sizeCheck(bab3)) {
+                document.getElementById('bab3-name').classList = "err";
+                document.getElementById('bab3-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (bab3.value) {
                 document.getElementById('bab3-name').innerHTML = bab3.files[0].name;
             }
         });
         bab4.addEventListener('change', function () {
-            if (bab4.value) {
+            if (!sizeCheck(bab4)) {
+                document.getElementById('bab4-name').classList = "err";
+                document.getElementById('bab4-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (bab4.value) {
                 document.getElementById('bab4-name').innerHTML = bab4.files[0].name;
             }
         });
         bab5.addEventListener('change', function () {
-            if (bab5.value) {
+            if (!sizeCheck(bab5)) {
+                document.getElementById('bab5-name').classList = "err";
+                document.getElementById('bab5-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (bab5.value) {
                 document.getElementById('bab5-name').innerHTML = bab5.files[0].name;
             }
         });
         bab6.addEventListener('change', function () {
-            if (bab6.value) {
+            if (!sizeCheck(bab6)) {
+                document.getElementById('bab6-name').classList = "err";
+                document.getElementById('bab6-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (bab6.value) {
                 document.getElementById('bab6-name').innerHTML = bab6.files[0].name;
             }
         });
         bab7.addEventListener('change', function () {
-            if (bab7.value) {
+            if (!sizeCheck(bab7)) {
+                document.getElementById('bab7-name').classList = "err";
+                document.getElementById('bab7-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (bab7.value) {
                 document.getElementById('bab7-name').innerHTML = bab7.files[0].name;
             }
         });
         pustaka.addEventListener('change', function () {
-            if (pustaka.value) {
+            if (!sizeCheck(pustaka)) {
+                document.getElementById('pustaka-name').classList = "err";
+                document.getElementById('pustaka-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (pustaka.value) {
                 document.getElementById('pustaka-name').innerHTML = pustaka.files[0].name;
             }
         });
         lampiran.addEventListener('change', function () {
-            if (lampiran.value) {
+            if (!sizeCheck(lampiran)) {
+                document.getElementById('lampiran-name').classList = "err";
+                document.getElementById('lampiran-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (lampiran.value) {
                 document.getElementById('lampiran-name').innerHTML = lampiran.files[0].name;
             }
         });
         kompilasi.addEventListener('change', function () {
-            if (kompilasi.value) {
+            if (!sizeCheck(kompilasi)) {
+                document.getElementById('kompilasi-name').classList = "err";
+                document.getElementById('kompilasi-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (kompilasi.value) {
                 document.getElementById('kompilasi-name').innerHTML = kompilasi.files[0].name;
             }
         });
         jurnal.addEventListener('change', function () {
-            if (jurnal.value) {
+            if (!sizeCheck(jurnal)) {
+                document.getElementById('jurnal-name').classList = "err";
+                document.getElementById('jurnal-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (jurnal.value) {
                 document.getElementById('jurnal-name').innerHTML = jurnal.files[0].name;
             }
         });
         resi.addEventListener('change', function () {
-            if (resi.value) {
+            if (!sizeCheck(resi)) {
+                document.getElementById('resi-name').classList = "err";
+                document.getElementById('resi-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (resi.value) {
                 document.getElementById('resi-name').innerHTML = resi.files[0].name;
             }
         });
+
+        function sizeCheck(inputFiles) {
+            const size = (inputFiles.files[0].size / 1024 / 1024).toFixed(2);
+
+            if (size > 100) {
+                return false;
+            } 
+            return true;
+        }
 
         function checkSubmit() {
             const submit = document.getElementById('submit-btn');

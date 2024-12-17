@@ -83,6 +83,10 @@ body {
     font-size: 15px;
 }
 
+.err {
+    color: #f45867;
+}
+
 input[type="file"] {
     display: none;
 }

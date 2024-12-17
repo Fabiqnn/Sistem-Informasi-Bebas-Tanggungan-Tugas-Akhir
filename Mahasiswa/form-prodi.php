@@ -96,22 +96,43 @@
         const kompen = document.getElementById('up-kompen');
 
         skripsiName.addEventListener('change', function () {
-            if (skripsiName.value) {
+            if (!sizeCheck(skripsiName)) {
+                document.getElementById('skripsi-name').classList = "err";
+                document.getElementById('skripsi-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            }else if (skripsiName.value) {
                 document.getElementById('skripsi-name').innerHTML = skripsiName.files[0].name;
             }
         });
 
         pkl.addEventListener('change', function () {
-            if (pkl.value) {
+            if (!sizeCheck(pkl)) {
+                document.getElementById('pkl-name').classList = "err";
+                document.getElementById('pkl-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (pkl.value) {
                 document.getElementById('pkl-name').innerHTML = pkl.files[0].name;
             }
         });
 
         kompen.addEventListener('change', function () {
-            if (kompen.value) {
+            if (!sizeCheck(kompen)) {
+                document.getElementById('kompen-name').classList = "err";
+                document.getElementById('kompen-name').innerHTML = "Ukuran File Tidak Boleh Melebihi 50 MB";
+                this.value = "";
+            } else if (kompen.value) {
                 document.getElementById('kompen-name').innerHTML = kompen.files[0].name;
             }
         });
+
+        function sizeCheck(inputFiles) {
+            const size = (inputFiles.files[0].size / 1024 / 1024).toFixed(2);
+
+            if (size > 50) {
+                return false;
+            } 
+            return true;
+        }
 
         function checkSubmit() {
             const submit = document.getElementById('submit-btn');

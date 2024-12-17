@@ -156,6 +156,10 @@ select {
     font-size: 15px;
 }
 
+.err {
+    color: #f45867;
+}
+
 /* button */
 
 .form button {
