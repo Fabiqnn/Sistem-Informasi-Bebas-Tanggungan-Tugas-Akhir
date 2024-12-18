@@ -32,9 +32,12 @@ body {
     margin-top: 10px;
 }
 
+hr {
+    opacity: .5;
+}
+
 #hr-1 {
     margin: 0px 10px 20px 10px;
-    opacity: .5;
 }
 
 .profile-img img {
@@ -49,28 +52,28 @@ body {
     margin-bottom: 20px;
 }
 
-.credential-info{ 
-    display: flex;
-    gap: 10px;
-    font-size: 20px;
-    margin-bottom: 0;
-    align-items: center;
-}
-
-.credential-info h4 {
-    font-weight: 400;
-    font-size: 20px;
-    margin-bottom: 0;
-}
-
-.credential-info p {
-    margin-bottom: 0;
-}
-
 .credential {
    display: flex;
-   flex-direction: column;
    gap: 24px;
+}
+
+.label h5, .titik-dua h5 {
+    font-size: 20px;
+}
+
+.label, .titik-dua, .data {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.label h5, .titik-dua h5, .data p {
+    margin-bottom: 0;
+}
+
+.data p {
+    font-size: 20px;
+    height: 24px;
 }
 
 .button-container {
@@ -101,6 +104,11 @@ body {
 
 .button-container #profil:hover {
     background-color: rgba(27, 188, 155, .8);
+}
+
+.btn.btn-simpan {
+    background-color: rgba(27, 188, 155, 1);
+    color: white;
 }
 
 /* modal */
@@ -137,7 +145,10 @@ body {
 
 .upload-img span {
     font-weight: 400;
+}
 
+.err {
+    color: #f45867;
 }
 
 /* modal2 */

@@ -102,7 +102,7 @@ body {
     opacity: .5;
 }
 
-.request button{
+.request .riwayat-btn{
     background: none;
     border: none;
     cursor: pointer;
@@ -174,7 +174,7 @@ table th:nth-child(3), table td:nth-child(3) { width: 15%; } /* No Wa */
 table th:nth-child(4), table td:nth-child(4) { width: 10%; } /* Jabatan */
 table th:nth-child(5), table td:nth-child(5) { width: 15%; } /* Status Verifikasi */
 table th:nth-child(6), table td:nth-child(6) { width: 18%; } /* Catatan */
-table th:nth-child(7), table td:nth-child(7) { width: 7%;  } /* Update */
+table th:nth-child(7), table td:nth-child(7) { width: 7%; } /* Update */
 
 table tr {
     transition: background-color 0.3s ease;
@@ -188,17 +188,30 @@ table tr:hover {
     background-color: #e9ecef;
 }
 
-table td:last-child a {
-    display: inline-block;
+table td:last-child .perbarui-btn {
     padding: 3px 10px;
     background-color: rgba(254, 183, 75, 1);
     color: white;
     text-decoration: none;
     border-radius: 4px;;
     transition: background-color 0.3s ease;
+    display: flex;
+    justify-self: center;
 }
 
-table td:last-child a:hover {
+table td:last-child .perbarui-btn:hover {
     background-color: rgba(254, 183, 75, .8);
     cursor: pointer;
+}
+
+.perbarui-disabled {
+    padding: 3px 10px;
+    background-color: #a7b1b9;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-self: center;
+    border: none;
 }

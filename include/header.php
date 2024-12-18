@@ -22,12 +22,7 @@
         <a href="<?= $editProfileLink ?>">
             <div class="pfp-img">
                 <?php 
-                    if (isset($_SESSION['profil'])) {
-                        ?> <img src="<?php $_SESSION['profil']; ?>" alt="profile picture"><?php
-                    } else {
-                       ?> <img src="../assets/images/profildummy1.jpg" alt=""><?php 
-                    }
-                    
+                    include '../include/profile-picture.php';
                 ?>
             </div>
             <h1 id="nama_pengguna">

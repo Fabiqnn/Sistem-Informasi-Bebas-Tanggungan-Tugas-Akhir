@@ -92,7 +92,7 @@
                 <hr id="hr-1">
                 <div class="profile">
                     <div id="img-container2">
-                        <img src="../assets/images/profildummy1.jpg" alt="profile picture">
+                        <?php include '../include/profile-picture.php' ?>
                     </div>
                     <div id="credential">
                         <h4 id="h4-1">Hai' </h4> <h4 id="h4-2"><?php if (isset($_SESSION['nama'])) {
@@ -150,7 +150,12 @@
                                             echo "<td>" . $row['ROLE'] . "</td>";
                                             echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
                                             echo "<td>" . $row['catatan'] . "</td>";
-                                            echo "<td><a href='form-edit-ta.php?adm=1'>Perbarui</a></td>";
+                                            if ($row['STATUS_VERIFIKASI'] === 'Ditolak') {
+                                                echo "<td><a class='perbarui-btn' href='form-edit-ta.php?adm=1'>Perbarui</a></td>";
+                                            } else {
+                                                echo "<td><a class='perbarui-disabled'>Perbarui</a>";
+                                            }
+                                            
                                         }
                                     }
                                 ?>
@@ -185,7 +190,12 @@
                                         echo "<td>" . $row['ROLE'] . "</td>";
                                         echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
                                         echo "<td>" . $row['catatan'] . "</td>";
-                                        echo "<td><a href='form-edit-prodi.php?adm=2' >Perbarui</a></td>";
+                                        if ($row['STATUS_VERIFIKASI'] === 'Ditolak') {
+                                            echo "<td><a class='perbarui-btn' href='form-edit-prodi.php?adm=2' >Perbarui</a></td>";
+                                        } else {
+                                            echo "<td><a class='perbarui-disabled'>Perbarui</a></td>";
+                                        }
+                                        
                                     }
                                 }
                             ?>
@@ -220,7 +230,11 @@
                                         echo "<td>" . $row['ROLE'] . "</td>";
                                         echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
                                         echo "<td>" . $row['catatan'] . "</td>";
-                                        echo "<td><a href='form-edit-pustaka.php?adm=3'>Perbarui</a></td>";
+                                        if ($row['STATUS_VERIFIKASI'] === 'Ditolak') {
+                                            echo "<td><a class='perbarui-btn' href='form-edit-pustaka.php?adm=3'>Perbarui</a></td>";
+                                        } else {
+                                            echo "<td><a class='perbarui-disabled'>Perbarui</a></td>";
+                                        }
                                     }
                                 }
                             ?>
