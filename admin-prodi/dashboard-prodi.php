@@ -42,7 +42,7 @@
                 <hr id="hr-1">
                 <div class="profile">
                     <div id="img-container2">
-                        <img src="../assets/images/profildummy1.jpg" alt="profile picture">
+                        <?php include '../include/profile-picture.php' ?>
                     </div>
                     <div id="credential">
                         <h4 id="h4-1">Hai' </h4> <h4 id="h4-2"><?php if (isset($_SESSION['nama'])) {

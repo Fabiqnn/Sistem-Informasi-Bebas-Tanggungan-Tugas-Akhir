@@ -1,31 +1,24 @@
-<?php
+<?php 
     session_start();
 
     if (!isset($_SESSION['logged-in']) || $_SESSION['logged-in'] !== true) {
         header("Location: ../index.php");
         exit();
     } 
-    
-    if ($_SESSION['role'] !== 'mahasiswa') {
-        header("Location: ../index.php");
-        exit();
-    }
 
     include '../config/db-connect.php';
-    
+
     $query = "SELECT 
-                NAMA_MHS,
-                NO_WA_MHS,
-                EMAIL_MHS,
-                PRODI,
-                ANGKATAN
-            FROM MAHASISWA
-            WHERE NIM = ?";
+                NAMA_ADM,
+                NO_WA_ADM,
+                EMAIL_ADM
+                FROM [ADMIN]
+                WHERE NIP = ?";
     $params = array($_SESSION['noInduk']);
     $result = sqlsrv_query($conn, $query, $params);
 
     if (!$result) {
-        die("Query Tidak Berhasil Dijalankan " . print_r(sqlsrv_errors(), true));
+        die("Query Data Gagal " . print_r(sqlsrv_errors(), true));
     } else {
         $getData = sqlsrv_fetch_array($result);
     }
@@ -49,12 +42,16 @@
     <?php include '../include/header.php' ?>
 
     <div class="body">
-        <?php include '../include/sidebar.php' ?>
+        <?php 
+            if ($_SESSION['role'] === 'Super Admin') {
+                include '../include/sidebar-super-adm.php';
+            } else {
+                include '../include/sidebar-adm.php';
+            }
+        ?>
 
         <div class="main-content">
             <?php include '../include/banner.php' ?>
-
-            
             <div class="card-container">
                 <h3>SELAMAT DATANG</h3>
                 <hr id="hr-1">
@@ -69,12 +66,8 @@
                             <h5>Nama</h5>
                             <h5>No. Whatsapp</h5>
                             <h5>Email</h5>
-                            <h5>Prodi</h5>
-                            <h5>Angakatan</h5>
                         </div>
                         <div class="titik-dua">
-                            <h5>:</h5>
-                            <h5>:</h5>
                             <h5>:</h5>
                             <h5>:</h5>
                             <h5>:</h5>
@@ -83,8 +76,6 @@
                             <p><?= $_SESSION['nama'] ?></p>
                             <p><?= $_SESSION['noTelp'] ?></p>
                             <p><?= $_SESSION['email'] ?></p>
-                            <p><?= $_SESSION['prodi'] ?></p>
-                            <p><?= $_SESSION['angkatan'] ?></p>
                     </div>
                 </div>
             </div>
@@ -97,7 +88,7 @@
     </div>
 
     <!-- Modal unggah foto -->
-    <form action="../assets/php/edit-profile-mhs.php?type=1" method="post" enctype="multipart/form-data">
+    <form action="../assets/php/edit-profile-adm.php?type=1" method="post" enctype="multipart/form-data">
         <div class="modal fade" id="tambahFoto" tabindex="-1" aria-labelledby="tambahFotoLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -125,7 +116,7 @@
     </form>
 
     <!-- Modal edit profile-->
-    <form action="../assets/php/edit-profile-mhs.php?type=2" method="post" enctype="multipart/form-data">
+    <form action="../assets/php/edit-profile-adm.php?type=2" method="post" enctype="multipart/form-data">
         <div class="modal fade" id="editProfile" tabindex="-1" aria-labelledby="editProfileLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -136,32 +127,19 @@
             <div class="modal-body">
                 <div class="input-form">
                     <label for="nama">Nama</label>
-                    <input type="text" name="nama" id="nama" value="<?= $getData['NAMA_MHS'] ?>">
+                    <input type="text" name="nama" id="nama" value="<?= $getData['NAMA_ADM'] ?>">
                 </div>
 
                 <div class="input-form">
                     <label for="no-wa">No Whatsapp</label>
-                    <input type="text" name="no-wa" id="no-wa" value="<?= $getData['NO_WA_MHS'] ?>">
+                    <input type="text" name="no-wa" id="no-wa" value="<?= $getData['NO_WA_ADM'] ?>">
                 </div>
 
                 <div class="input-form">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" value="<?= $getData['EMAIL_MHS'] ?>">
+                    <input type="email" name="email" id="email" value="<?= $getData['EMAIL_ADM'] ?>">
                 </div>
 
-                <div class="input-form">
-                    <label for="prodi">Prodi</label>
-                    <select name="prodi" id="prodi">
-                        <option value="D4 Sistem Informasi Bisnis (D4-SIB)" <?= ($getData['PRODI'] == 'D4 Sistem Informasi Bisnis (D4-SIB)') ? 'selected' : '' ?>>D4 Sistem Informasi Bisnis (D4-SIB)</option>
-                        <option value="D2 Pengembangan Perangkat (Piranti) Lunak Situs (D2-PPLS)" <?= ($getData['PRODI'] == 'D2 Pengembangan Perangkat (Piranti) Lunak Situs (D2-PPLS)') ? 'selected' : '' ?>>D2 Pengembangan Perangkat (Piranti) Lunak Situs (D2-PPLS)</option>
-                        <option value="D4 Teknik Informatika (D4-TI)" <?= ($getData['PRODI'] == 'D4 Teknik Informatika (D4-TI)') ? 'selected' : '' ?>>D4 Teknik Informatika (D4-TI)</option>
-                    </select>
-                </div>
-
-                <div class="input-form">
-                    <label for="angkatan">Angkatan</label>
-                    <input type="text" name="angkatan" id="angkatan" value="<?= $getData['ANGKATAN'] ?>">
-                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -171,8 +149,7 @@
         </div>
         </div>
     </form>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
     <script>
         const inputFoto = document.getElementById('foto');
 
@@ -185,10 +162,10 @@
             } else if (inputFoto.value) {
                 document.getElementById('foto-name').classList.remove('err');
                 document.getElementById('foto-upload').src = URL.createObjectURL(inputFoto.files[0]);
-
                 document.getElementById('foto-name').innerHTML = inputFoto.files[0].name;
             }
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -7,13 +7,13 @@
             </button>
         </li>
         <li class="sidebar-item">
-            <a href="super-admin-dashboard.php">
+            <a href="../super-admin/super-admin-dashboard.php">
                 <i class="lni lni-home-2"></i>
                 <span>Beranda</span>
             </a>
         </li>
         <li class="sidebar-item">
-            <a href="kelola-admin.php">
+            <a href="../super-admin/kelola-admin.php">
             <i class="lni lni-folder-1"></i>
                 <span>Edit User Admin</span>
             </a>

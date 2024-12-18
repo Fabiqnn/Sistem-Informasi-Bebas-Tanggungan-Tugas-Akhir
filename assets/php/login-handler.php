@@ -40,9 +40,9 @@
                     case 'adm_lt7':
                         $_SESSION['nama'] = $rowAdm['NAMA_ADM'];
                         $_SESSION['noInduk'] = $rowAdm['NIP'];
-                        $_SESSION['profil'] = $rowAdm['PATH_FOTO_PROFIL'];
-                        $_SESSION['noTelp'] = $rowAdm['NOWA_ADMIN'];
-                        $_SESSION['email'] = $rowAdm['EMAIL'];
+                        $_SESSION['profil'] = $rowAdm['FOTO_ADM'];
+                        $_SESSION['noTelp'] = $rowAdm['NO_WA_ADM'];
+                        $_SESSION['email'] = $rowAdm['EMAIL_ADM'];
                         $_SESSION['role'] = "Admin TA";
                         header("Location: ../../admin-TA/dashboard-ta.php");
                         break;

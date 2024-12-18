@@ -6,7 +6,7 @@
         if ($_SESSION['role'] === "mahasiswa") {
             $editProfileLink = "../Mahasiswa/edit-profile-mhs.php";
         } else {
-            $editProfileLink = "/kokam";
+            $editProfileLink = "../include/edit-profile-admin.php";
         }
     }
 ?>
