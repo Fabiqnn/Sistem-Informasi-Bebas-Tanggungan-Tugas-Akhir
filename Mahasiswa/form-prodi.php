@@ -60,7 +60,7 @@
                     <h4>Formulir Tanggungan Prodi</h4>
                     <form action="../assets/php/upload-prodi.php" method="post" enctype="multipart/form-data">
 
-                        <label>Bukti Distribusi Buku Skripsi / Laporan Akhir</label>
+                        <label class="keterangan">Bukti Distribusi Buku Skripsi / Laporan Akhir</label>
 
                         <div class="upload-file">
                             <label for="up-skripsi" class="upload-btn">Unggah</label> 
@@ -68,7 +68,7 @@
                             <span id="skripsi-name">No File Choosen.</span>
                         </div>
                         
-                        <label>Bukti Distribusi Laporan PKL</label>
+                        <label class="keterangan">Bukti Distribusi Laporan PKL</label>
                         
                         <div class="upload-file">
                             <label for="up-pkl" class="upload-btn">Unggah</label> 
@@ -76,7 +76,7 @@
                             <span id="pkl-name">No File Choosen.</span>
                         </div>
                         
-                        <label>Bukti Bebas Kompen</label>
+                        <label class="keterangan">Bukti Bebas Kompen</label>
                         
                         <div class="upload-file">
                             <label for="up-kompen" class="upload-btn">Unggah</label> 

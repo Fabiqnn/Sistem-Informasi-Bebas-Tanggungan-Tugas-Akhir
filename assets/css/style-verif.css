@@ -100,3 +100,19 @@ table td a:hover {
 table #check-form {
     width: 300px;
 }
+
+@media (max-width: 768px) {
+    table th {
+        font-size: 12px;
+        line-height: 1rem;
+    }
+
+    table td {
+        font-size: 10px;
+        line-height: 1rem;
+    }
+
+    .table-content {
+        overflow-x: scroll;
+    }
+}

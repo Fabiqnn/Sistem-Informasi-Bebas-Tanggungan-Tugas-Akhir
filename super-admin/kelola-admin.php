@@ -64,35 +64,37 @@
                             <i class="lni lni-plus"></i>
                             Add Admin User
                         </button>
-                        <table>
-                            <tr>
-                                <th>Nama</th>
-                                <th>Jabatan</th>
-                                <th>NIP</th>
-                                <th>Kata Sandi</th>
-                                <th>update</th>
-                                <th>Delete</th>
-                            </tr>
-                            <?php
-                                while ($rowTable = sqlsrv_fetch_array($resultTable, SQLSRV_FETCH_ASSOC)) {
-                                    echo "<tr>";
-                                        echo "<td>" . $rowTable['NAMA_ADM'] . "</td>";
-                                        echo "<td>" . $rowTable['ROLE'] . "</td>";
-                                        echo "<td>" . $rowTable['NIP'] . "</td>";
-                                        echo "<td>******</td>"; 
-                                        echo "<td class='update-col'><a 
-                                            href='#' 
-                                            class='update-btn' 
-                                            data-bs-toggle='modal' 
-                                            data-bs-target='#edit-admin-modal'
-                                            data-nama = '".$rowTable['NAMA_ADM']."'
-                                            data-nip = '".$rowTable['NIP']."'
-                                            data-pass = '".$rowTable['PASS']."' >Perbarui</a></td>";
-                                        echo "<td class='delete-col'><a href='../assets/php/delete-admin.php?delete_id=" . $rowTable['ID_USER'] . "' class='delete-btn' onclick='return confirm(\"Apakah anda yakin untuk menghapus user berikut?\")'>Hapus</a></td>";
-                                    echo "</tr>";
-                                }
-                            ?>
-                        </table>
+                        <div class="table-table">
+                            <table>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Jabatan</th>
+                                    <th>NIP</th>
+                                    <th>Kata Sandi</th>
+                                    <th>update</th>
+                                    <th>Delete</th>
+                                </tr>
+                                <?php
+                                    while ($rowTable = sqlsrv_fetch_array($resultTable, SQLSRV_FETCH_ASSOC)) {
+                                        echo "<tr>";
+                                            echo "<td>" . $rowTable['NAMA_ADM'] . "</td>";
+                                            echo "<td>" . $rowTable['ROLE'] . "</td>";
+                                            echo "<td>" . $rowTable['NIP'] . "</td>";
+                                            echo "<td>******</td>"; 
+                                            echo "<td class='update-col'><a 
+                                                href='#' 
+                                                class='update-btn' 
+                                                data-bs-toggle='modal' 
+                                                data-bs-target='#edit-admin-modal'
+                                                data-nama = '".$rowTable['NAMA_ADM']."'
+                                                data-nip = '".$rowTable['NIP']."'
+                                                data-pass = '".$rowTable['PASS']."' >Perbarui</a></td>";
+                                            echo "<td class='delete-col'><a href='../assets/php/delete-admin.php?delete_id=" . $rowTable['ID_USER'] . "' class='delete-btn' onclick='return confirm(\"Apakah anda yakin untuk menghapus user berikut?\")'>Hapus</a></td>";
+                                        echo "</tr>";
+                                    }
+                                ?>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

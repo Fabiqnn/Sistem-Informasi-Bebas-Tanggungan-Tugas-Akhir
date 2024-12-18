@@ -72,10 +72,10 @@
                             </div>
                         </div>
 
-                        <label for="judul-skripsi">Judul Karya Ilmiah (Laporan Akhir)</label>
+                        <label class="keterangan" for="judul-skripsi">Judul Karya Ilmiah (Laporan Akhir)</label>
                         <input type="text" name="judul" id="judul-skripsi">
 
-                        <label for="tahun-skripsi">Tahun Karya Ilmiah Akhir Terbit (Laporan Akhir)</label>
+                        <label class="keterangan" for="tahun-skripsi">Tahun Karya Ilmiah Akhir Terbit (Laporan Akhir)</label>
                         <select id="tahun-skripsi" name="tahun-skripsi">
                             <option value="2010">2010</option>
                             <option value="2011">2011</option>
@@ -95,10 +95,10 @@
                             <option value="2025">2025</option>
                         </select>
 
-                        <label for="tgl-skripsi">Tanggal, Bulan, Tahun Ujian Tugas Akhir / Skripsi</label>
+                        <label class="keterangan" for="tgl-skripsi">Tanggal, Bulan, Tahun Ujian Tugas Akhir / Skripsi</label>
                         <input type="date" name="tgl-skripsi" id="tgl-skripsi">
 
-                        <label for="tgl-yudisium">Tanggal, Bulan, Tahun Yudisium</label>
+                        <label class="keterangan" for="tgl-yudisium">Tanggal, Bulan, Tahun Yudisium</label>
                         <input type="date" name="tgl-yudisium" id="tgl-yudisium">
 
                         <p>Bukti Bebas Kompen</p>
@@ -221,7 +221,7 @@
                         </div>
 
                         <h6>LINK PUBLIKASI JURNAL</h6>
-                        <p>Khusus mahasiswa D4 ( Link dimana Jurnal anda dipublikasikan sesuai alamat URL ) ( bila ada silahkan dilampirkan ) (bila tidak ada bisa dikosongkan)</p>
+                        <p class="keterangan">Khusus mahasiswa D4 ( Link dimana Jurnal anda dipublikasikan sesuai alamat URL ) ( bila ada silahkan dilampirkan ) (bila tidak ada bisa dikosongkan)</p>
                         <input type="text" id="link-publikasi" name="link-publikasi">
 
                         <div class="upload">
@@ -234,7 +234,8 @@
                             </div>
                         </div>
 
-                        <p class="label">Dengan ini saya memberikan ijin kepada perpustakaan polinema untuk mengolah Laporan Akhir / Tugas Akhir saya dengan ketentuan yang ada untuk kemajuan ilmu pengetahuan dan institusi.</p>
+                        <h6>IZIN MENGOLAH</h6>
+                        <p class="keterangan">Dengan ini saya memberikan ijin kepada perpustakaan polinema untuk mengolah Laporan Akhir / Tugas Akhir saya dengan ketentuan yang ada untuk kemajuan ilmu pengetahuan dan institusi.</p>
                         <div class="radio-container">
                             <div class="radio">
                                 <input type="radio" name="izin" class="radio-check" id="iya" value="Diperbolehkan">

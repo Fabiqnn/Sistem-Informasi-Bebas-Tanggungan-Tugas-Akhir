@@ -28,6 +28,12 @@
     .informasi .data {
         font-size: 14px;
     }
+
+    @media (max-width: 425px) {
+        .informasi h5, .informasi p {
+            font-size: 10px;
+        }
+    }
 </style>
 
 <?php 

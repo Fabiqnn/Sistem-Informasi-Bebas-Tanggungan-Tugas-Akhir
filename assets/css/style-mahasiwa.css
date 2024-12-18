@@ -7,6 +7,7 @@
 
 html {
     line-height: 2rem;
+    width: 100%;
 }
 
 body {
@@ -214,4 +215,81 @@ table td:last-child .perbarui-btn:hover {
     display: flex;
     justify-self: center;
     border: none;
+}
+
+@media (max-width: 1024px) {
+    #credential h4 {
+        font-size: 25px;
+    }
+
+    #credential h5 {
+        font-size: 18px;
+    }
+
+    table th {
+        font-size: 14px;
+        line-height: 1rem;
+    }
+
+    table td {
+        font-size: 12px;
+        line-height: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    #img-container2 {
+        width: 175px;
+        height: 250px;
+    }
+
+    #credential h4 {
+        font-size: 25px;
+    }
+
+    #credential h5 {
+        font-size: 18px;
+    }
+
+    .card-container h3 {
+        font-size: 20px;
+    }
+
+    .request span {
+        font-size: 15px;
+    }
+
+    table th {
+        font-size: 10px;
+        line-height: 1rem;
+    }
+
+    table td {
+        font-size: 8px;
+        line-height: 1rem;
+    }
+}
+
+@media (max-width: 425px) {
+
+    .profile {
+        display: grid;
+    }
+
+    #img-container2 {
+        width: 175px;
+        height: 250px;
+        justify-self: center;
+    }
+
+    #credential h4 {
+        font-size: 20px;
+    }
+    
+    #credential h5 {
+        font-size: 12px;
+    }
+
+    .table-container {
+        overflow-x: scroll;
+    }
 }

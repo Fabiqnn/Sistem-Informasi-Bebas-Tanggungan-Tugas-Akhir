@@ -47,6 +47,7 @@ body {
 }
 
 .cetak-btn button {
+    cursor: pointer;
     padding: 5px 20px;
     background-color: rgba(27, 188, 155, 1);
     color: white;
@@ -79,5 +80,35 @@ body {
         position: absolute;
         top: 0;
         left: 0;
+    }
+}
+
+@media (max-width: 425px) {
+    #print-area {
+        transform: scale(0.8); /* Mengecilkan seluruh konten menjadi 80% dari ukuran aslinya */
+        transform-origin: top left; /* Titik asal skala di kiri atas */
+    }
+
+    #print-area * {
+        font-size: 12px; /* Menyesuaikan ukuran font agar lebih kecil di layar kecil */
+    }
+
+    /* Opsional: Sesuaikan margin dan padding agar konten lebih rapi */
+    #print-area table {
+        margin: 5px;
+    }
+
+    #print-area h2, #print-area h3 {
+        font-size: 14px; /* Mengecilkan ukuran heading */
+    }
+
+    /* Pastikan tabel tetap responsif */
+    #print-area table {
+        width: 100%;
+        table-layout: fixed; /* Memastikan kolom tetap rapi */
+    }
+
+    #print-area td, #print-area th {
+        padding: 5px; /* Mengecilkan padding pada tabel */
     }
 }

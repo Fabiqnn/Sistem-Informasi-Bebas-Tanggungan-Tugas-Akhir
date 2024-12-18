@@ -8,7 +8,7 @@
 
 html, body {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
 }
 
 .header {
@@ -30,11 +30,9 @@ html, body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 930px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 930px;
 }
 
 .form::before {
@@ -136,7 +134,10 @@ a:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 0 10px;
+    padding: 0 20px;
+}
+
+.data {
 }
 
 .informasi img, .informasi h1, .informasi p {
@@ -164,4 +165,105 @@ a:hover {
     background-color: rgba(43, 54, 67, 1);
 }
 
+.container {
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
 
+@media (max-width: 2500px) {
+    .form.container {
+        min-width: 930px
+    }
+}
+
+@media (max-width: 1880px) {
+    .form.container {
+        min-width: 930px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .form.container {
+        min-width: 900px;
+    }
+
+    .informasi img {
+        margin-top: 100px;
+        width: 100px;
+        height: auto;
+    }
+
+    .informasi h1 {
+        font-size: 30px;
+    }
+
+    .informasi p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .form.container {
+        min-width: 600px;
+    }
+
+    .content h1  {
+        font-size: 30px;
+    }
+
+    .content h3 {
+        font-size: 25px;
+    }
+
+    .content label, a  {
+        font-size: 15px;
+    }
+
+    .content input {
+        padding: 8px;
+    }
+
+    .content input::placeholder, button {
+        font-size: 14px;
+    }
+
+    .informasi img {
+        margin-top: 100px;
+        width: 100px;
+        height: auto;
+    }
+
+    .informasi h1 {
+        font-size: 30px;
+    }
+
+    .informasi p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .informasi {
+        display: none;
+    }
+
+    .form.container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+
+    .informasi {
+        display: none;
+    }
+
+    .form.container {
+        width: 100%;
+        overflow: auto;
+        height: 100%;
+    }
+}

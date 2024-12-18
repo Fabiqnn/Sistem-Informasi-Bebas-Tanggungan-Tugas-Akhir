@@ -72,3 +72,23 @@ header a:hover {
     height: 43px;
     border-radius: 50px;
 }
+
+@media (max-width: 425px) {
+    header  {
+        padding-right: 5px;
+    }
+
+    header h1 {
+        font-size: 14px;
+    }
+
+    header #nama_pengguna {
+        font-size: 12px;
+        margin-right: 5px;
+    }
+
+    .pfp-img img {
+        width: 43px;
+        height: 43px;
+    }
+}

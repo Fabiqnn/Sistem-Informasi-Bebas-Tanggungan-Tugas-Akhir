@@ -3,6 +3,7 @@
     display: flex;
     min-height: 200px;
     position: relative;
+    width: 100%;
 }
 
 .banner::before {
@@ -47,4 +48,38 @@
     font-weight: 600;
     line-height: 2rem;
     margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .judul {
+        min-width: 500px;
+        position: absolute;
+        top: 30%;
+        left: 25%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .judul {
+        min-width: 500px;
+        position: absolute;
+        top: 30%;
+        left: 15%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 425px) {
+    .judul {
+        min-width: 200px;
+        position: absolute;
+        top: 30%;
+        left: 22%;
+        margin: 0;
+    }
+    
+    .judul h1 {
+        font-size: 25px;
+    }
 }

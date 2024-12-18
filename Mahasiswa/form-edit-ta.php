@@ -63,21 +63,21 @@
                     <h4>Formulir Tanggungan Skripsi/TA</h4>
                     <form action="../assets/php/edit-upload.php?adm=1" method="post" enctype="multipart/form-data">
 
-                        <label>Laporan Tugas Akhir/Skripsi</label>
+                        <label class="keterangan">Laporan Tugas Akhir/Skripsi</label>
                         <div class="file-upload">
                             <label for="up-laporan-ta" class="upload-btn">Unggah</label>
                             <input type="file" name="up-laporan-ta" id="up-laporan-ta">
                             <span id="laporan-ta-name"><?= $skripsi ?></span>
                         </div>
                         
-                        <label>Program/Aplikasi Tugas Akhir/Skripsi</label>
+                        <label class="keterangan">Program/Aplikasi Tugas Akhir/Skripsi</label>
                         <div class="file-upload">
                             <label for="up-program" class="upload-btn">Unggah</label>
                             <input type="file" name="up-program" id="up-program">
                             <span id="program-name"><?= $program ?></span>
                         </div>
                         
-                        <label>Bukti Publikasi Tugas Akhir</label>
+                        <label class="keterangan">Bukti Publikasi Tugas Akhir</label>
                         <div class="file-upload">
                             <label for="up-publikasi" class="upload-btn">Unggah</label>
                             <input type="file" name="up-publikasi" id="up-publikasi">

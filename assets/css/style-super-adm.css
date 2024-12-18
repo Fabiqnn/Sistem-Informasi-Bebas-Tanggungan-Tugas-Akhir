@@ -122,7 +122,45 @@ body {
     gap: 10px;
 }
 
-.sub-credential p {
+#credential .credential-value {
     font-weight: 400;
-    font-size: 23px;
+}
+
+@media (max-width: 1024px) {
+    #credential h4 {
+        font-size: 25px;
+    }
+
+    #credential h5 {
+        font-size: 18px;
+    }
+}
+@media (max-width: 768px) {
+    #img-container2 {
+        width: 175px;
+        height: 250px;
+    }
+
+    #credential h4 {
+        font-size: 25px;
+    }
+
+    #credential h5 {
+        font-size: 18px;
+    }
+
+    .card-container h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 425px) {
+    .profile {
+        display: grid;
+    }
+    #img-container2 {
+        width: 175px;
+        height: 250px;
+        justify-self: center;
+    }
 }

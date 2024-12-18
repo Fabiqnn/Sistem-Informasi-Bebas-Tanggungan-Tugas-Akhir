@@ -199,3 +199,54 @@ form #submit-btn {
 form #submit-btn:hover {
     background-color: rgba(27, 188, 155, .8);
 }
+
+@media (max-width: 425px) {
+    .form h4{
+        font-size: 20px;
+        margin-top: 25px;
+    }
+
+    .form .label{
+        font-size: 14px;
+    }
+
+    .form label {
+        font-size: 12px;
+    }
+
+    .form span {
+        font-size: 12px;
+    }
+
+    .form p {
+        font-size: 12px;
+    }
+    
+    .form h6 {
+        font-size: 18px;
+    }
+
+    .form .keterangan {
+        line-height: 1.3rem;
+    }
+
+    .form span{
+        font-size: 12px;
+    }
+
+    .upload-btn {
+        padding: 2px 10px;
+    }
+
+    #submit-btn {
+        font-size: 12px;
+    }
+
+    .form .subjudul {
+        width: 245px;
+    }
+
+    .form .file-upload-nama {
+        font-size: 10px;
+    }
+}

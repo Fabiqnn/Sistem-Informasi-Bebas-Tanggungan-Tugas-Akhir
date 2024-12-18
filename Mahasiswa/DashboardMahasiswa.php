@@ -129,38 +129,40 @@
                     </button>
 
                     <div class="verifikasi">
-                        <table>
-                            <tr>
-                                <th>Nama Admin</th>
-                                <th>Email</th>
-                                <th>No Wa</th>
-                                <th>Jabatan</th>
-                                <th>Status Verifikasi</th>
-                                <th>Catatan</th>
-                                <th>Update</th>
-                            </tr>
-                            <tr>
-                                <?php
-                                    if ($resultTa) {
-                                        $row = sqlsrv_fetch_array($resultTa);
-                                        if (isset($row)) {
-                                            echo "<td>" . $row['NAMA_ADM']. "</td>";
-                                            echo "<td>" . $row['EMAIL_ADM'] . "</td>";
-                                            echo "<td>" . $row['NO_WA_ADM'] . "</td>";
-                                            echo "<td>" . $row['ROLE'] . "</td>";
-                                            echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
-                                            echo "<td>" . $row['catatan'] . "</td>";
-                                            if ($row['STATUS_VERIFIKASI'] === 'Ditolak') {
-                                                echo "<td><a class='perbarui-btn' href='form-edit-ta.php?adm=1'>Perbarui</a></td>";
-                                            } else {
-                                                echo "<td><a class='perbarui-disabled'>Perbarui</a>";
+                        <div class="table-container">
+                            <table>
+                                <tr>
+                                    <th>Nama Admin</th>
+                                    <th>Email</th>
+                                    <th>No Wa</th>
+                                    <th>Jabatan</th>
+                                    <th>Status Verifikasi</th>
+                                    <th>Catatan</th>
+                                    <th>Update</th>
+                                </tr>
+                                <tr>
+                                    <?php
+                                        if ($resultTa) {
+                                            $row = sqlsrv_fetch_array($resultTa);
+                                            if (isset($row)) {
+                                                echo "<td>" . $row['NAMA_ADM']. "</td>";
+                                                echo "<td>" . $row['EMAIL_ADM'] . "</td>";
+                                                echo "<td>" . $row['NO_WA_ADM'] . "</td>";
+                                                echo "<td>" . $row['ROLE'] . "</td>";
+                                                echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
+                                                echo "<td>" . $row['catatan'] . "</td>";
+                                                if ($row['STATUS_VERIFIKASI'] === 'Ditolak') {
+                                                    echo "<td><a class='perbarui-btn' href='form-edit-ta.php?adm=1'>Perbarui</a></td>";
+                                                } else {
+                                                    echo "<td><a class='perbarui-disabled'>Perbarui</a>";
+                                                }
+                                                
                                             }
-                                            
                                         }
-                                    }
-                                ?>
-                            </tr>
-                        </table>
+                                    ?>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
 
                     <button class="riwayat-btn" id="prodi-btn">
@@ -169,38 +171,40 @@
                     </button>
 
                     <div class="verifikasi">
-                        <table>
-                            <tr>
-                                <th>Nama Admin</th>
-                                <th>Email</th>
-                                <th>No Wa</th>
-                                <th>Jabatan</th>
-                                <th>Status Verifikasi</th>
-                                <th>Catatan</th>
-                                <th>Update</th>
-                            </tr>
-                            <tr>
-                            <?php
-                                if ($resultProdi) {
-                                    $row = sqlsrv_fetch_array($resultProdi);
-                                    if (isset($row)) {
-                                        echo "<td>" . $row['NAMA_ADM']. "</td>";
-                                        echo "<td>" . $row['EMAIL_ADM'] . "</td>";
-                                        echo "<td>" . $row['NO_WA_ADM'] . "</td>";
-                                        echo "<td>" . $row['ROLE'] . "</td>";
-                                        echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
-                                        echo "<td>" . $row['catatan'] . "</td>";
-                                        if ($row['STATUS_VERIFIKASI'] === 'Ditolak') {
-                                            echo "<td><a class='perbarui-btn' href='form-edit-prodi.php?adm=2' >Perbarui</a></td>";
-                                        } else {
-                                            echo "<td><a class='perbarui-disabled'>Perbarui</a></td>";
+                        <div class="table-container">
+                            <table>
+                                <tr>
+                                    <th>Nama Admin</th>
+                                    <th>Email</th>
+                                    <th>No Wa</th>
+                                    <th>Jabatan</th>
+                                    <th>Status Verifikasi</th>
+                                    <th>Catatan</th>
+                                    <th>Update</th>
+                                </tr>
+                                <tr>
+                                <?php
+                                    if ($resultProdi) {
+                                        $row = sqlsrv_fetch_array($resultProdi);
+                                        if (isset($row)) {
+                                            echo "<td>" . $row['NAMA_ADM']. "</td>";
+                                            echo "<td>" . $row['EMAIL_ADM'] . "</td>";
+                                            echo "<td>" . $row['NO_WA_ADM'] . "</td>";
+                                            echo "<td>" . $row['ROLE'] . "</td>";
+                                            echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
+                                            echo "<td>" . $row['catatan'] . "</td>";
+                                            if ($row['STATUS_VERIFIKASI'] === 'Ditolak') {
+                                                echo "<td><a class='perbarui-btn' href='form-edit-prodi.php?adm=2' >Perbarui</a></td>";
+                                            } else {
+                                                echo "<td><a class='perbarui-disabled'>Perbarui</a></td>";
+                                            }
+                                            
                                         }
-                                        
                                     }
-                                }
-                            ?>
-                            </tr>
-                        </table>
+                                ?>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
 
                     <button class="riwayat-btn" id="perpus-btn">
@@ -209,37 +213,39 @@
                     </button>
                         
                     <div class="verifikasi">
-                        <table>
-                            <tr>
-                                <th>Nama Admin</th>
-                                <th>Email</th>
-                                <th>No Wa</th>
-                                <th>Jabatan</th>
-                                <th>Status Verifikasi</th>
-                                <th>Catatan</th>
-                                <th>Update</th>
-                            </tr>
-                            <tr>
-                            <?php
-                                if ($resultPustaka) {
-                                    $row = sqlsrv_fetch_array($resultPustaka);
-                                    if (isset($row)) {
-                                        echo "<td>" . $row['NAMA_ADM']. "</td>";
-                                        echo "<td>" . $row['EMAIL_ADM'] . "</td>";
-                                        echo "<td>" . $row['NO_WA_ADM'] . "</td>";
-                                        echo "<td>" . $row['ROLE'] . "</td>";
-                                        echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
-                                        echo "<td>" . $row['catatan'] . "</td>";
-                                        if ($row['STATUS_VERIFIKASI'] === 'Ditolak') {
-                                            echo "<td><a class='perbarui-btn' href='form-edit-pustaka.php?adm=3'>Perbarui</a></td>";
-                                        } else {
-                                            echo "<td><a class='perbarui-disabled'>Perbarui</a></td>";
+                        <div class="table-container">
+                            <table>
+                                <tr>
+                                    <th>Nama Admin</th>
+                                    <th>Email</th>
+                                    <th>No Wa</th>
+                                    <th>Jabatan</th>
+                                    <th>Status Verifikasi</th>
+                                    <th>Catatan</th>
+                                    <th>Update</th>
+                                </tr>
+                                <tr>
+                                <?php
+                                    if ($resultPustaka) {
+                                        $row = sqlsrv_fetch_array($resultPustaka);
+                                        if (isset($row)) {
+                                            echo "<td>" . $row['NAMA_ADM']. "</td>";
+                                            echo "<td>" . $row['EMAIL_ADM'] . "</td>";
+                                            echo "<td>" . $row['NO_WA_ADM'] . "</td>";
+                                            echo "<td>" . $row['ROLE'] . "</td>";
+                                            echo "<td>" . $row['STATUS_VERIFIKASI'] . "</td>";
+                                            echo "<td>" . $row['catatan'] . "</td>";
+                                            if ($row['STATUS_VERIFIKASI'] === 'Ditolak') {
+                                                echo "<td><a class='perbarui-btn' href='form-edit-pustaka.php?adm=3'>Perbarui</a></td>";
+                                            } else {
+                                                echo "<td><a class='perbarui-disabled'>Perbarui</a></td>";
+                                            }
                                         }
                                     }
-                                }
-                            ?>
-                            </tr>
-                        </table>
+                                ?>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

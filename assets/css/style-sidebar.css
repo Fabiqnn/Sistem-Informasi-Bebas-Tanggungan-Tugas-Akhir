@@ -135,3 +135,9 @@
 .main-content.shrink {
     margin-left: 330px;
 }
+
+@media (max-width: 1024px) {
+    .main-content.shrink {
+        margin-left: 70px;
+    }
+}

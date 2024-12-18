@@ -48,11 +48,11 @@
                         <hr id="hr-2">
                         <div class="sub-credential">
                             <h5>NIP : </h5>
-                            <p><?= $_SESSION['noInduk']?></p>
+                            <h5 class="credential-value"><?= $_SESSION['noInduk']?></h5>
                         </div>
                         <div class="sub-credential">
                             <h5>Jabatan : </h5>
-                            <p><?= $_SESSION['role']?></p>
+                            <h5 class="credential-value"><?= $_SESSION['role']?></h5>
                         </div>
                     </div>
                 </div>

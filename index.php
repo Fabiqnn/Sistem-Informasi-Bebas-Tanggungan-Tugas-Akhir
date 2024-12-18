@@ -25,7 +25,7 @@
 <body>
     <div class="header"></div>
     <div class="body"> 
-        <div class="form">
+        <div class="form container">
             <div class="content">
                 <h1>Sistem Informasi Bebas Tanggungan</h1>
                 <h3>Masuk Ke Akun Anda!</h3>
@@ -44,10 +44,10 @@
             </div>
         </div>
     
-        <div class="informasi">
-            <img src="assets/images/Logo Fiks.png" alt="">
-            <h1>Selamat Datang</h1>
-            <p>Platform resmi ‘SIBETA’ untuk memfasilitasi proses administrasi pelepasan tanggungan mahasiswa. Akses status tanggungan Anda dengan mudah dan pastikan kelancaran proses kelulusan Anda di sini.</p>
+        <div class="informasi container">
+                <img src="assets/images/Logo Fiks.png" alt="">
+                <h1>Selamat Datang</h1>
+                <p>Platform resmi ‘SIBETA’ untuk memfasilitasi proses administrasi pelepasan tanggungan mahasiswa. Akses status tanggungan Anda dengan mudah dan pastikan kelancaran proses kelulusan Anda di sini.</p>
         </div>
     </div>
     <div class="footer"></div>

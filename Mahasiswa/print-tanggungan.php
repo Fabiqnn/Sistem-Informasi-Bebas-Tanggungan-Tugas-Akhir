@@ -149,7 +149,7 @@
 
                     <hr style="opacity: .5; margin: 10px 0;">
 
-                    <table border="0" class="TableFormulir" style="width:100%; padding-top: 50px;">
+                    <table border="0" class="TableFormulir" style="width:100%; padding-top: 40px;">
                         <tbody>
                             <tr>
                                 <td style="text-align: right; vertical-align: bottom; width: 30%; height: 50px;"></td>

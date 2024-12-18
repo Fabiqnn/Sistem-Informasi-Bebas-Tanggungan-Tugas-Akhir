@@ -170,3 +170,19 @@ table .delete-btn {
 table .delete-btn:hover {
     background-color: rgba(248, 32, 32, .7);
 }
+
+@media (max-width: 768px) {
+    table th {
+        font-size: 12px;
+        line-height: 1rem;
+    }
+
+    table td {
+        font-size: 10px;
+        line-height: 1rem;
+    }
+
+    .table-table {
+        overflow-x: scroll;
+    }
+}

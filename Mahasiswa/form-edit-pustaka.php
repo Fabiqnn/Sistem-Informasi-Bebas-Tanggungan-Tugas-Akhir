@@ -77,10 +77,10 @@
                             </div>
                         </div>
 
-                        <label for="judul-skripsi">Judul Karya Ilmiah (Laporan Akhir)</label>
+                        <label class="keterangan" for="judul-skripsi">Judul Karya Ilmiah (Laporan Akhir)</label>
                         <input type="text" name="judul" id="judul-skripsi" value="<?= $getData['JUDUL_KARYA_ILMIAH'] ?>">
 
-                        <label for="tahun-skripsi">Tahun Karya Ilmiah Akhir Terbit (Laporan Akhir)</label>
+                        <label class="keterangan" for="tahun-skripsi">Tahun Karya Ilmiah Akhir Terbit (Laporan Akhir)</label>
                         <select id="tahun-skripsi" name="tahun-skripsi">
                             <option value="2010" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2010') ? 'selected' : '' ?> >2010</option>
                             <option value="2011" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2011') ? 'selected' : '' ?> >2011</option>
@@ -100,17 +100,17 @@
                             <option value="2025" <?= ($getData['TAHUN_KARYA_ILMIAH'] == '2025') ? 'selected' : '' ?> >2025</option>
                         </select>
 
-                        <label for="tgl-skripsi">Tanggal, Bulan, Tahun Ujian Tugas Akhir / Skripsi</label>
+                        <label class="keterangan" for="tgl-skripsi">Tanggal, Bulan, Tahun Ujian Tugas Akhir / Skripsi</label>
                         <input type="date" name="tgl-skripsi" id="tgl-skripsi" value="<?= htmlspecialchars($tanggalSkripsi) ?>">
 
-                        <label for="tgl-yudisium">Tanggal, Bulan, Tahun Yudisium</label>
+                        <label class="keterangan" for="tgl-yudisium">Tanggal, Bulan, Tahun Yudisium</label>
                         <input type="date" name="tgl-yudisium" id="tgl-yudisium" value="<?= htmlspecialchars($tanggalYudisium) ?>">
 
                         <p>Bukti Bebas Kompen</p>
                         <div class="upload-file">
                             <label for="up-kompen" class="upload-btn">Unggah</label>
                             <input type="file" id="up-kompen" name="up-kompen">
-                            <span id="kompen-name"><?= $getData['FILE_BEBAS_KOMPEN'] ?></span>
+                            <span class="file-upload-nama" id="kompen-name"><?= $getData['FILE_BEBAS_KOMPEN'] ?></span>
                         </div>
 
                         <p class="subjudul">Upload File SoftCopy Laporan Akhir</p>
@@ -122,7 +122,7 @@
                             <div class="upload-file">
                                 <label for="up-pendahuluan" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-pendahuluan" name="up-pendahuluan">
-                                <span id="pendahuluan-name"><?= $getData['FILE_PENDAHULUAN'] ?></span>
+                                <span class="file-upload-nama" id="pendahuluan-name"><?= $getData['FILE_PENDAHULUAN'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -131,7 +131,7 @@
                             <div class="upload-file">
                                 <label for="up-abstrak" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-abstrak" name="up-abstrak">
-                                <span id="abstrak-name"><?= $getData['FILE_ABSTRAK'] ?></span>
+                                <span class="file-upload-nama" id="abstrak-name"><?= $getData['FILE_ABSTRAK'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -140,7 +140,7 @@
                             <div class="upload-file">
                                 <label for="up-bab1" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-bab1" name="up-bab1">
-                                <span id="bab1-name"><?= $getData['BAB_1'] ?></span>
+                                <span class="file-upload-nama" id="bab1-name"><?= $getData['BAB_1'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -149,7 +149,7 @@
                             <div class="upload-file">
                                 <label for="up-bab2" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-bab2" name="up-bab2">
-                                <span id="bab2-name"><?= $getData['BAB_2'] ?></span>
+                                <span class="file-upload-nama" id="bab2-name"><?= $getData['BAB_2'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -158,7 +158,7 @@
                             <div class="upload-file">
                                 <label for="up-bab3" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-bab3" name="up-bab3">
-                                <span id="bab3-name"><?= $getData['BAB_3'] ?></span>
+                                <span class="file-upload-nama" id="bab3-name"><?= $getData['BAB_3'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -167,7 +167,7 @@
                             <div class="upload-file">
                                 <label for="up-bab4" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-bab4" name="up-bab4">
-                                <span id="bab4-name"><?= $getData['BAB_4'] ?></span>
+                                <span class="file-upload-nama" id="bab4-name"><?= $getData['BAB_4'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -176,7 +176,7 @@
                             <div class="upload-file">
                                 <label for="up-bab5" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-bab5" name="up-bab5">
-                                <span id="bab5-name"><?= $getData['BAB_5'] ?></span>
+                                <span class="file-upload-nama" id="bab5-name"><?= $getData['BAB_5'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -185,7 +185,7 @@
                             <div class="upload-file">
                                 <label for="up-bab6" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-bab6" name="up-bab6">
-                                <span id="bab6-name"><?= $getData['BAB_6'] ?></span>
+                                <span class="file-upload-nama" id="bab6-name"><?= $getData['BAB_6'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -194,7 +194,7 @@
                             <div class="upload-file">
                                 <label for="up-bab7" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-bab7" name="up-bab7">
-                                <span id="bab7-name"><?= $getData['BAB_7'] ?></span>
+                                <span class="file-upload-nama" id="bab7-name"><?= $getData['BAB_7'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -203,7 +203,7 @@
                             <div class="upload-file">
                                 <label for="up-dftr-pustaka" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-dftr-pustaka" name="up-dftr-pustaka">
-                                <span id="pustaka-name"><?= $getData['FILE_DAFTAR_PUSTAKA'] ?></span>
+                                <span class="file-upload-nama" id="pustaka-name"><?= $getData['FILE_DAFTAR_PUSTAKA'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -212,7 +212,7 @@
                             <div class="upload-file">
                                 <label for="up-lampiran" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-lampiran" name="up-lampiran">
-                                <span id="lampiran-name"><?= $getData['FILE_LAMPIRAN'] ?></span>
+                                <span class="file-upload-nama" id="lampiran-name"><?= $getData['FILE_LAMPIRAN'] ?></span>
                             </div>
                         </div>
                         <div class="upload">
@@ -221,12 +221,12 @@
                             <div class="upload-file">
                                 <label for="up-kompilasi" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-kompilasi" name="up-kompilasi">
-                                <span id="kompilasi-name"><?= $getData['FILE_KOMPILASI_LAPORAN_AKHIR'] ?></span>
+                                <span class="file-upload-nama" id="kompilasi-name"><?= $getData['FILE_KOMPILASI_LAPORAN_AKHIR'] ?></span>
                             </div>
                         </div>
 
                         <h6>LINK PUBLIKASI JURNAL</h6>
-                        <p>Khusus mahasiswa D4 ( Link dimana Jurnal anda dipublikasikan sesuai alamat URL ) ( bila ada silahkan dilampirkan ) (bila tidak ada bisa dikosongkan)</p>
+                        <p class="keterangan" >Khusus mahasiswa D4 ( Link dimana Jurnal anda dipublikasikan sesuai alamat URL ) ( bila ada silahkan dilampirkan ) (bila tidak ada bisa dikosongkan)</p>
                         <input type="text" id="link-publikasi" name="link-publikasi" value="<?= $getData['LINK_JURNAL'] ?>">
 
                         <div class="upload">
@@ -235,11 +235,12 @@
                             <div class="upload-file">
                                 <label for="up-softcopy-jurnal" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-softcopy-jurnal" name="up-softcopy-jurnal">
-                                <span id="jurnal-name"><?= $getData['FILE_SOFTCOPY_JURNAL'] ?></span>
+                                <span class="file-upload-nama" id="jurnal-name"><?= $getData['FILE_SOFTCOPY_JURNAL'] ?></span>
                             </div>
                         </div>
 
-                        <p class="label">Dengan ini saya memberikan ijin kepada perpustakaan polinema untuk mengolah Laporan Akhir / Tugas Akhir saya dengan ketentuan yang ada untuk kemajuan ilmu pengetahuan dan institusi.</p>
+                        <h6>IZIN MENGOLAH</h6>
+                        <p class="keterangan">Dengan ini saya memberikan ijin kepada perpustakaan polinema untuk mengolah Laporan Akhir / Tugas Akhir saya dengan ketentuan yang ada untuk kemajuan ilmu pengetahuan dan institusi.</p>
                         <div class="radio-container">
                             <div class="radio">
                                 <input type="radio" name="izin" class="radio-check" id="iya" value="Diperbolehkan" <?= ($getData['IZIN_MENGOLAH'] == 'Diperbolehkan') ? 'checked' : '' ?>>
@@ -277,7 +278,7 @@
                             <div class="upload-file">
                                 <label for="up-resi" class="upload-btn">Unggah</label>
                                 <input type="file" id="up-resi" name="up-resi">
-                                <span id="resi-name"><?= $getData['RESI_PENGIRIMAN_SKRIPSI'] ?></span>
+                                <span class="file-upload-nama" id="resi-name"><?= $getData['RESI_PENGIRIMAN_SKRIPSI'] ?></span>
                             </div>
                         </div>
 

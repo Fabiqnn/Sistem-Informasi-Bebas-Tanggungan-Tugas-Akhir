@@ -65,39 +65,41 @@
                             <i class="lni lni-plus"></i>
                             Add Mahasiswa User
                         </button>
-                        <table>
-                            <tr>
-                                <th>Nama</th>
-                                <th>NIM</th>
-                                <th>Kata Sandi</th>
-                                <th>Angkatan</th>
-                                <th>Progam Studi</th>
-                                <th>update</th>
-                                <th>Delete</th>
-                            </tr>
-                            <?php
-                                while ($rowTable = sqlsrv_fetch_array($resultTable, SQLSRV_FETCH_ASSOC)) {
-                                    echo "<tr>";
-                                        echo "<td>" . $rowTable['NAMA_MHS'] . "</td>";
-                                        echo "<td>" . $rowTable['ID_USER'] . "</td>";
-                                        echo "<td>******</td>";
-                                        echo "<td>" . $rowTable['ANGKATAN'] . "</td>";
-                                        echo "<td>" . $rowTable['PRODI'] . "</td>";
-                                        echo "<td class='update-col'><a 
-                                            href='#' 
-                                            class='update-btn' 
-                                            data-bs-toggle='modal' 
-                                            data-bs-target='#edit-mhs-modal'
-                                            data-nama = '".$rowTable['NAMA_MHS']."'
-                                            data-nim = '".$rowTable['ID_USER']."'
-                                            data-pass = '".$rowTable['PASS']."'
-                                            data-angkatan = '".$rowTable['ANGKATAN']."'
-                                            data-prodi = '".$rowTable['PRODI']."' >Perbarui</a></td>";
-                                        echo "<td class='delete-col'><a href='../assets/php/delete-mhs.php?delete_id=" . $rowTable['ID_USER'] . "' class='delete-btn' onclick='return confirm(\"Apakah anda yakin untuk menghapus user berikut?\")'>Hapus</a></td>";
-                                    echo "</tr>";
-                                }
-                            ?>
-                        </table>
+                        <div class="table-table">
+                            <table>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>NIM</th>
+                                    <th>Kata Sandi</th>
+                                    <th>Angkatan</th>
+                                    <th>Progam Studi</th>
+                                    <th>update</th>
+                                    <th>Delete</th>
+                                </tr>
+                                <?php
+                                    while ($rowTable = sqlsrv_fetch_array($resultTable, SQLSRV_FETCH_ASSOC)) {
+                                        echo "<tr>";
+                                            echo "<td>" . $rowTable['NAMA_MHS'] . "</td>";
+                                            echo "<td>" . $rowTable['ID_USER'] . "</td>";
+                                            echo "<td>******</td>";
+                                            echo "<td>" . $rowTable['ANGKATAN'] . "</td>";
+                                            echo "<td>" . $rowTable['PRODI'] . "</td>";
+                                            echo "<td class='update-col'><a 
+                                                href='#' 
+                                                class='update-btn' 
+                                                data-bs-toggle='modal' 
+                                                data-bs-target='#edit-mhs-modal'
+                                                data-nama = '".$rowTable['NAMA_MHS']."'
+                                                data-nim = '".$rowTable['ID_USER']."'
+                                                data-pass = '".$rowTable['PASS']."'
+                                                data-angkatan = '".$rowTable['ANGKATAN']."'
+                                                data-prodi = '".$rowTable['PRODI']."' >Perbarui</a></td>";
+                                            echo "<td class='delete-col'><a href='../assets/php/delete-mhs.php?delete_id=" . $rowTable['ID_USER'] . "' class='delete-btn' onclick='return confirm(\"Apakah anda yakin untuk menghapus user berikut?\")'>Hapus</a></td>";
+                                        echo "</tr>";
+                                    }
+                                ?>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
