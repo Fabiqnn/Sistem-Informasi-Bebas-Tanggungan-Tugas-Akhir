@@ -15,27 +15,16 @@
 
     $idMhs = $_SESSION['noInduk'];
 
-    $queryTA = "SELECT STATUS_VERIFIKASI FROM FORM_TA 
-            JOIN VERIFIKASI ON FORM_TA.ID_VERIFIKASI = VERIFIKASI.ID_VERIFIKASI
-            WHERE FORM_TA.NIM = ?";
-    $queryProdi = "SELECT STATUS_VERIFIKASI FROM FORM_PRODI 
-            JOIN VERIFIKASI ON FORM_PRODI.ID_VERIFIKASI = VERIFIKASI.ID_VERIFIKASI
-            WHERE FORM_PRODI.NIM = ?";
-    $queryPustaka = "SELECT STATUS_VERIFIKASI FROM FORM_Pustaka 
-            JOIN VERIFIKASI ON FORM_Pustaka.ID_VERIFIKASI = VERIFIKASI.ID_VERIFIKASI
-            WHERE FORM_Pustaka.NIM = ?";
+    $query = "SELECT * FROM ViewPrintBebasTanggungan
+                WHERE NIM = ?";
 
     $params = array($idMhs);
-    $resultTa = sqlsrv_query($conn, $queryTA, $params);
-    $resultProdi = sqlsrv_query($conn, $queryProdi, $params);
-    $resultPustaka = sqlsrv_query($conn, $queryPustaka, $params);
+    $result = sqlsrv_query($conn, $query, $params);
 
-    if (!$resultTa && !$resultProdi && !$resultPustaka) {
+    if (!$result) {
         die("Error Query" . print_r(sqlsrv_errors(), true)); 
     } else {
-        $statusTa = sqlsrv_fetch_array($resultTa);
-        $statusProdi = sqlsrv_fetch_array($resultProdi);
-        $statusPustaka = sqlsrv_fetch_array($resultPustaka);
+        $getData = sqlsrv_fetch_array($result);
     }
 ?>
 
@@ -119,8 +108,8 @@
                     <h3>Bebas Tanggungan TA</h3>
                     <table width="100%">
                         <tr>
-                        <?php if (isset($statusTa['STATUS_VERIFIKASI'])): ?>
-                            <td align="center"><h2 style="font-weight: 400;"><?= $statusTa['STATUS_VERIFIKASI'] ?></h2 style="font-weight: 400;"></td>
+                        <?php if (isset($getData['STATUS_TA'])): ?>
+                            <td align="center"><h2 style="font-weight: 400;"><?= $getData['STATUS_TA'] ?></h2 style="font-weight: 400;"></td>
                         <?php endif; ?>
                         </tr>
                     </table>
@@ -130,8 +119,8 @@
                     <h3>Bebas Tanggungan Prodi</h3>
                     <table width="100%">
                         <tr>
-                        <?php if (isset($statusProdi['STATUS_VERIFIKASI'])): ?>
-                            <td align="center"><h2 style="font-weight: 400;"><?= $statusProdi['STATUS_VERIFIKASI'] ?></h2 style="font-weight: 400;"></td>
+                        <?php if (isset($getData['STATUS_PRODI'])): ?>
+                            <td align="center"><h2 style="font-weight: 400;"><?= $getData['STATUS_PRODI'] ?></h2 style="font-weight: 400;"></td>
                         <?php endif; ?>
                         </tr>
                     </table width="100%">
@@ -141,8 +130,8 @@
                     <h3>Bebas Tanggungan Pustaka</h3>
                     <table width="100%">
                         <tr>
-                        <?php if (isset($statusPustaka['STATUS_VERIFIKASI'])): ?>
-                            <td align="center"><h2 style="font-weight: 400;"><?= $statusPustaka['STATUS_VERIFIKASI'] ?></h2 style="font-weight: 400;"></td>
+                        <?php if (isset($getData['STATUS_PUSTAKA'])): ?>
+                            <td align="center"><h2 style="font-weight: 400;"><?= $getData['STATUS_PUSTAKA'] ?></h2 style="font-weight: 400;"></td>
                         <?php endif; ?>
                         </tr>
                     </table>
