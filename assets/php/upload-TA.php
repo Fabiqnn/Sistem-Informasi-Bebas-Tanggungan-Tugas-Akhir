@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($stmt === false) {
         die("$file_laporan_ta " . print_r(sqlsrv_errors(), true));
     } else {
-        header("Location: ../../Mahasiswa/form-TA-lt7.php");
+        header("Location: ../../Mahasiswa/form-TA-lt7.php?adm=1");
         exit();
     }
 }

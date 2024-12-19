@@ -138,7 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Gagal menyimpan data ke database: " . print_r(sqlsrv_errors(), true));
     } else {
         echo "Data berhasil disimpan!";
-        header("Location: ../../Mahasiswa/form-pustaka.php"); 
+        header("Location: ../../Mahasiswa/form-pustaka.php?adm=3"); 
         exit();
     }
 }
